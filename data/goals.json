@@ -1,0 +1,53 @@
+[
+  {
+    "id": "GOAL-0001",
+    "title": "100 Leads",
+    "description": "",
+    "category": "leads",
+    "status": "active",
+    "target_value": 100.0,
+    "current_value": 0,
+    "unit": "lead",
+    "deadline": null,
+    "parent_id": null,
+    "milestones": [],
+    "key_results": [],
+    "created_at": "2026-07-28T20:24:11.953509",
+    "updated_at": "2026-07-28T20:24:11.953509",
+    "completed_at": null
+  },
+  {
+    "id": "GOAL-0002",
+    "title": "100 Leads this month",
+    "description": "",
+    "category": "leads",
+    "status": "active",
+    "target_value": 100.0,
+    "current_value": 0,
+    "unit": "lead",
+    "deadline": null,
+    "parent_id": null,
+    "milestones": [],
+    "key_results": [],
+    "created_at": "2026-07-28T20:25:47.222795",
+    "updated_at": "2026-07-28T20:25:47.222795",
+    "completed_at": null
+  },
+  {
+    "id": "GOAL-0003",
+    "title": "Debug Goal",
+    "description": "",
+    "category": "other",
+    "status": "active",
+    "target_value": 50.0,
+    "current_value": 0,
+    "unit": "lead",
+    "deadline": null,
+    "parent_id": null,
+    "milestones": [],
+    "key_results": [],
+    "created_at": "2026-07-28T20:26:02.107431",
+    "updated_at": "2026-07-28T20:26:02.107431",
+    "completed_at": null
+  }
+]

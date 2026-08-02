@@ -1,0 +1,226 @@
+Scanning 102 Python files for type safety issues...
+
+================================================================================
+TYPE SAFETY SCAN RESULTS
+================================================================================
+
+--- Missing Return Type Hints (209) ---
+D:/cityestate/src\ai_crew\crew.py:112: MISSING_RETURN_TYPE: def generate_whatsapp_reply(
+D:/cityestate/src\ai_crew\crew.py:159: MISSING_RETURN_TYPE: def generate_content(
+D:/cityestate/src\ai_crew\crew.py:313: MISSING_RETURN_TYPE: def process_data_pipeline(
+D:/cityestate/src\ai_crew\llm_config.py:33: MISSING_RETURN_TYPE: def _ensure_openrouter_key():
+D:/cityestate/src\ai_crew\llm_config.py:42: MISSING_RETURN_TYPE: def get_llm(model: str = None, temperature: float = 0.1):
+D:/cityestate/src\ai_crew\outreach_tasks.py:69: MISSING_RETURN_TYPE: def create_personalized_writing_task(
+D:/cityestate/src\ai_crew\tasks.py:61: MISSING_RETURN_TYPE: def create_whatsapp_reply_task(
+D:/cityestate/src\ai_crew\tools.py:133: MISSING_RETURN_TYPE: def _run(
+D:/cityestate/src\api\auth.py:103: MISSING_RETURN_TYPE: def get_current_user(
+D:/cityestate/src\api\auth.py:134: MISSING_RETURN_TYPE: def create_user(db_session, username: str, password: str,
+D:/cityestate/src\api\deps.py:45: MISSING_RETURN_TYPE: def set_sqlite_pragma(dbapi_connection, connection_record):
+D:/cityestate/src\api\deps.py:55: MISSING_RETURN_TYPE: def get_db():
+D:/cityestate/src\api\main.py:210: MISSING_RETURN_TYPE: def health_check():
+D:/cityestate/src\api\main.py:255: MISSING_RETURN_TYPE: def get_metrics():
+D:/cityestate/src\api\main.py:293: MISSING_RETURN_TYPE: def monitoring_summary():
+D:/cityestate/src\api\main.py:304: MISSING_RETURN_TYPE: def root():
+D:/cityestate/src\api\routes\auth.py:53: MISSING_RETURN_TYPE: def login(request: LoginRequest, req: Request, db: Session = Depends(get_db)):
+D:/cityestate/src\api\routes\auth.py:83: MISSING_RETURN_TYPE: def register(request: UserCreate, user: dict = Depends(require_admin), db: Session = Depends(get_db)):
+D:/cityestate/src\api\routes\auth.py:96: MISSING_RETURN_TYPE: def get_me(user: dict = Depends(require_auth), db: Session = Depends(get_db)):
+D:/cityestate/src\api\routes\auth.py:106: MISSING_RETURN_TYPE: def list_users(
+D:/cityestate/src\api\routes\auth.py:126: MISSING_RETURN_TYPE: def extension_token(request: ExtensionTokenRequest, req: Request, db: Session = Depends(get_db)):
+D:/cityestate/src\api\routes\automation.py:20: MISSING_RETURN_TYPE: def run_campaign_task(action: str, platform: str, dry_run: bool = False):
+D:/cityestate/src\api\routes\automation.py:67: MISSING_RETURN_TYPE: def run_automation(
+D:/cityestate/src\api\routes\automation.py:104: MISSING_RETURN_TYPE: def trigger_scrape(
+D:/cityestate/src\api\routes\automation.py:120: MISSING_RETURN_TYPE: def trigger_send(
+D:/cityestate/src\api\routes\automation.py:136: MISSING_RETURN_TYPE: def trigger_enrich(
+D:/cityestate/src\api\routes\automation.py:151: MISSING_RETURN_TYPE: def get_automation_status(
+D:/cityestate/src\api\routes\content.py:38: MISSING_RETURN_TYPE: def generate_content(
+D:/cityestate/src\api\routes\content.py:83: MISSING_RETURN_TYPE: def preview_content(
+D:/cityestate/src\api\routes\dashboard.py:22: MISSING_RETURN_TYPE: def get_dashboard_stats(
+D:/cityestate/src\api\routes\dashboard.py:91: MISSING_RETURN_TYPE: def get_chart_data(
+D:/cityestate/src\api\routes\data.py:44: MISSING_RETURN_TYPE: def extract_data(req: ExtractRequest, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\data.py:73: MISSING_RETURN_TYPE: def score_quality(req: QualityRequest, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\data.py:93: MISSING_RETURN_TYPE: def market_research(user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\data.py:120: MISSING_RETURN_TYPE: def check_whatsapp(req: WhatsAppCheckRequest, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\leads.py:20: MISSING_RETURN_TYPE: def list_leads(
+D:/cityestate/src\api\routes\leads.py:44: MISSING_RETURN_TYPE: def get_lead_stats(
+D:/cityestate/src\api\routes\leads.py:70: MISSING_RETURN_TYPE: def get_lead(
+D:/cityestate/src\api\routes\leads.py:83: MISSING_RETURN_TYPE: def create_lead(
+D:/cityestate/src\api\routes\leads.py:116: MISSING_RETURN_TYPE: def update_lead(
+D:/cityestate/src\api\routes\leads.py:137: MISSING_RETURN_TYPE: def delete_lead(
+D:/cityestate/src\api\routes\properties.py:20: MISSING_RETURN_TYPE: def list_properties(
+D:/cityestate/src\api\routes\properties.py:53: MISSING_RETURN_TYPE: def get_property_stats(
+D:/cityestate/src\api\routes\properties.py:92: MISSING_RETURN_TYPE: def get_property(
+D:/cityestate/src\api\routes\properties.py:105: MISSING_RETURN_TYPE: def create_property(
+D:/cityestate/src\api\routes\properties.py:145: MISSING_RETURN_TYPE: def update_property(
+D:/cityestate/src\api\routes\properties.py:166: MISSING_RETURN_TYPE: def delete_property(
+D:/cityestate/src\api\routes\requests.py:27: MISSING_RETURN_TYPE: def list_requests(
+D:/cityestate/src\api\routes\requests.py:51: MISSING_RETURN_TYPE: def get_request_stats(
+D:/cityestate/src\api\routes\requests.py:77: MISSING_RETURN_TYPE: def get_request(
+D:/cityestate/src\api\routes\requests.py:90: MISSING_RETURN_TYPE: def create_request(
+D:/cityestate/src\api\routes\requests.py:119: MISSING_RETURN_TYPE: def update_request(
+D:/cityestate/src\api\routes\requests.py:140: MISSING_RETURN_TYPE: def delete_request(
+D:/cityestate/src\api\routes\requests.py:155: MISSING_RETURN_TYPE: def match_request(
+D:/cityestate/src\api\routes\scheduler.py:22: MISSING_RETURN_TYPE: def set_scheduler(scheduler: SchedulerEngine):
+D:/cityestate/src\api\routes\scheduler.py:38: MISSING_RETURN_TYPE: def scheduler_status(
+D:/cityestate/src\api\routes\scheduler.py:50: MISSING_RETURN_TYPE: def scheduler_pause(
+D:/cityestate/src\api\routes\scheduler.py:63: MISSING_RETURN_TYPE: def scheduler_resume(
+D:/cityestate/src\api\routes\scheduler.py:76: MISSING_RETURN_TYPE: def run_job_now(
+D:/cityestate/src\api\routes\skills.py:79: MISSING_RETURN_TYPE: def list_tasks(user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:92: MISSING_RETURN_TYPE: def create_task(task: TaskCreate, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:111: MISSING_RETURN_TYPE: def update_task_status(task_id: str, data: dict, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:124: MISSING_RETURN_TYPE: def delete_task(task_id: str, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:140: MISSING_RETURN_TYPE: def list_goals(user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:153: MISSING_RETURN_TYPE: def create_goal(goal: GoalCreate, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:172: MISSING_RETURN_TYPE: def update_goal_progress(goal_id: str, data: dict, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:188: MISSING_RETURN_TYPE: def list_kanban_boards(user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:201: MISSING_RETURN_TYPE: def create_kanban_board(board: KanbanBoardCreate, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:214: MISSING_RETURN_TYPE: def get_kanban_board(board_name: str, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:231: MISSING_RETURN_TYPE: def add_kanban_card(board_name: str, card: KanbanCardCreate, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:250: MISSING_RETURN_TYPE: def move_kanban_card(board_name: str, card_id: str, move: CardMove, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:266: MISSING_RETURN_TYPE: def list_notes(user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:279: MISSING_RETURN_TYPE: def create_note(note: NoteCreate, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:297: MISSING_RETURN_TYPE: def delete_note(note_id: str, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:310: MISSING_RETURN_TYPE: def brainstorm_ideas(req: BrainstormRequest, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:323: MISSING_RETURN_TYPE: def list_quick_notes(user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:335: MISSING_RETURN_TYPE: def create_quick_note(data: QuickIdea, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:351: MISSING_RETURN_TYPE: def get_time_summary(project: Optional[str] = None, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:364: MISSING_RETURN_TYPE: def start_timer(data: dict, user: dict = Depends(require_auth)):
+D:/cityestate/src\api\routes\skills.py:380: MISSING_RETURN_TYPE: def stop_timer(user: dict = Depends(require_auth)):
+  ... and 129 more
+
+--- Uses Any Type (36) ---
+D:/cityestate/src\api\routes\data.py:32: USES_ANY: data: dict[str, Any]
+D:/cityestate/src\api\routes\webhooks.py:58: USES_ANY: extra_fields: Optional[dict[str, Any]] = Field(default_factory=dict, alias="extra_fields")
+D:/cityestate/src\api\routes\webhooks.py:413: USES_ANY: "Any system that sends JSON POST",
+D:/cityestate/src\automation\smart_wait.py:44: USES_ANY: def __init__(self, page: Any, default_timeout: int = 30000) -> None:
+D:/cityestate/src\automation\smart_wait.py:461: USES_ANY: ) -> tuple[bool, Any]:
+D:/cityestate/src\mcp\whatsapp_web_server.py:174: USES_ANY: async def handle_tool_call(self, tool_name: str, arguments: Dict[str, Any]) -> Dict[str, Any]:
+D:/cityestate/src\mcp\whatsapp_web_server.py:275: USES_ANY: async def handle_resource_read(self, uri: str) -> Dict[str, Any]:
+D:/cityestate/src\mcp\whatsapp_web_server.py:301: USES_ANY: def get_tools_schema(self) -> List[Dict[str, Any]]:
+D:/cityestate/src\mcp\whatsapp_web_server.py:312: USES_ANY: def get_resources_schema(self) -> List[Dict[str, Any]]:
+D:/cityestate/src\outreach\templates.py:341: USES_ANY: def inject_variables(template: dict[str, str] | str, lead: dict[str, Any]) -> dict[str, str]:
+D:/cityestate/src\outreach\templates.py:372: USES_ANY: def render_message(segment: str, channel: str, lead: dict[str, Any]) -> dict[str, str]:
+D:/cityestate/src\services\whatsapp_web.py:478: USES_ANY: async def get_unread_messages(self) -> List[Dict[str, Any]]:
+D:/cityestate/src\services\whatsapp_web.py:546: USES_ANY: async def get_chat_list(self) -> List[Dict[str, Any]]:
+D:/cityestate/src\services\whatsapp_web.py:627: USES_ANY: async def search_contact(self, query: str) -> List[Dict[str, Any]]:
+D:/cityestate/src\session_vault\browser_profile.py:92: USES_ANY: def list_profiles(self) -> list[dict[str, Any]]:
+D:/cityestate/src\session_vault\cookie_manager.py:76: USES_ANY: def get_cookie_stats(self) -> dict[str, Any]:
+D:/cityestate/src\session_vault\encryption.py:98: USES_ANY: def encrypt(self, data: Any) -> str:
+D:/cityestate/src\session_vault\encryption.py:106: USES_ANY: def decrypt(self, token: str) -> Any:
+D:/cityestate/src\session_vault\encryption.py:154: USES_ANY: def save_encrypted_file(self, path: Path, data: Any) -> None:
+D:/cityestate/src\session_vault\encryption.py:160: USES_ANY: def load_encrypted_file(self, path: Path) -> Any:
+D:/cityestate/src\session_vault\vault.py:70: USES_ANY: def _empty_session(platform: str, profile: str) -> dict[str, Any]:
+D:/cityestate/src\session_vault\vault.py:82: USES_ANY: def _read(self, platform: str, profile: str) -> dict[str, Any] | None:
+D:/cityestate/src\session_vault\vault.py:110: USES_ANY: def get_whatsapp_session(self, profile: str = "default") -> dict[str, Any]:
+D:/cityestate/src\session_vault\vault.py:120: USES_ANY: def get_facebook_session(self, profile: str = "default") -> dict[str, Any]:
+D:/cityestate/src\session_vault\vault.py:130: USES_ANY: def get_session_status(self, platform: str = "") -> dict[str, Any]:
+D:/cityestate/src\session_vault\vault.py:176: USES_ANY: data: dict[str, Any],
+D:/cityestate/src\skills\whatsapp_web_skill.py:30: USES_ANY: async def send_message(self, phone: str, message: str) -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:38: USES_ANY: async def send_image(self, phone: str, image_path: str, caption: str = "") -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:47: USES_ANY: async def get_unread_messages(self) -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:52: USES_ANY: async def get_chats(self, limit: int = 20) -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:57: USES_ANY: async def search_contact(self, query: str) -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:62: USES_ANY: async def start(self, headless: bool = False) -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:67: USES_ANY: async def stop(self) -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:72: USES_ANY: async def status(self) -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:77: USES_ANY: async def screenshot(self, filename: str = "whatsapp_screenshot.png") -> Dict[str, Any]:
+D:/cityestate/src\skills\whatsapp_web_skill.py:82: USES_ANY: def get_tools(self) -> List[Dict[str, Any]]:
+
+--- Optional Without Default Values (292) ---
+D:/cityestate/src\ai_crew\tools.py:56: OPTIONAL_NO_DEFAULT: area: Optional[str] = Field(default=None, description="Area/location filter")
+D:/cityestate/src\ai_crew\tools.py:57: OPTIONAL_NO_DEFAULT: min_price: Optional[float] = Field(default=None, description="Minimum price EGP")
+D:/cityestate/src\ai_crew\tools.py:58: OPTIONAL_NO_DEFAULT: max_price: Optional[float] = Field(default=None, description="Maximum price EGP")
+D:/cityestate/src\ai_crew\tools.py:59: OPTIONAL_NO_DEFAULT: bedrooms: Optional[int] = Field(default=None, description="Number of bedrooms")
+D:/cityestate/src\ai_crew\tools.py:60: OPTIONAL_NO_DEFAULT: property_type: Optional[str] = Field(default=None, description="Property type")
+D:/cityestate/src\ai_crew\tools.py:135: OPTIONAL_NO_DEFAULT: area: Optional[str] = None,
+D:/cityestate/src\ai_crew\tools.py:136: OPTIONAL_NO_DEFAULT: min_price: Optional[float] = None,
+D:/cityestate/src\ai_crew\tools.py:137: OPTIONAL_NO_DEFAULT: max_price: Optional[float] = None,
+D:/cityestate/src\ai_crew\tools.py:138: OPTIONAL_NO_DEFAULT: bedrooms: Optional[int] = None,
+D:/cityestate/src\ai_crew\tools.py:139: OPTIONAL_NO_DEFAULT: property_type: Optional[str] = None,
+D:/cityestate/src\ai_crew\tools.py:319: OPTIONAL_NO_DEFAULT: sender: Optional[str] = Field(default=None, description="Sender name or phone")
+D:/cityestate/src\ai_crew\tools.py:320: OPTIONAL_NO_DEFAULT: url: Optional[str] = Field(default=None, description="Source URL (for web)")
+D:/cityestate/src\ai_crew\tools.py:362: OPTIONAL_NO_DEFAULT: source: Optional[str] = Field(default=None, description="Crawl source: 'olx', 'propertyfinder', 'aqarmap'")
+D:/cityestate/src\ai_crew\tools.py:363: OPTIONAL_NO_DEFAULT: url: Optional[str] = Field(default=None, description="Custom URL to crawl")
+D:/cityestate/src\ai_crew\tools.py:503: OPTIONAL_NO_DEFAULT: name: Optional[str] = Field(default=None, description="Contact name")
+D:/cityestate/src\ai_crew\tools.py:504: OPTIONAL_NO_DEFAULT: property_type: Optional[str] = Field(default=None, description="Property type interest")
+D:/cityestate/src\ai_crew\tools.py:505: OPTIONAL_NO_DEFAULT: budget: Optional[float] = Field(default=None, description="Budget amount")
+D:/cityestate/src\ai_crew\tools.py:542: OPTIONAL_NO_DEFAULT: area: Optional[str] = Field(default=None, description="El Sadat City area to research")
+D:/cityestate/src\ai_crew\tools.py:543: OPTIONAL_NO_DEFAULT: property_type: Optional[str] = Field(default=None, description="Property type")
+D:/cityestate/src\api\auth.py:119: OPTIONAL_NO_DEFAULT: def authenticate_user(db_session, username: str, password: str) -> Optional[User]:
+D:/cityestate/src\api\models.py:30: OPTIONAL_NO_DEFAULT: full_name: Optional[str] = None
+D:/cityestate/src\api\models.py:37: OPTIONAL_NO_DEFAULT: full_name: Optional[str]
+D:/cityestate/src\api\models.py:40: OPTIONAL_NO_DEFAULT: created_at: Optional[str]
+D:/cityestate/src\api\models.py:51: OPTIONAL_NO_DEFAULT: budget: Optional[str] = None
+D:/cityestate/src\api\models.py:52: OPTIONAL_NO_DEFAULT: area: Optional[str] = None
+D:/cityestate/src\api\models.py:53: OPTIONAL_NO_DEFAULT: interest: Optional[str] = None
+D:/cityestate/src\api\models.py:55: OPTIONAL_NO_DEFAULT: phone: Optional[str] = None
+D:/cityestate/src\api\models.py:56: OPTIONAL_NO_DEFAULT: email: Optional[str] = None
+D:/cityestate/src\api\models.py:57: OPTIONAL_NO_DEFAULT: tags: Optional[str] = None
+D:/cityestate/src\api\models.py:61: OPTIONAL_NO_DEFAULT: title: Optional[str]
+D:/cityestate/src\api\models.py:62: OPTIONAL_NO_DEFAULT: lead_type: Optional[str]
+D:/cityestate/src\api\models.py:63: OPTIONAL_NO_DEFAULT: budget: Optional[str]
+D:/cityestate/src\api\models.py:64: OPTIONAL_NO_DEFAULT: area: Optional[str]
+D:/cityestate/src\api\models.py:65: OPTIONAL_NO_DEFAULT: interest: Optional[str]
+D:/cityestate/src\api\models.py:66: OPTIONAL_NO_DEFAULT: urgency: Optional[str]
+D:/cityestate/src\api\models.py:67: OPTIONAL_NO_DEFAULT: phone: Optional[str]
+D:/cityestate/src\api\models.py:68: OPTIONAL_NO_DEFAULT: email: Optional[str]
+D:/cityestate/src\api\models.py:69: OPTIONAL_NO_DEFAULT: status: Optional[str]
+D:/cityestate/src\api\models.py:70: OPTIONAL_NO_DEFAULT: score: Optional[float]
+D:/cityestate/src\api\models.py:71: OPTIONAL_NO_DEFAULT: tags: Optional[str]
+D:/cityestate/src\api\models.py:80: OPTIONAL_NO_DEFAULT: budget: Optional[str]
+D:/cityestate/src\api\models.py:81: OPTIONAL_NO_DEFAULT: area: Optional[str]
+D:/cityestate/src\api\models.py:82: OPTIONAL_NO_DEFAULT: interest: Optional[str]
+D:/cityestate/src\api\models.py:84: OPTIONAL_NO_DEFAULT: phone: Optional[str]
+D:/cityestate/src\api\models.py:85: OPTIONAL_NO_DEFAULT: email: Optional[str]
+D:/cityestate/src\api\models.py:88: OPTIONAL_NO_DEFAULT: tags: Optional[str]
+D:/cityestate/src\api\models.py:89: OPTIONAL_NO_DEFAULT: created_at: Optional[str]
+D:/cityestate/src\api\models.py:90: OPTIONAL_NO_DEFAULT: updated_at: Optional[str]
+D:/cityestate/src\api\models.py:98: OPTIONAL_NO_DEFAULT: description: Optional[str] = None
+D:/cityestate/src\api\models.py:103: OPTIONAL_NO_DEFAULT: district: Optional[str] = None
+D:/cityestate/src\api\models.py:106: OPTIONAL_NO_DEFAULT: bedrooms: Optional[int] = None
+D:/cityestate/src\api\models.py:107: OPTIONAL_NO_DEFAULT: bathrooms: Optional[int] = None
+D:/cityestate/src\api\models.py:108: OPTIONAL_NO_DEFAULT: area_sqm: Optional[float] = None
+D:/cityestate/src\api\models.py:109: OPTIONAL_NO_DEFAULT: developer: Optional[str] = None
+D:/cityestate/src\api\models.py:110: OPTIONAL_NO_DEFAULT: project_name: Optional[str] = None
+D:/cityestate/src\api\models.py:111: OPTIONAL_NO_DEFAULT: delivery_date: Optional[str] = None
+D:/cityestate/src\api\models.py:112: OPTIONAL_NO_DEFAULT: down_payment: Optional[float] = None
+D:/cityestate/src\api\models.py:113: OPTIONAL_NO_DEFAULT: monthly_installment: Optional[float] = None
+D:/cityestate/src\api\models.py:114: OPTIONAL_NO_DEFAULT: installment_years: Optional[int] = None
+D:/cityestate/src\api\models.py:115: OPTIONAL_NO_DEFAULT: payment_plan_details: Optional[str] = None
+D:/cityestate/src\api\models.py:116: OPTIONAL_NO_DEFAULT: contact_name: Optional[str] = None
+D:/cityestate/src\api\models.py:117: OPTIONAL_NO_DEFAULT: contact_phone: Optional[str] = None
+D:/cityestate/src\api\models.py:118: OPTIONAL_NO_DEFAULT: contact_email: Optional[str] = None
+D:/cityestate/src\api\models.py:119: OPTIONAL_NO_DEFAULT: source: Optional[str] = None
+D:/cityestate/src\api\models.py:120: OPTIONAL_NO_DEFAULT: source_url: Optional[str] = None
+D:/cityestate/src\api\models.py:121: OPTIONAL_NO_DEFAULT: tags: Optional[str] = None
+D:/cityestate/src\api\models.py:125: OPTIONAL_NO_DEFAULT: title: Optional[str]
+D:/cityestate/src\api\models.py:126: OPTIONAL_NO_DEFAULT: description: Optional[str]
+D:/cityestate/src\api\models.py:127: OPTIONAL_NO_DEFAULT: property_type: Optional[str]
+D:/cityestate/src\api\models.py:128: OPTIONAL_NO_DEFAULT: status: Optional[str]
+D:/cityestate/src\api\models.py:129: OPTIONAL_NO_DEFAULT: area: Optional[str]
+D:/cityestate/src\api\models.py:130: OPTIONAL_NO_DEFAULT: city: Optional[str]
+D:/cityestate/src\api\models.py:131: OPTIONAL_NO_DEFAULT: district: Optional[str]
+D:/cityestate/src\api\models.py:132: OPTIONAL_NO_DEFAULT: price: Optional[float]
+D:/cityestate/src\api\models.py:133: OPTIONAL_NO_DEFAULT: bedrooms: Optional[int]
+D:/cityestate/src\api\models.py:134: OPTIONAL_NO_DEFAULT: bathrooms: Optional[int]
+D:/cityestate/src\api\models.py:135: OPTIONAL_NO_DEFAULT: area_sqm: Optional[float]
+D:/cityestate/src\api\models.py:136: OPTIONAL_NO_DEFAULT: developer: Optional[str]
+D:/cityestate/src\api\models.py:137: OPTIONAL_NO_DEFAULT: project_name: Optional[str]
+D:/cityestate/src\api\models.py:138: OPTIONAL_NO_DEFAULT: delivery_date: Optional[str]
+  ... and 212 more
+
+--- Untyped Dict Returns (261) ---
+D:/cityestate/src\ai_crew\crew.py:172: UNTYPED_DICT_RETURN: return {}
+D:/cityestate/src\ai_crew\crew.py:457: UNTYPED_DICT_RETURN: return {"extraction": extracted, "enrichment": None, "analysis": None, "matching": None, "errors": ["llm_unavailable"]}
+D:/cityestate/src\ai_crew\crew.py:459: UNTYPED_DICT_RETURN: return {"extraction": None, "enrichment": None, "analysis": None, "matching": None, "errors": [str(e)]}
+D:/cityestate/src\ai_crew\crew.py:473: UNTYPED_DICT_RETURN: return {"market_report": {"error": str(e)}}
+Traceback (most recent call last):
+  File "D:\cityestate\type_safety_scan.py", line 208, in <module>
+    main()
+    ~~~~^^
+  File "D:\cityestate\type_safety_scan.py", line 193, in main
+    print(item)
+    ~~~~~^^^^^^
+  File "C:\Users\powertech\AppData\Local\Python\pythoncore-3.14-64\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 142-148: character maps to <undefined>

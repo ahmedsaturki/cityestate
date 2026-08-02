@@ -1,0 +1,48 @@
+# =============================================================================
+# CityEstate Dashboard Dockerfile
+# ===============================
+# Streamlit dashboard for CityEstate
+# =============================================================================
+
+FROM python:3.12-slim as builder
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+
+# Stage 2: Runtime
+FROM python:3.12-slim as runtime
+
+WORKDIR /app
+
+# Copy installed packages
+COPY --from=builder /install /usr/local
+
+# Copy application code
+COPY src/ ./src/
+COPY scripts/ ./scripts/
+COPY output/ ./output/
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
+
+# Expose Streamlit port
+EXPOSE 8050
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8050/_stcore/health')" || exit 1
+
+# Run Streamlit dashboard
+CMD ["streamlit", "run", "src/dashboard/main.py", "--server.port=8050", "--server.address=0.0.0.0"]

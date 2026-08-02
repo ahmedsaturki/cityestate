@@ -1,0 +1,138 @@
+# CityEstate — Docker Compose
+# ============================
+# Production deployment configuration
+#
+# Usage:
+#   docker compose up -d          Start all services
+#   docker compose logs -f        Follow logs
+#   docker compose down           Stop all services
+#   docker compose build          Rebuild images
+#   docker compose exec api python main.py --all  Run scheduler in API container
+
+services:
+  # --- API Server ---
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cityestate-api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./output:/app/output
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OTEL_SDK_DISABLED=true
+    networks:
+      - cityestate
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"
+        reservations:
+          memory: 256M
+          cpus: "0.5"
+
+  # --- Dashboard ---
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cityestate-dashboard
+    command: streamlit run src/dashboard/app.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
+    ports:
+      - "${DASHBOARD_PORT:-8501}:8501"
+    env_file:
+      - .env
+    environment:
+      - API_BASE_URL=http://api:8000
+    volumes:
+      - ./output:/app/output
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - cityestate
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+        reservations:
+          memory: 128M
+          cpus: "0.25"
+
+  # --- Scheduler ---
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cityestate-scheduler
+    command: python main.py --all
+    env_file:
+      - .env
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - cityestate
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+        reservations:
+          memory: 128M
+          cpus: "0.25"
+
+  # --- Nginx Reverse Proxy (optional) ---
+  nginx:
+    image: nginx:alpine
+    container_name: cityestate-nginx
+    ports:
+      - "${NGINX_PORT:-80}:80"
+      - "${NGINX_SSL_PORT:-443}:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+      - dashboard
+    restart: unless-stopped
+    networks:
+      - cityestate
+    profiles:
+      - production
+
+networks:
+  cityestate:
+    driver: bridge

@@ -1,0 +1,77 @@
+name: CityEstate CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install ruff flake8 mypy
+      - name: Lint with ruff
+        run: ruff check src/ tests/
+      - name: Lint with flake8
+        run: flake8 src/ tests/ --max-line-length=120 --extend-ignore=E203,W503
+      - name: Type check with mypy
+        run: mypy src/ --ignore-missing-imports --no-error-summary || true
+
+  test:
+    runs-on: ubuntu-latest
+    services:
+      sqlite:
+        image: alpine:latest
+        options: >-
+          sh -c "while true; do sleep 3600; done"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest tests/ -v --tb=short --cov=src --cov-report=xml --cov-report=html
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: htmlcov/
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt pip-audit bandit
+      - name: Audit dependencies
+        run: pip-audit -r requirements.txt || true
+      - name: Security scan with bandit
+        run: bandit -r src/ -f json -o bandit-report.json || true
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint, test, security]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t cityestate:latest .
+      - name: Run container smoke test
+        run: |
+          docker run -d --name cityestate-test -p 8000:8000 cityestate:latest
+          sleep 5
+          curl -f http://localhost:8000/health || exit 1
+          docker stop cityestate-test
+          docker rm cityestate-test

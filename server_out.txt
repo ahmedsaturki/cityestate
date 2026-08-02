@@ -1,0 +1,22 @@
+2026-07-29 00:24:57 [[32mINFO    [0m] root: Logging initialized (level=INFO, json=False)
+2026-07-29 00:24:57 [[32mINFO    [0m] cityestate: CityEstate API starting up...
+2026-07-29 00:24:57 [[32mINFO    [0m] cityestate: Database tables created/verified
+2026-07-29 00:24:57 [[32mINFO    [0m] cityestate: Default admin user already exists
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Added job "Match-Making Engine" to job store "default"
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Added job "WhatsApp Notifications" to job store "default"
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Added job "Database Backup" to job store "default"
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Added job "Vault Session Check" to job store "default"
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Added job "WhatsApp Inbound Reader" to job store "default"
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Added job "Facebook Groups Radar" to job store "default"
+2026-07-29 00:24:57 [[32mINFO    [0m] apscheduler.scheduler: Scheduler started
+2026-07-29 00:24:57 [[32mINFO    [0m] scheduler: Scheduler started with 6 jobs
+2026-07-29 00:24:57 [[32mINFO    [0m] cityestate: Background scheduler started
+2026-07-29 00:24:57 [[32mINFO    [0m] cityestate: CityEstate API ready (env=development, docs=True)
+2026-07-29 00:28:28 [[32mINFO    [0m] src.services.whatsapp_web: Waiting for QR code scan...
+2026-07-29 00:28:28 [[32mINFO    [0m] src.services.whatsapp_web: QR code saved to whatsapp_session/qr_code.png

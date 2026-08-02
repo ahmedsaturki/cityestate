@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityEstate Bridge</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="../icons/icon48.png" alt="CityEstate" class="logo">
+      <h1>CityEstate Bridge</h1>
+    </div>
+
+    <!-- Connection Status -->
+    <div class="status-card" id="statusCard">
+      <div class="status-indicator" id="statusIndicator"></div>
+      <div class="status-text">
+        <span class="status-label" id="statusLabel">جاري الاتصال...</span>
+        <span class="status-detail" id="statusDetail">Connecting to AI Brain</span>
+      </div>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">المعرف:</span>
+        <span class="info-value" id="profileId">---</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">الخادم:</span>
+        <span class="info-value" id="wsUrl">localhost:8000</span>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" id="messagesSent">0</span>
+        <span class="stat-label">رسائل مرسلة</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="leadsFound">0</span>
+        <span class="stat-label">عملاء مكتشفين</span>
+      </div>
+    </div>
+
+    <!-- Last Lead -->
+    <div class="lead-card" id="lastLeadCard" style="display: none;">
+      <div class="lead-header">
+        <span class="lead-badge" id="leadBadge">عميل ساخن 🔥</span>
+        <span class="lead-score" id="leadScore">0/100</span>
+      </div>
+      <div class="lead-name" id="leadName">---</div>
+      <div class="lead-area" id="leadArea">---</div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="btn btn-primary" id="connectBtn">اتصال</button>
+      <button class="btn btn-secondary" id="disconnectBtn">قطع الاتصال</button>
+    </div>
+
+    <!-- Auto-auth status -->
+    <div class="auto-auth-card" id="autoAuthCard">
+      <div class="auto-auth-row">
+        <span class="auto-auth-label">المصادقة التلقائية:</span>
+        <span class="auto-auth-status" id="autoAuthStatus">جاري التحقق...</span>
+      </div>
+      <div class="auto-auth-row">
+        <label for="extensionSecret" class="auto-auth-label">EXTENSION_SHARED_SECRET:</label>
+        <input type="password" id="extensionSecret" placeholder="paste server secret here" autocomplete="off">
+      </div>
+      <button class="btn btn-small" id="saveSecretBtn">حفظ السر</button>
+      <button class="btn btn-small" id="refreshToken">تجديد التوكن</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>CityEstate v1.0.0</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

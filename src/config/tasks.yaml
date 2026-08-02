@@ -1,0 +1,392 @@
+# =============================================================================
+# CityEstate — Task Definitions (13 Tasks)
+# =============================================================================
+# Phase 0 -> Phase 1 -> Phase 2 -> Phase 3 -> Phase 4 -> Phase 5
+# IMPORTANT: Tasks must be defined in order so context dependencies resolve.
+# =============================================================================
+
+# =============================================================================
+# PHASE 0: PRE-PROCESSING
+# =============================================================================
+
+config_validation_task:
+  description: >
+    Before any pipeline execution, validate all configuration:
+    1. Verify .env has ROUTER_API_KEY, ROUTER_BASE_URL, ROUTER_MODEL
+    2. Check agents.yaml parses correctly with all required keys
+    3. Verify task context dependencies form a valid DAG
+    4. Ensure output directory is writable
+    5. Validate API key format
+
+    Report findings as: CRITICAL (halt pipeline) or WARNING (proceed with caution).
+  expected_output: >
+    Configuration validation report with:
+    1. Environment status (pass/fail per variable)
+    2. YAML validation (errors and warnings)
+    3. DAG validation (no cycles detected)
+    4. Overall recommendation: PROCEED or HALT
+  agent: config_validator
+
+freshness_check_task:
+  description: >
+    Check the freshness of all existing data artifacts:
+    1. Lead CSV files and database (threshold: 7 days)
+    2. Final reports (threshold: 3 days)
+    3. Outreach logs (threshold: 1 day)
+    4. Campaign analytics (threshold: 2 days)
+
+    For each artifact, report: status (fresh/stale/missing), age, and
+    recommendation (keep/re-run specific phase).
+  expected_output: >
+    Data freshness report with:
+    1. Per-artifact status and age
+    2. Recommended pipeline phases to re-run
+    3. Data still valid for skip
+  agent: freshness_checker
+  context:
+    - config_validation_task
+
+competitor_scan_task:
+  description: >
+    Scan top 15 Egyptian real estate competitors for recent activities:
+    1. New project launches in 2025/2026
+    2. Pricing changes and new payment plans
+    3. Marketing campaigns and partnerships
+    4. Regulatory compliance updates
+
+    Search Google News RSS for each competitor with Egypt real estate queries.
+    Deduplicate results by URL.
+  expected_output: >
+    Competitor intelligence report containing:
+    1. Per-competitor activity summary
+    2. Pricing intelligence signals
+    3. New project launches
+    4. Strategic moves and partnerships
+    5. Source URLs and dates for every item
+  agent: competitor_monitor
+  context:
+    - config_validation_task
+
+# =============================================================================
+# PHASE 1: RESEARCH & ANALYSIS
+# =============================================================================
+
+research_task:
+  description: >
+    You are researching the Egyptian real estate market for 2025/2026.
+
+    IMPORTANT: Execute ONE search query at a time. Do NOT bulk-search.
+    You must briefly summarize and synthesize the results of each search
+    in your scratchpad before initiating the next search tool call to
+    prevent context window overload.
+
+    STEP-BY-STEP PROTOCOL:
+    1. Execute Query 1: 'Cairo new real estate prices 2026 EGP per sqm'
+    2. Summarize key findings from Query 1 (2-3 sentences max)
+    3. Execute Query 2: 'New Administrative Capital NAC apartment prices 2026'
+    4. Summarize key findings from Query 2 (2-3 sentences max)
+    5. Execute Query 3: 'Egypt real estate payment plans ROI 2026'
+    6. Summarize key findings from Query 3 (2-3 sentences max)
+    7. Execute Query 4: 'North Coast Egypt real estate prices 2026'
+    8. Summarize key findings from Query 4 (2-3 sentences max)
+    9. Execute Query 5: 'Egypt real estate developers portfolio 2026'
+    10. Summarize key findings from Query 5 (2-3 sentences max)
+    11. Execute Query 6: 'Egypt real estate market trends regulations 2025 2026'
+    12. Summarize key findings from Query 6 (2-3 sentences max)
+
+    AFTER ALL 6 QUERIES, compile the verified data into:
+    1. Market Overview (current state 2025/2026)
+    2. Price ranges per sqm (Min/Max/Avg) per area
+    3. Payment terms and ROI statistics
+    4. Top developers and their projects
+
+    CRITICAL: Every price, URL, and statistic MUST come from the search tool
+    output above. If data is missing, say so explicitly.
+
+    DO NOT store all raw search results in context. Summarize each result
+    immediately after receiving it, then discard the raw output.
+
+    Include competitor intelligence from the competitor scan if available.
+  expected_output: >
+    A structured research dossier in English containing:
+    1. Executive Summary
+    2. Per-area price table (Area | Min EGP/sqm | Max EGP/sqm | Avg EGP/sqm | Source URL | Date)
+    3. Payment plans and ROI data with sources
+    4. Developer portfolio summary
+    5. Market trends and regulatory updates
+    6. Competitor intelligence summary (if available)
+
+    Every data point must have: [Source Name](URL) -- Date.
+    Minimum 1000 words. Minimum 6 search queries executed.
+  agent: market_researcher
+  context:
+    - competitor_scan_task
+
+analysis_task:
+  description: >
+    Using ONLY the verified data from the Researcher, produce a comprehensive
+    financial analysis with ROI calculations and investment metrics.
+
+    ANALYSIS SECTIONS:
+    1. Price-per-sqm analysis by area (Min/Max/Average with trends)
+    2. Payment plan comparison (down payment %, installment periods, interest)
+    3. ROI calculations for each area (rental yield, capital appreciation)
+    4. Investment ranking: Best areas for ROI vs. best areas for capital growth
+    5. Risk-adjusted returns considering market volatility
+
+    Use the financial_math tool for ALL calculations. Every calculated figure
+    must be traceable to the tool output.
+  expected_output: >
+    A comprehensive Arabic Markdown financial analysis containing:
+    1. Price Comparison Table
+    2. Payment Plan Analysis
+    3. ROI Calculations
+    4. Investment Area Ranking
+    5. Risk Analysis
+
+    ALL calculations done via financial_math tool. ALL numbers sourced.
+    Minimum 1200 words.
+  agent: financial_analyst
+  context:
+    - research_task
+
+# =============================================================================
+# PHASE 3: LEAD GEN (must come before data validation)
+# =============================================================================
+
+lead_gen_task:
+  description: >
+    Based on the market research and financial analysis, create a comprehensive
+    organic lead generation strategy for Egyptian real estate.
+
+    STRATEGY COMPONENTS:
+    1. Target audience segments (first-time buyers, investors, diaspora, etc.)
+    2. Content marketing calendar (30-day plan)
+    3. Social media organic growth tactics (Facebook, Instagram, TikTok)
+    4. WhatsApp Business lead nurturing workflow
+    5. SEO strategy for real estate listings
+    6. Referral program design
+    7. Lead qualification framework
+
+    Use the lead_extractor tool to identify and qualify potential leads from
+    public sources. Build a sample lead list with qualification data.
+
+    CRITICAL: NO paid advertising recommendations. Organic only.
+  expected_output: >
+    An organic lead generation playbook in Arabic containing:
+    1. Content Strategy
+    2. Social Media Plan
+    3. WhatsApp Automation
+    4. Lead List with qualification data
+    5. KPIs and Metrics
+
+    ALL organic tactics. Lead list with qualification data.
+    Minimum 1000 words.
+  agent: lead_gen_specialist
+  context:
+    - research_task
+    - analysis_task
+
+# =============================================================================
+# PHASE 1 (continued): DATA VALIDATION (after lead gen)
+# =============================================================================
+
+data_validation_task:
+  description: >
+    Validate the quality of all lead data generated by the Lead Gen Specialist:
+    1. Check phone number formats (Egyptian +20 format)
+    2. Validate email addresses
+    3. Verify URLs are accessible
+    4. Check budget ranges against market norms
+    5. Verify area names match known Egyptian locations
+    6. Cross-check lead type consistency
+
+    Report validation rate and list all flagged records with reasons.
+  expected_output: >
+    Data validation report containing:
+    1. Total leads checked
+    2. Validation rate (pass/fail percentage)
+    3. List of invalid records with specific issues
+    4. Recommendations for data cleanup
+  agent: data_validator
+  context:
+    - lead_gen_task
+
+# =============================================================================
+# PHASE 2: CONTENT & CREATIVE
+# =============================================================================
+
+content_creation_task:
+  description: >
+    Based on the market research, financial analysis, and lead data, create
+    marketing content for outreach campaigns:
+
+    1. Email templates for each segment (diaspora, investor, buyer, developer)
+    2. SMS messages (max 160 chars each) for quick outreach
+    3. WhatsApp messages (max 500 chars) for conversational engagement
+    4. Social media post ideas for organic growth
+    5. Blog post outlines for SEO content
+
+    All content must be bilingual (Arabic primary, English for diaspora).
+    No paid advertising content -- organic channels only.
+  expected_output: >
+    Content package containing:
+    1. Email templates per segment (Arabic + English)
+    2. SMS messages per segment
+    3. WhatsApp messages per segment
+    4. Social media content calendar (30 days)
+    5. Blog post outlines (5 topics)
+  agent: content_writer
+  context:
+    - research_task
+    - analysis_task
+    - lead_gen_task
+
+arabic_review_task:
+  description: >
+    Review a SAMPLE of Arabic text from the pipeline for quality:
+    1. Check the first 500 words of the financial analysis for grammar
+    2. Check 3 content templates (1 email, 1 SMS, 1 WhatsApp) for punctuation
+    3. Verify Arabic spelling in key terms
+
+    Keep your review concise. Flag issues and provide corrections.
+    Do NOT re-review the entire pipeline output -- sample only.
+  expected_output: >
+    Arabic quality report containing:
+    1. Issues found (max 10 items)
+    2. Corrected text snippets
+    3. Overall Arabic quality score (1-10)
+  agent: arabic_specialist
+  context:
+    - analysis_task
+    - content_creation_task
+
+# =============================================================================
+# PHASE 3 (continued): CAMPAIGN PLANNING
+# =============================================================================
+
+campaign_planning_task:
+  description: >
+    Design a comprehensive outreach campaign plan based on the lead data,
+    content templates, and market intelligence:
+
+    1. Campaign objectives and target metrics
+    2. Segment-specific campaign tracks (diaspora, investor, buyer, developer)
+    3. Channel strategy (email, SMS, WhatsApp allocation per segment)
+    4. Sending schedule (optimal times, frequency, follow-up sequences)
+    5. A/B test plan (2-3 message variants per segment per channel)
+    6. Rate limiting and compliance rules
+    7. Success metrics and benchmarks
+
+    Consider the data validation results when planning -- only target
+    leads with valid contact information.
+  expected_output: >
+    Campaign plan containing:
+    1. Campaign overview and objectives
+    2. Per-segment campaign tracks
+    3. Channel allocation matrix
+    4. Sending schedule (daily/weekly)
+    5. A/B test matrix
+    6. Compliance checklist
+    7. KPI targets and benchmarks
+  agent: campaign_manager
+  context:
+    - lead_gen_task
+    - content_creation_task
+    - data_validation_task
+
+# =============================================================================
+# PHASE 4: STRATEGY & SYNTHESIS
+# =============================================================================
+
+strategy_task:
+  description: >
+    Synthesize all research, financial analysis, lead generation data,
+    content, and campaign plans into a comprehensive strategic report.
+    This is the final deliverable.
+
+    REPORT STRUCTURE:
+    1. Executive Summary (Arabic)
+    2. Market Opportunity Assessment
+    3. Financial Projections and ROI Summary
+    4. Lead Generation Pipeline and Expected Conversions
+    5. Content and Outreach Strategy
+    6. Risk Assessment Matrix
+    7. Implementation Roadmap (90-day, 6-month, 12-month)
+    8. Resource Requirements and Budget
+    9. Success Metrics and KPIs
+
+    Every section must reference data from the previous agents. If data is
+    missing, explicitly state the gap and recommend how to fill it.
+  expected_output: >
+    The final strategic report in Arabic Markdown containing:
+    1. Executive Summary
+    2. Market Opportunity Assessment
+    3. Financial Projections
+    4. Lead Gen Pipeline
+    5. Content and Outreach Strategy
+    6. Risk Matrix
+    7. Implementation Roadmap
+    8. Resources and Budget
+    9. Success Metrics
+
+    Comprehensive, actionable, data-backed. Minimum 2000 words.
+  agent: strategy_director
+  context:
+    - research_task
+    - analysis_task
+    - lead_gen_task
+    - content_creation_task
+    - campaign_planning_task
+
+# =============================================================================
+# PHASE 5: POST-PROCESSING
+# =============================================================================
+
+feedback_analysis_task:
+  description: >
+    After campaign execution, analyze all available performance data:
+    1. Outreach log statistics (messages sent, by channel, by segment)
+    2. Response rates and engagement metrics
+    3. Lead quality assessment (which segments converted best)
+    4. Channel performance comparison (email vs SMS vs WhatsApp)
+    5. Message variant performance (A/B test results)
+
+    If no live campaign data exists, provide a PRE-LAUNCH analysis:
+    - Template quality assessment
+    - Segment targeting recommendations
+    - Expected performance based on industry benchmarks
+  expected_output: >
+    Feedback analysis report containing:
+    1. Campaign performance summary
+    2. Segment comparison analysis
+    3. Channel effectiveness ranking
+    4. A/B test recommendations
+    5. Optimization action items
+  agent: feedback_analyst
+  context:
+    - campaign_planning_task
+    - strategy_task
+
+performance_dashboard_task:
+  description: >
+    Generate a comprehensive KPI dashboard covering the entire pipeline:
+    1. Research quality metrics (data freshness, source diversity)
+    2. Lead generation metrics (volume, qualification rate, validity)
+    3. Outreach metrics (delivery, open, response, conversion rates)
+    4. Content metrics (template usage, LLM vs template ratio)
+    5. Overall pipeline health (time per phase, error rates)
+
+    Include trend analysis where historical data exists.
+    Compare against Egyptian real estate industry benchmarks.
+  expected_output: >
+    Executive dashboard containing:
+    1. KPI summary with traffic light indicators
+    2. Trend charts (where data available)
+    3. Industry benchmark comparison
+    4. Improvement recommendations
+    5. Next-quarter projections
+  agent: performance_tracker
+  context:
+    - feedback_analysis_task
+    - strategy_task

@@ -1,0 +1,118 @@
+INFO:     Started server process [18136]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 93: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1490, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 440, in main
+    run(
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 621, in run
+    server.run()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\server.py", line 74, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in run_until_complete
+    self.run_forever()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in run_forever
+    super().run_forever()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\cityestate\src\api\main.py", line 174, in dispatch
+    logger.info(
+Message: '%s %s \u2192 %d (%sms) %s'
+Arguments: ('GET', '/api/v1/webhooks/whatsapp-web/status', 200, 45.2, '')
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py", line 1163, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 93: character maps to <undefined>
+Call stack:
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1569, in __call__
+    return self.main(*args, **kwargs)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1490, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 1353, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\click\core.py", line 907, in invoke
+    return callback(*args, **kwargs)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 440, in main
+    run(
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\main.py", line 621, in run
+    server.run()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\server.py", line 74, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in run_until_complete
+    self.run_forever()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in run_forever
+    super().run_forever()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 422, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\powertech\AppData\Local\Programs\Python\Python312\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "D:\cityestate\src\api\main.py", line 174, in dispatch
+    logger.info(
+Message: '%s %s \u2192 %d (%sms) %s'
+Arguments: ('GET', '/api/v1/webhooks/whatsapp-web/status', 200, 1.0, '')

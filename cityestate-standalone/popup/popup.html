@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityEstate — El Sadat City</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="../icons/icon48.png" alt="CityEstate" class="logo">
+      <div>
+        <h1>CityEstate</h1>
+        <span class="subtitle">مدينة السادات — Premium</span>
+      </div>
+      <span class="mode-badge">STANDALONE</span>
+    </div>
+
+    <!-- Mode Banner -->
+    <div class="mode-banner">
+      <span class="mode-icon">⚡</span>
+      <span>يعمل بدون خادم — كل شيء محلي في المتصفح</span>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" id="totalLeads">0</span>
+        <span class="stat-label">عملاء</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number platinum" id="platinumLeads">0</span>
+        <span class="stat-label">Platinum</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number gold" id="goldLeads">0</span>
+        <span class="stat-label">Gold</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number silver" id="silverLeads">0</span>
+        <span class="stat-label">Silver</span>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="leads">العملاء</button>
+      <button class="tab" data-tab="notes">ملاحظات</button>
+      <button class="tab" data-tab="templates">ردود</button>
+      <button class="tab" data-tab="areas">المناطق</button>
+    </div>
+
+    <!-- Tab: Leads -->
+    <div class="tab-content active" id="tab-leads">
+      <div class="leads-list" id="leadsList">
+        <div class="empty-state">لا يوجد عملاء بعد</div>
+      </div>
+    </div>
+
+    <!-- Tab: Notes -->
+    <div class="tab-content" id="tab-notes">
+      <div class="note-input">
+        <input type="text" id="noteInput" placeholder="اكتب ملاحظة..." class="input-field">
+        <button class="btn btn-small" id="addNoteBtn">إضافة</button>
+      </div>
+      <div class="notes-list" id="notesList">
+        <div class="empty-state">لا توجد ملاحظات</div>
+      </div>
+    </div>
+
+    <!-- Tab: Templates -->
+    <div class="tab-content" id="tab-templates">
+      <div class="templates-list" id="templatesList"></div>
+    </div>
+
+    <!-- Tab: Areas -->
+    <div class="tab-content" id="tab-areas">
+      <div class="areas-list" id="areasList"></div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="actions">
+      <button class="btn btn-primary" id="openWhatsApp">
+        <span>WhatsApp Web</span>
+      </button>
+      <button class="btn btn-secondary" id="openFacebook">
+        <span>Facebook Groups</span>
+      </button>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-section">
+      <label class="toggle-row">
+        <span>رد تلقائي</span>
+        <input type="checkbox" id="autoReplyToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+      <label class="toggle-row">
+        <span>إشعارات العملاء الساخنين</span>
+        <input type="checkbox" id="notifToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>CityEstate v2.0 — Standalone Mode</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

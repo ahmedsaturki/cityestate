@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "CityEstate — El Sadat City Premium Real Estate",
+  "description": "Standalone AI-powered real estate tool for El Sadat City. Monitors WhatsApp & Facebook, scores leads, auto-replies. Zero setup required.",
+  "version": "2.0.0",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://www.facebook.com/*",
+    "https://web.facebook.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": [
+        "utils/lead-scorer.js",
+        "utils/auto-reply.js",
+        "utils/sadat-knowledge.js",
+        "content/whatsapp.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.facebook.com/*", "https://web.facebook.com/*"],
+      "js": [
+        "utils/lead-scorer.js",
+        "utils/auto-reply.js",
+        "utils/sadat-knowledge.js",
+        "content/facebook.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

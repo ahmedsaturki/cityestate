@@ -1,0 +1,1073 @@
+CityEstate Codebase Analysis: 102 Python files scanned
+
+Source directory: D:\cityestate\src
+
+======================================================================
+  1. ERROR HANDLING PATTERNS (try/except/raise)
+======================================================================
+   96  D:\cityestate\src\api\routes\skills.py
+   65  D:\cityestate\src\services\whatsapp_web.py
+   28  D:\cityestate\src\automation\smart_wait.py
+   26  D:\cityestate\src\ai_crew\crew.py
+   26  D:\cityestate\src\ai_crew\tools.py
+   25  D:\cityestate\src\api\routes\webhooks.py
+   17  D:\cityestate\src\api\routes\websocket.py
+   17  D:\cityestate\src\dashboard\app.py
+   14  D:\cityestate\src\automation\browser_manager.py
+   14  D:\cityestate\src\skills\image_analysis.py
+   14  D:\cityestate\src\skills\web_scraper.py
+   13  D:\cityestate\src\data\crawler.py
+   13  D:\cityestate\src\skills\computer_use.py
+   12  D:\cityestate\src\database\ingester.py
+   11  D:\cityestate\src\skills\google_search.py
+
+  'except Exception' appears in 227 locations:
+    D:\cityestate\src\error_handling.py:289
+    D:\cityestate\src\ai_crew\crew.py:105
+    D:\cityestate\src\ai_crew\crew.py:152
+    D:\cityestate\src\ai_crew\crew.py:191
+    D:\cityestate\src\ai_crew\crew.py:306
+    D:\cityestate\src\ai_crew\crew.py:348
+    D:\cityestate\src\ai_crew\crew.py:364
+    D:\cityestate\src\ai_crew\crew.py:387
+    D:\cityestate\src\ai_crew\crew.py:413
+    D:\cityestate\src\ai_crew\crew.py:442
+    D:\cityestate\src\ai_crew\crew.py:458
+    D:\cityestate\src\ai_crew\crew.py:472
+    ... and 215 more
+
+  'except HTTPException' appears in 1 locations:
+    D:\cityestate\src\api\routes\skills.py:223
+
+  'except ImportError' appears in 13 locations:
+    D:\cityestate\src\data\crawler.py:204
+    D:\cityestate\src\data\crawler.py:217
+    D:\cityestate\src\services\mcp_service.py:121
+    D:\cityestate\src\services\whatsapp_web.py:136
+    D:\cityestate\src\skills\computer_use.py:44
+    D:\cityestate\src\skills\document_processing.py:67
+    D:\cityestate\src\skills\document_processing.py:101
+    D:\cityestate\src\skills\google_search.py:77
+    D:\cityestate\src\skills\image_analysis.py:56
+    D:\cityestate\src\skills\image_analysis.py:112
+    D:\cityestate\src\skills\voice_speech.py:46
+    D:\cityestate\src\skills\voice_speech.py:68
+    ... and 1 more
+
+  'except InvalidToken' appears in 1 locations:
+    D:\cityestate\src\backup\encrypted_backup.py:244
+
+  'except OSError' appears in 3 locations:
+    D:\cityestate\src\backup\encrypted_backup.py:197
+    D:\cityestate\src\backup\encrypted_backup.py:218
+    D:\cityestate\src\outreach\campaign_log.py:106
+
+  'except RuntimeError' appears in 1 locations:
+    D:\cityestate\src\backup\encrypted_backup.py:271
+
+  'except ValueError' appears in 2 locations:
+    D:\cityestate\src\scheduler\engine.py:39
+    D:\cityestate\src\skills\document_processing.py:197
+
+  'except WebSocketDisconnect' appears in 1 locations:
+    D:\cityestate\src\api\routes\websocket.py:288
+
+  'except exceptions' appears in 2 locations:
+    D:\cityestate\src\error_handling.py:132
+    D:\cityestate\src\error_handling.py:170
+
+  'except httpx' appears in 3 locations:
+    D:\cityestate\src\dashboard\app.py:81
+    D:\cityestate\src\dashboard\app.py:133
+    D:\cityestate\src\dashboard\app.py:177
+
+  'except json' appears in 6 locations:
+    D:\cityestate\src\ai_crew\crew.py:238
+    D:\cityestate\src\api\routes\websocket.py:279
+    D:\cityestate\src\dashboard\app.py:1521
+    D:\cityestate\src\skills\lead_scoring.py:320
+    D:\cityestate\src\skills\lead_scoring.py:346
+    D:\cityestate\src\skills\lead_scoring.py:370
+
+  'except jwt' appears in 2 locations:
+    D:\cityestate\src\api\auth.py:88
+    D:\cityestate\src\api\auth.py:93
+
+  'except leading' appears in 1 locations:
+    D:\cityestate\src\database\ingester.py:163
+
+  'except requests' appears in 2 locations:
+    D:\cityestate\src\outreach\llm_generator.py:248
+    D:\cityestate\src\outreach\llm_generator.py:252
+
+  'except subprocess' appears in 2 locations:
+    D:\cityestate\src\api\routes\automation.py:60
+    D:\cityestate\src\scheduler\jobs.py:82
+
+  'raise' appears in 92 locations:
+    D:\cityestate\src\error_handling.py:148
+    D:\cityestate\src\error_handling.py:186
+    D:\cityestate\src\error_handling.py:275
+    D:\cityestate\src\error_handling.py:291
+    D:\cityestate\src\api\auth.py:57
+    D:\cityestate\src\api\auth.py:59
+    D:\cityestate\src\api\auth.py:89
+    D:\cityestate\src\api\auth.py:94
+    D:\cityestate\src\api\auth.py:140
+    D:\cityestate\src\api\auth.py:203
+    D:\cityestate\src\api\deps.py:73
+    D:\cityestate\src\api\routes\auth.py:59
+    ... and 80 more
+
+  'try:' appears in 270 locations:
+    D:\cityestate\src\error_handling.py:130
+    D:\cityestate\src\error_handling.py:168
+    D:\cityestate\src\error_handling.py:285
+    D:\cityestate\src\ai_crew\crew.py:93
+    D:\cityestate\src\ai_crew\crew.py:140
+    D:\cityestate\src\ai_crew\crew.py:179
+    D:\cityestate\src\ai_crew\crew.py:226
+    D:\cityestate\src\ai_crew\crew.py:289
+    D:\cityestate\src\ai_crew\crew.py:338
+    D:\cityestate\src\ai_crew\crew.py:354
+    D:\cityestate\src\ai_crew\crew.py:369
+    D:\cityestate\src\ai_crew\crew.py:393
+    ... and 258 more
+
+======================================================================
+  2. VALIDATION/SANITIZATION/CLEAN FUNCTIONS
+======================================================================
+  Found 6 validation/cleaning functions
+
+  format_for_display: 1 occurrences
+    D:\cityestate\src\automation\experts\phone.py:214
+
+  format_for_whatsapp: 1 occurrences
+    D:\cityestate\src\automation\experts\phone.py:227
+
+  parse_intent: 1 occurrences
+    D:\cityestate\src\api\bridge_handler.py:177
+
+  sanitize_text: 1 occurrences
+    D:\cityestate\src\database\ingester.py:200
+
+  validate_batch: 1 occurrences
+    D:\cityestate\src\automation\experts\phone.py:189
+
+  validate_row: 1 occurrences
+    D:\cityestate\src\database\ingester.py:323
+
+======================================================================
+  3. DATABASE QUERY PATTERNS
+======================================================================
+
+  ORM .query():
+     13  D:\cityestate\src\api\routes\dashboard.py
+      8  D:\cityestate\src\api\routes\leads.py
+      8  D:\cityestate\src\api\routes\properties.py
+      8  D:\cityestate\src\api\routes\requests.py
+      7  D:\cityestate\src\ai_crew\tools.py
+      7  D:\cityestate\src\matching\engine.py
+      6  D:\cityestate\src\database\ingester.py
+      3  D:\cityestate\src\api\auth.py
+
+  ORM .filter():
+     11  D:\cityestate\src\ai_crew\tools.py
+     10  D:\cityestate\src\api\routes\properties.py
+      8  D:\cityestate\src\matching\engine.py
+      7  D:\cityestate\src\api\routes\dashboard.py
+      7  D:\cityestate\src\api\routes\leads.py
+      7  D:\cityestate\src\api\routes\requests.py
+      5  D:\cityestate\src\database\ingester.py
+      4  D:\cityestate\src\skills\web_scraper.py
+
+  ORM .all():
+      4  D:\cityestate\src\ai_crew\tools.py
+      3  D:\cityestate\src\api\routes\dashboard.py
+      3  D:\cityestate\src\api\routes\leads.py
+      3  D:\cityestate\src\api\routes\properties.py
+      3  D:\cityestate\src\api\routes\requests.py
+      3  D:\cityestate\src\matching\engine.py
+      2  D:\cityestate\src\database\ingester.py
+      1  D:\cityestate\src\api\bridge_handler.py
+
+  ORM .first():
+      4  D:\cityestate\src\api\routes\leads.py
+      4  D:\cityestate\src\api\routes\properties.py
+      4  D:\cityestate\src\api\routes\requests.py
+      3  D:\cityestate\src\api\auth.py
+      2  D:\cityestate\src\api\routes\auth.py
+      2  D:\cityestate\src\api\routes\content.py
+      1  D:\cityestate\src\database\ingester.py
+      1  D:\cityestate\src\matching\engine.py
+
+  ORM .count():
+     12  D:\cityestate\src\api\routes\dashboard.py
+      3  D:\cityestate\src\ai_crew\tools.py
+      3  D:\cityestate\src\api\routes\leads.py
+      3  D:\cityestate\src\api\routes\properties.py
+      3  D:\cityestate\src\api\routes\requests.py
+      3  D:\cityestate\src\database\ingester.py
+      3  D:\cityestate\src\matching\engine.py
+      1  D:\cityestate\src\skills\document_processing.py
+
+  cursor.execute:
+      3  D:\cityestate\src\api\deps.py
+
+  session.add:
+      2  D:\cityestate\src\outreach\social_radar.py
+      1  D:\cityestate\src\api\auth.py
+      1  D:\cityestate\src\api\bridge_handler.py
+      1  D:\cityestate\src\database\ingester.py
+
+  session.commit:
+      2  D:\cityestate\src\api\auth.py
+      2  D:\cityestate\src\database\ingester.py
+      1  D:\cityestate\src\api\bridge_handler.py
+      1  D:\cityestate\src\outreach\social_radar.py
+
+  session.rollback:
+      4  D:\cityestate\src\database\ingester.py
+      1  D:\cityestate\src\api\bridge_handler.py
+      1  D:\cityestate\src\outreach\social_radar.py
+
+  DB session accessor:
+      8  D:\cityestate\src\api\routes\requests.py
+      7  D:\cityestate\src\api\routes\leads.py
+      7  D:\cityestate\src\api\routes\properties.py
+      6  D:\cityestate\src\api\routes\auth.py
+      4  D:\cityestate\src\scheduler\jobs.py
+      3  D:\cityestate\src\api\routes\dashboard.py
+      2  D:\cityestate\src\api\deps.py
+      2  D:\cityestate\src\api\routes\webhooks.py
+
+======================================================================
+  4. API ROUTE STRUCTURES
+======================================================================
+
+  FastAPI router decorator:
+     31  D:\cityestate\src\api\routes\skills.py
+     10  D:\cityestate\src\api\routes\webhooks.py
+      7  D:\cityestate\src\api\routes\requests.py
+      6  D:\cityestate\src\api\routes\leads.py
+      6  D:\cityestate\src\api\routes\properties.py
+      5  D:\cityestate\src\api\routes\auth.py
+      5  D:\cityestate\src\api\routes\automation.py
+      4  D:\cityestate\src\api\routes\data.py
+
+  FastAPI app decorator:
+      4  D:\cityestate\src\api\main.py
+      2  D:\cityestate\src\error_handling.py
+
+======================================================================
+  4b. HTTP METHOD FUNCTION PATTERNS
+======================================================================
+
+  GET/List pattern:
+      8  D:\cityestate\src\api\routes\skills.py
+      7  D:\cityestate\src\skills\whatsapp_web_skill.py
+      6  D:\cityestate\src\skills\task_manager.py
+      4  D:\cityestate\src\automation\selectors.py
+      4  D:\cityestate\src\automation\experts\whatsapp.py
+      4  D:\cityestate\src\session_vault\vault.py
+      4  D:\cityestate\src\skills\checklist_builder.py
+      4  D:\cityestate\src\skills\goal_tracker.py
+
+  POST/Create pattern:
+      9  D:\cityestate\src\ai_crew\agents.py
+      8  D:\cityestate\src\ai_crew\tasks.py
+      8  D:\cityestate\src\api\routes\skills.py
+      3  D:\cityestate\src\ai_crew\outreach_agents.py
+      3  D:\cityestate\src\ai_crew\outreach_tasks.py
+      3  D:\cityestate\src\skills\checklist_builder.py
+      3  D:\cityestate\src\skills\goal_tracker.py
+      3  D:\cityestate\src\skills\kanban_board.py
+
+  PUT/Update pattern:
+      2  D:\cityestate\src\api\routes\skills.py
+      2  D:\cityestate\src\skills\goal_tracker.py
+      1  D:\cityestate\src\api\websocket_manager.py
+      1  D:\cityestate\src\api\routes\leads.py
+      1  D:\cityestate\src\api\routes\properties.py
+      1  D:\cityestate\src\api\routes\requests.py
+      1  D:\cityestate\src\database\ingester.py
+      1  D:\cityestate\src\session_vault\browser_profile.py
+
+  DELETE/Remove pattern:
+      2  D:\cityestate\src\api\routes\skills.py
+      2  D:\cityestate\src\skills\checklist_builder.py
+      1  D:\cityestate\src\api\routes\leads.py
+      1  D:\cityestate\src\api\routes\properties.py
+      1  D:\cityestate\src\api\routes\requests.py
+      1  D:\cityestate\src\session_vault\browser_profile.py
+      1  D:\cityestate\src\session_vault\vault.py
+      1  D:\cityestate\src\skills\notes_brainstorming.py
+
+======================================================================
+  5. CRUD FUNCTION PATTERNS (get/find/search/create/update/delete)
+======================================================================
+
+  get_ functions:
+    get_all_selectors: 1 files
+      D:\cityestate\src\automation\selectors.py:321
+    get_all_skills: 1 files
+      D:\cityestate\src\skills\__init__.py:69
+    get_all_tools: 2 files
+      D:\cityestate\src\ai_crew\tools.py:264
+      D:\cityestate\src\skills\__init__.py:93
+    get_automation_status: 1 files
+      D:\cityestate\src\api\routes\automation.py:151
+    get_chart_data: 1 files
+      D:\cityestate\src\api\routes\dashboard.py:91
+    get_checklist_tools: 1 files
+      D:\cityestate\src\skills\checklist_builder.py:227
+    get_computer_use_tools: 1 files
+      D:\cityestate\src\skills\computer_use.py:159
+    get_crewai_model: 1 files
+      D:\cityestate\src\ai_crew\llm_config.py:107
+    get_current_user: 1 files
+      D:\cityestate\src\api\auth.py:103
+    get_dashboard_stats: 1 files
+      D:\cityestate\src\api\routes\dashboard.py:22
+    get_db: 1 files
+      D:\cityestate\src\api\deps.py:55
+    get_db_status: 1 files
+      D:\cityestate\src\api\deps.py:80
+    get_decision_tools: 1 files
+      D:\cityestate\src\skills\decision_matrix.py:186
+    get_document_tools: 1 files
+      D:\cityestate\src\skills\document_processing.py:202
+    get_email_tools: 1 files
+      D:\cityestate\src\skills\email_skill.py:190
+    get_engine: 1 files
+      D:\cityestate\src\database\models.py:314
+    get_goal_tools: 1 files
+      D:\cityestate\src\skills\goal_tracker.py:239
+    get_image_tools: 1 files
+      D:\cityestate\src\skills\image_analysis.py:225
+    get_kanban_board: 1 files
+      D:\cityestate\src\api\routes\skills.py:214
+    get_kanban_tools: 1 files
+      D:\cityestate\src\skills\kanban_board.py:148
+    get_lead: 1 files
+      D:\cityestate\src\api\routes\leads.py:77
+    get_lead_scoring_tools: 1 files
+      D:\cityestate\src\skills\lead_scoring.py:392
+    get_lead_stats: 1 files
+      D:\cityestate\src\api\routes\leads.py:44
+    get_llm: 1 files
+      D:\cityestate\src\ai_crew\llm_config.py:42
+    get_llm_provider: 1 files
+      D:\cityestate\src\ai_crew\llm_config.py:142
+    get_maps_tools: 1 files
+      D:\cityestate\src\skills\google_maps.py:231
+    get_mcp_server: 1 files
+      D:\cityestate\src\mcp\whatsapp_web_server.py:321
+    get_mcp_service: 1 files
+      D:\cityestate\src\services\mcp_service.py:168
+    get_me: 1 files
+      D:\cityestate\src\api\routes\auth.py:96
+    get_metrics: 1 files
+      D:\cityestate\src\api\main.py:255
+    get_notes_tools: 1 files
+      D:\cityestate\src\skills\notes_brainstorming.py:156
+    get_property: 1 files
+      D:\cityestate\src\api\routes\properties.py:98
+    get_property_stats: 1 files
+      D:\cityestate\src\api\routes\properties.py:53
+    get_report_tools: 1 files
+      D:\cityestate\src\skills\report_generator.py:167
+    get_request: 1 files
+      D:\cityestate\src\api\routes\requests.py:84
+    get_request_stats: 1 files
+      D:\cityestate\src\api\routes\requests.py:51
+    get_scraper_tools: 1 files
+      D:\cityestate\src\skills\web_scraper.py:227
+    get_search_tools: 1 files
+      D:\cityestate\src\skills\google_search.py:166
+    get_selector: 1 files
+      D:\cityestate\src\automation\selectors.py:316
+    get_session: 1 files
+      D:\cityestate\src\database\models.py:320
+    get_task_tools: 1 files
+      D:\cityestate\src\skills\task_manager.py:226
+    get_template: 1 files
+      D:\cityestate\src\outreach\templates.py:317
+    get_time_summary: 1 files
+      D:\cityestate\src\api\routes\skills.py:351
+    get_time_tools: 1 files
+      D:\cityestate\src\skills\time_tracker.py:169
+    get_translator_tools: 1 files
+      D:\cityestate\src\skills\translator.py:160
+    get_voice_tools: 1 files
+      D:\cityestate\src\skills\voice_speech.py:142
+    get_whatsapp_chats: 1 files
+      D:\cityestate\src\skills\whatsapp_web_skill.py:153
+    get_whatsapp_status: 1 files
+      D:\cityestate\src\skills\whatsapp_web_skill.py:167
+    get_whatsapp_unread: 1 files
+      D:\cityestate\src\skills\whatsapp_web_skill.py:146
+    get_whatsapp_web_tools: 1 files
+      D:\cityestate\src\skills\whatsapp_web_skill.py:195
+
+  set/put/update functions:
+    set_scheduler: 1 files
+      D:\cityestate\src\api\routes\scheduler.py:22
+    update_goal_progress: 1 files
+      D:\cityestate\src\api\routes\skills.py:172
+    update_lead: 1 files
+      D:\cityestate\src\api\routes\leads.py:123
+    update_property: 1 files
+      D:\cityestate\src\api\routes\properties.py:151
+    update_request: 1 files
+      D:\cityestate\src\api\routes\requests.py:126
+    update_task_status: 1 files
+      D:\cityestate\src\api\routes\skills.py:111
+
+  create/add/new functions:
+    add_checklist_item: 1 files
+      D:\cityestate\src\api\routes\skills.py:466
+    add_kanban_card: 1 files
+      D:\cityestate\src\api\routes\skills.py:231
+    create_backup: 1 files
+      D:\cityestate\src\backup\encrypted_backup.py:69
+    create_buyer_research_task: 1 files
+      D:\cityestate\src\ai_crew\outreach_tasks.py:16
+    create_buyer_researcher: 1 files
+      D:\cityestate\src\ai_crew\outreach_agents.py:20
+    create_checklist: 1 files
+      D:\cityestate\src\api\routes\skills.py:437
+    create_content_generation_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:99
+    create_copywriter: 1 files
+      D:\cityestate\src\ai_crew\agents.py:105
+    create_data_collection_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:165
+    create_data_collector: 1 files
+      D:\cityestate\src\ai_crew\agents.py:186
+    create_data_enricher: 1 files
+      D:\cityestate\src\ai_crew\agents.py:216
+    create_data_enrichment_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:209
+    create_goal: 1 files
+      D:\cityestate\src\api\routes\skills.py:153
+    create_jwt_token: 1 files
+      D:\cityestate\src\api\auth.py:69
+    create_kanban_board: 1 files
+      D:\cityestate\src\api\routes\skills.py:201
+    create_lead: 1 files
+      D:\cityestate\src\api\routes\leads.py:90
+    create_lead_analysis_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:254
+    create_lead_analyst: 1 files
+      D:\cityestate\src\ai_crew\agents.py:246
+    create_lead_qualification_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:21
+    create_lead_qualifier: 1 files
+      D:\cityestate\src\ai_crew\agents.py:38
+    create_llm: 1 files
+      D:\cityestate\src\config\loader.py:74
+    create_market_research_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:339
+    create_market_researcher: 1 files
+      D:\cityestate\src\ai_crew\agents.py:308
+    create_message_review_task: 1 files
+      D:\cityestate\src\ai_crew\outreach_tasks.py:122
+    create_message_reviewer: 1 files
+      D:\cityestate\src\ai_crew\outreach_agents.py:90
+    create_note: 1 files
+      D:\cityestate\src\api\routes\skills.py:279
+    create_personalized_writer: 1 files
+      D:\cityestate\src\ai_crew\outreach_agents.py:53
+    create_personalized_writing_task: 1 files
+      D:\cityestate\src\ai_crew\outreach_tasks.py:69
+    create_powerful_agent: 1 files
+      D:\cityestate\src\ai_crew\agents.py:141
+    create_property: 1 files
+      D:\cityestate\src\api\routes\properties.py:111
+    create_property_expert: 1 files
+      D:\cityestate\src\ai_crew\agents.py:277
+    create_property_matching_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:296
+    create_quick_note: 1 files
+      D:\cityestate\src\api\routes\skills.py:335
+    create_request: 1 files
+      D:\cityestate\src\api\routes\requests.py:97
+    create_sales_rep: 1 files
+      D:\cityestate\src\ai_crew\agents.py:71
+    create_task: 1 files
+      D:\cityestate\src\api\routes\skills.py:92
+    create_user: 1 files
+      D:\cityestate\src\api\auth.py:134
+    create_whatsapp_reply_task: 1 files
+      D:\cityestate\src\ai_crew\tasks.py:61
+
+  delete/remove functions:
+    delete_lead: 1 files
+      D:\cityestate\src\api\routes\leads.py:144
+    delete_note: 1 files
+      D:\cityestate\src\api\routes\skills.py:297
+    delete_property: 1 files
+      D:\cityestate\src\api\routes\properties.py:172
+    delete_request: 1 files
+      D:\cityestate\src\api\routes\requests.py:147
+    delete_task: 1 files
+      D:\cityestate\src\api\routes\skills.py:124
+
+  find/search/lookup functions:
+    find_matching_properties: 1 files
+      D:\cityestate\src\api\bridge_handler.py:499
+    search_whatsapp_contact: 1 files
+      D:\cityestate\src\skills\whatsapp_web_skill.py:160
+
+  list/fetch/retrieve functions:
+    get_all_selectors: 1 files
+      D:\cityestate\src\automation\selectors.py:321
+    get_all_skills: 1 files
+      D:\cityestate\src\skills\__init__.py:69
+    get_all_tools: 2 files
+      D:\cityestate\src\ai_crew\tools.py:264
+      D:\cityestate\src\skills\__init__.py:93
+    list_checklists: 1 files
+      D:\cityestate\src\api\routes\skills.py:425
+    list_goals: 1 files
+      D:\cityestate\src\api\routes\skills.py:140
+    list_kanban_boards: 1 files
+      D:\cityestate\src\api\routes\skills.py:188
+    list_leads: 1 files
+      D:\cityestate\src\api\routes\leads.py:20
+    list_notes: 1 files
+      D:\cityestate\src\api\routes\skills.py:266
+    list_properties: 1 files
+      D:\cityestate\src\api\routes\properties.py:20
+    list_quick_notes: 1 files
+      D:\cityestate\src\api\routes\skills.py:323
+    list_requests: 1 files
+      D:\cityestate\src\api\routes\requests.py:27
+    list_tasks: 1 files
+      D:\cityestate\src\api\routes\skills.py:79
+    list_users: 1 files
+      D:\cityestate\src\api\routes\auth.py:106
+
+======================================================================
+  6. DUPLICATED UTILITY FUNCTION PATTERNS
+======================================================================
+
+  Functions defined in 3+ files (potential duplication):
+
+    __init__ (51 files):
+      D:\cityestate\src\error_handling.py:61
+      D:\cityestate\src\error_handling.py:208
+      D:\cityestate\src\logging_config.py:146
+      D:\cityestate\src\ai_crew\crew.py:61
+      D:\cityestate\src\api\websocket_manager.py:50
+      D:\cityestate\src\automation\browser_manager.py:16
+      D:\cityestate\src\automation\human_simulator.py:15
+      D:\cityestate\src\automation\selectors.py:236
+      D:\cityestate\src\automation\smart_wait.py:44
+      D:\cityestate\src\automation\whatsapp_automation.py:16
+      D:\cityestate\src\automation\experts\classifier.py:117
+      D:\cityestate\src\automation\experts\phone.py:62
+      D:\cityestate\src\automation\experts\whatsapp.py:77
+      D:\cityestate\src\automation\experts\writer.py:90
+      D:\cityestate\src\data\crawler.py:56
+      D:\cityestate\src\data\enricher.py:104
+      D:\cityestate\src\data\extractor.py:44
+      D:\cityestate\src\data\quality.py:62
+      D:\cityestate\src\data\whatsapp_check.py:46
+      D:\cityestate\src\database\ingester.py:229
+      D:\cityestate\src\matching\engine.py:280
+      D:\cityestate\src\matching\notifier.py:26
+      D:\cityestate\src\mcp\whatsapp_web_server.py:17
+      D:\cityestate\src\outreach\campaign_log.py:42
+      D:\cityestate\src\outreach\content_generator.py:24
+      D:\cityestate\src\outreach\dispatcher.py:38
+      D:\cityestate\src\outreach\engine.py:44
+      D:\cityestate\src\outreach\intent_parser.py:63
+      D:\cityestate\src\outreach\llm_generator.py:72
+      D:\cityestate\src\outreach\rate_limiter.py:25
+      D:\cityestate\src\outreach\social_radar.py:92
+      D:\cityestate\src\scheduler\engine.py:47
+      D:\cityestate\src\services\mcp_service.py:22
+      D:\cityestate\src\services\whatsapp_web.py:92
+      D:\cityestate\src\session_vault\browser_profile.py:33
+      D:\cityestate\src\session_vault\cookie_manager.py:18
+      D:\cityestate\src\session_vault\encryption.py:51
+      D:\cityestate\src\session_vault\vault.py:44
+      D:\cityestate\src\skills\checklist_builder.py:90
+      D:\cityestate\src\skills\computer_use.py:21
+      D:\cityestate\src\skills\email_skill.py:25
+      D:\cityestate\src\skills\goal_tracker.py:21
+      D:\cityestate\src\skills\google_maps.py:19
+      D:\cityestate\src\skills\google_search.py:19
+      D:\cityestate\src\skills\kanban_board.py:21
+      D:\cityestate\src\skills\lead_scoring.py:22
+      D:\cityestate\src\skills\notes_brainstorming.py:21
+      D:\cityestate\src\skills\task_manager.py:38
+      D:\cityestate\src\skills\time_tracker.py:22
+      D:\cityestate\src\skills\web_scraper.py:20
+      D:\cityestate\src\skills\whatsapp_web_skill.py:20
+
+    _run (67 files):
+      D:\cityestate\src\ai_crew\tools.py:76
+      D:\cityestate\src\ai_crew\tools.py:133
+      D:\cityestate\src\ai_crew\tools.py:193
+      D:\cityestate\src\ai_crew\tools.py:215
+      D:\cityestate\src\ai_crew\tools.py:243
+      D:\cityestate\src\ai_crew\tools.py:336
+      D:\cityestate\src\ai_crew\tools.py:379
+      D:\cityestate\src\ai_crew\tools.py:416
+      D:\cityestate\src\ai_crew\tools.py:447
+      D:\cityestate\src\ai_crew\tools.py:483
+      D:\cityestate\src\ai_crew\tools.py:520
+      D:\cityestate\src\ai_crew\tools.py:558
+      D:\cityestate\src\skills\checklist_builder.py:242
+      D:\cityestate\src\skills\checklist_builder.py:256
+      D:\cityestate\src\skills\checklist_builder.py:270
+      D:\cityestate\src\skills\checklist_builder.py:279
+      D:\cityestate\src\skills\checklist_builder.py:288
+      D:\cityestate\src\skills\computer_use.py:173
+      D:\cityestate\src\skills\computer_use.py:190
+      D:\cityestate\src\skills\decision_matrix.py:200
+      D:\cityestate\src\skills\decision_matrix.py:220
+      D:\cityestate\src\skills\document_processing.py:215
+      D:\cityestate\src\skills\document_processing.py:229
+      D:\cityestate\src\skills\document_processing.py:243
+      D:\cityestate\src\skills\email_skill.py:206
+      D:\cityestate\src\skills\email_skill.py:223
+      D:\cityestate\src\skills\goal_tracker.py:257
+      D:\cityestate\src\skills\goal_tracker.py:272
+      D:\cityestate\src\skills\goal_tracker.py:284
+      D:\cityestate\src\skills\google_maps.py:244
+      D:\cityestate\src\skills\google_maps.py:259
+      D:\cityestate\src\skills\google_maps.py:276
+      D:\cityestate\src\skills\google_search.py:184
+      D:\cityestate\src\skills\google_search.py:199
+      D:\cityestate\src\skills\image_analysis.py:238
+      D:\cityestate\src\skills\image_analysis.py:253
+      D:\cityestate\src\skills\image_analysis.py:267
+      D:\cityestate\src\skills\kanban_board.py:162
+      D:\cityestate\src\skills\kanban_board.py:180
+      D:\cityestate\src\skills\kanban_board.py:196
+      D:\cityestate\src\skills\kanban_board.py:209
+      D:\cityestate\src\skills\lead_scoring.py:317
+      D:\cityestate\src\skills\lead_scoring.py:342
+      D:\cityestate\src\skills\lead_scoring.py:367
+      D:\cityestate\src\skills\lead_scoring.py:386
+      D:\cityestate\src\skills\notes_brainstorming.py:172
+      D:\cityestate\src\skills\notes_brainstorming.py:186
+      D:\cityestate\src\skills\notes_brainstorming.py:200
+      D:\cityestate\src\skills\notes_brainstorming.py:215
+      D:\cityestate\src\skills\report_generator.py:185
+      D:\cityestate\src\skills\report_generator.py:204
+      D:\cityestate\src\skills\task_manager.py:244
+      D:\cityestate\src\skills\task_manager.py:260
+      D:\cityestate\src\skills\task_manager.py:275
+      D:\cityestate\src\skills\task_manager.py:284
+      D:\cityestate\src\skills\time_tracker.py:183
+      D:\cityestate\src\skills\time_tracker.py:196
+      D:\cityestate\src\skills\time_tracker.py:212
+      D:\cityestate\src\skills\time_tracker.py:226
+      D:\cityestate\src\skills\time_tracker.py:235
+      D:\cityestate\src\skills\translator.py:175
+      D:\cityestate\src\skills\translator.py:189
+      D:\cityestate\src\skills\translator.py:205
+      D:\cityestate\src\skills\voice_speech.py:156
+      D:\cityestate\src\skills\voice_speech.py:170
+      D:\cityestate\src\skills\web_scraper.py:240
+      D:\cityestate\src\skills\web_scraper.py:254
+
+    generate (3 files):
+      D:\cityestate\src\automation\experts\writer.py:337
+      D:\cityestate\src\outreach\content_generator.py:39
+      D:\cityestate\src\outreach\llm_generator.py:176
+
+    get_stats (7 files):
+      D:\cityestate\src\api\websocket_manager.py:223
+      D:\cityestate\src\automation\experts\phone.py:240
+      D:\cityestate\src\automation\experts\whatsapp.py:332
+      D:\cityestate\src\automation\experts\writer.py:372
+      D:\cityestate\src\database\ingester.py:662
+      D:\cityestate\src\outreach\campaign_log.py:109
+      D:\cityestate\src\outreach\social_radar.py:214
+
+    main (3 files):
+      D:\cityestate\src\backup\encrypted_backup.py:260
+      D:\cityestate\src\dashboard\app.py:1642
+      D:\cityestate\src\database\ingester.py:691
+
+    normalize_phone (3 files):
+      D:\cityestate\src\data\whatsapp_check.py:53
+      D:\cityestate\src\database\ingester.py:154
+      D:\cityestate\src\outreach\social_radar.py:54
+
+    reset (3 files):
+      D:\cityestate\src\logging_config.py:195
+      D:\cityestate\src\data\crawler.py:320
+      D:\cityestate\src\outreach\rate_limiter.py:89
+
+    score_lead (4 files):
+      D:\cityestate\src\api\bridge_handler.py:300
+      D:\cityestate\src\api\routes\skills.py:482
+      D:\cityestate\src\data\quality.py:150
+      D:\cityestate\src\skills\lead_scoring.py:67
+
+    stats (8 files):
+      D:\cityestate\src\data\crawler.py:316
+      D:\cityestate\src\data\enricher.py:288
+      D:\cityestate\src\data\extractor.py:303
+      D:\cityestate\src\data\quality.py:420
+      D:\cityestate\src\data\whatsapp_check.py:247
+      D:\cityestate\src\outreach\dispatcher.py:255
+      D:\cityestate\src\outreach\engine.py:226
+      D:\cityestate\src\outreach\llm_generator.py:262
+
+    to_dict (7 files):
+      D:\cityestate\src\error_handling.py:74
+      D:\cityestate\src\database\ingester.py:93
+      D:\cityestate\src\database\models.py:45
+      D:\cityestate\src\database\models.py:126
+      D:\cityestate\src\database\models.py:218
+      D:\cityestate\src\database\models.py:290
+      D:\cityestate\src\outreach\intent_parser.py:37
+
+  Functions defined in 2 files (possible duplication):
+
+    _check_rate_limit:
+      D:\cityestate\src\api\routes\auth.py:35
+      D:\cityestate\src\automation\experts\whatsapp.py:154
+
+    _detect_intent:
+      D:\cityestate\src\data\extractor.py:284
+      D:\cityestate\src\outreach\intent_parser.py:174
+
+    _extract_area:
+      D:\cityestate\src\data\extractor.py:229
+      D:\cityestate\src\outreach\intent_parser.py:202
+
+    _extract_bedrooms:
+      D:\cityestate\src\data\extractor.py:268
+      D:\cityestate\src\outreach\intent_parser.py:252
+
+    _extract_budget:
+      D:\cityestate\src\data\extractor.py:251
+      D:\cityestate\src\outreach\intent_parser.py:218
+
+    _extract_property_type:
+      D:\cityestate\src\data\extractor.py:211
+      D:\cityestate\src\outreach\intent_parser.py:189
+
+    _get_llm:
+      D:\cityestate\src\outreach\content_generator.py:28
+      D:\cityestate\src\outreach\intent_parser.py:67
+
+    _run_inline_match:
+      D:\cityestate\src\api\routes\webhooks.py:333
+      D:\cityestate\src\api\routes\webhooks.py:365
+
+    analyze_investment:
+      D:\cityestate\src\api\routes\skills.py:409
+      D:\cityestate\src\skills\decision_matrix.py:69
+
+    check_whatsapp:
+      D:\cityestate\src\api\routes\data.py:120
+      D:\cityestate\src\data\whatsapp_check.py:94
+
+    compare_properties:
+      D:\cityestate\src\api\routes\skills.py:396
+      D:\cityestate\src\skills\decision_matrix.py:18
+
+    create_checklist:
+      D:\cityestate\src\api\routes\skills.py:437
+      D:\cityestate\src\skills\checklist_builder.py:105
+
+    create_goal:
+      D:\cityestate\src\api\routes\skills.py:153
+      D:\cityestate\src\skills\goal_tracker.py:36
+
+    create_note:
+      D:\cityestate\src\api\routes\skills.py:279
+      D:\cityestate\src\skills\notes_brainstorming.py:36
+
+    create_task:
+      D:\cityestate\src\api\routes\skills.py:92
+      D:\cityestate\src\skills\task_manager.py:55
+
+    decorator:
+      D:\cityestate\src\error_handling.py:123
+      D:\cityestate\src\error_handling.py:161
+
+    deduplicate:
+      D:\cityestate\src\automation\experts\phone.py:197
+      D:\cityestate\src\database\ingester.py:398
+
+    delete_note:
+      D:\cityestate\src\api\routes\skills.py:297
+      D:\cityestate\src\skills\notes_brainstorming.py:92
+
+    delete_task:
+      D:\cityestate\src\api\routes\skills.py:124
+      D:\cityestate\src\skills\task_manager.py:121
+
+    format:
+      D:\cityestate\src\logging_config.py:21
+      D:\cityestate\src\logging_config.py:53
+
+    generate_content:
+      D:\cityestate\src\ai_crew\crew.py:159
+      D:\cityestate\src\api\routes\content.py:38
+
+    get_all_selectors:
+      D:\cityestate\src\automation\selectors.py:248
+      D:\cityestate\src\automation\selectors.py:321
+
+    get_all_tools:
+      D:\cityestate\src\ai_crew\tools.py:264
+      D:\cityestate\src\skills\__init__.py:93
+
+    get_status:
+      D:\cityestate\src\error_handling.py:293
+      D:\cityestate\src\scheduler\engine.py:171
+
+    is_connected:
+      D:\cityestate\src\api\websocket_manager.py:105
+      D:\cityestate\src\automation\experts\whatsapp.py:107
+
+    list_checklists:
+      D:\cityestate\src\api\routes\skills.py:425
+      D:\cityestate\src\skills\checklist_builder.py:192
+
+    list_goals:
+      D:\cityestate\src\api\routes\skills.py:140
+      D:\cityestate\src\skills\goal_tracker.py:176
+
+    list_notes:
+      D:\cityestate\src\api\routes\skills.py:266
+      D:\cityestate\src\skills\notes_brainstorming.py:71
+
+    list_profiles:
+      D:\cityestate\src\session_vault\browser_profile.py:92
+      D:\cityestate\src\session_vault\vault.py:203
+
+    list_quick_notes:
+      D:\cityestate\src\api\routes\skills.py:323
+      D:\cityestate\src\skills\notes_brainstorming.py:101
+
+======================================================================
+  7. COMMON IMPORT PATTERNS
+======================================================================
+
+  Commonly imported names (from 5+ files):
+
+    APIRouter (used in 12 files):
+      from fastapi: 12 files
+
+    Any (used in 17 files):
+      from typing: 17 files
+
+    BaseModel (used in 26 files):
+      from pydantic: 26 files
+
+    BaseTool (used in 19 files):
+      from crewai.tools: 19 files
+
+    ChecklistSkill (used in 5 files):
+      from src.skills.checklist_builder: 4 files
+      from .checklist_builder: 1 files
+
+    ClientRequest (used in 9 files):
+      from src.database.models: 9 files
+
+    Depends (used in 13 files):
+      from fastapi: 13 files
+
+    EncryptionManager (used in 9 files):
+      from src.session_vault.encryption: 9 files
+
+    Field (used in 23 files):
+      from pydantic: 23 files
+
+    HTTPException (used in 13 files):
+      from fastapi: 13 files
+
+    Image (used in 6 files):
+      from PIL: 6 files
+
+    KanbanSkill (used in 6 files):
+      from src.skills.kanban_board: 5 files
+      from .kanban_board: 1 files
+
+    Lead (used in 8 files):
+      from src.database.ingester: 8 files
+
+    LeadScoringSkill (used in 5 files):
+      from src.skills.lead_scoring: 4 files
+      from .lead_scoring: 1 files
+
+    MessageLog (used in 5 files):
+      from src.database.models: 5 files
+
+    NotesSkill (used in 7 files):
+      from src.skills.notes_brainstorming: 6 files
+      from .notes_brainstorming: 1 files
+
+    Optional (used in 66 files):
+      from typing: 66 files
+
+    Path (used in 33 files):
+      from pathlib: 33 files
+
+    Property (used in 11 files):
+      from src.database.models: 11 files
+
+    Session (used in 11 files):
+      from sqlalchemy.orm: 11 files
+
+    SessionLocal (used in 7 files):
+      from src.api.deps: 7 files
+
+    TaskManagerSkill (used in 5 files):
+      from src.skills.task_manager: 4 files
+      from .task_manager: 1 files
+
+    async_playwright (used in 13 files):
+      from playwright.async_api: 13 files
+
+    circuit_breakers (used in 5 files):
+      from src.error_handling: 5 files
+
+    datetime (used in 39 files):
+      from datetime: 39 files
+
+    get_db (used in 6 files):
+      from src.api.deps: 6 files
+
+    get_whatsapp_web (used in 10 files):
+      from src.services.whatsapp_web: 10 files
+
+    require_auth (used in 11 files):
+      from src.api.deps: 11 files
+
+    status (used in 7 files):
+      from fastapi: 7 files
+
+    timedelta (used in 5 files):
+      from datetime: 5 files
+
+    timezone (used in 23 files):
+      from datetime: 23 files
+
+======================================================================
+  8. DUPLICATED STRING TEMPLATES & MESSAGES
+======================================================================
+
+  Duplicate error/message strings (appearing in 2+ files):
+
+    'Goal {goal_id} not found' (6 occurrences):
+      D:\cityestate\src\skills\goal_tracker.py:92
+      D:\cityestate\src\skills\goal_tracker.py:108
+      D:\cityestate\src\skills\goal_tracker.py:121
+      D:\cityestate\src\skills\goal_tracker.py:137
+      D:\cityestate\src\skills\goal_tracker.py:150
+      D:\cityestate\src\skills\goal_tracker.py:167
+
+    'Client request not found' (4 occurrences):
+      D:\cityestate\src\api\routes\requests.py:92
+      D:\cityestate\src\api\routes\requests.py:135
+      D:\cityestate\src\api\routes\requests.py:155
+      D:\cityestate\src\api\routes\requests.py:172
+
+    'Checklist {checklist_id} not found' (4 occurrences):
+      D:\cityestate\src\skills\checklist_builder.py:167
+      D:\cityestate\src\skills\checklist_builder.py:178
+      D:\cityestate\src\skills\checklist_builder.py:190
+      D:\cityestate\src\skills\checklist_builder.py:224
+
+    ', WaitResult.SUCCESS, f' (3 occurrences):
+      D:\cityestate\src\automation\smart_wait.py:250
+      D:\cityestate\src\automation\smart_wait.py:256
+      D:\cityestate\src\automation\smart_wait.py:294
+
+    'Note {note_id} not found' (3 occurrences):
+      D:\cityestate\src\skills\notes_brainstorming.py:60
+      D:\cityestate\src\skills\notes_brainstorming.py:90
+      D:\cityestate\src\skills\notes_brainstorming.py:99
+
+    'Task {task_id} not found' (3 occurrences):
+      D:\cityestate\src\skills\task_manager.py:112
+      D:\cityestate\src\skills\task_manager.py:128
+      D:\cityestate\src\skills\task_manager.py:202
+
+    'All %d retries failed for %s: %s' (2 occurrences):
+      D:\cityestate\src\error_handling.py:144
+      D:\cityestate\src\error_handling.py:182
+
+    'Data extraction failed: %s' (2 occurrences):
+      D:\cityestate\src\ai_crew\crew.py:349
+      D:\cityestate\src\ai_crew\tools.py:354
+
+    'Data enrichment failed: %s' (2 occurrences):
+      D:\cityestate\src\ai_crew\crew.py:365
+      D:\cityestate\src\ai_crew\tools.py:424
+
+    'Property matching failed: %s' (2 occurrences):
+      D:\cityestate\src\ai_crew\crew.py:414
+      D:\cityestate\src\api\bridge_handler.py:549
+
+    'Market research failed: %s' (2 occurrences):
+      D:\cityestate\src\ai_crew\crew.py:443
+      D:\cityestate\src\ai_crew\tools.py:578
+
+    'Failed to start WhatsApp Web' (2 occurrences):
+      D:\cityestate\src\api\routes\webhooks.py:446
+      D:\cityestate\src\mcp\whatsapp_web_server.py:233
+
+    'Failed to send message' (2 occurrences):
+      D:\cityestate\src\api\routes\webhooks.py:490
+      D:\cityestate\src\mcp\whatsapp_web_server.py:188
+
+    'Failed to take screenshot' (2 occurrences):
+      D:\cityestate\src\api\routes\webhooks.py:551
+      D:\cityestate\src\mcp\whatsapp_web_server.py:259
+
+    'Selector: {selector}, waited {timeout_sec:.0f}s' (2 occurrences):
+      D:\cityestate\src\automation\smart_wait.py:223
+      D:\cityestate\src\automation\smart_wait.py:269
+
+======================================================================
+  9. CLASS PATTERNS
+======================================================================
+
+  Classes defined in multiple files:
+
+    WebSearchInput (2 files):
+      D:\cityestate\src\ai_crew\tools.py:50
+      D:\cityestate\src\skills\google_search.py:171
+
+======================================================================
+  10. COMMON RETURN/RESPONSE PATTERNS
+======================================================================
+
+  error dict return:
+      2  D:\cityestate\src\error_handling.py
+      2  D:\cityestate\src\outreach\engine.py
+      2  D:\cityestate\src\scheduler\engine.py
+
+  response return:
+      2  D:\cityestate\src\data\crawler.py
+      1  D:\cityestate\src\ai_crew\llm_config.py
+
+  status dict return:
+     15  D:\cityestate\src\skills\computer_use.py
+     15  D:\cityestate\src\skills\goal_tracker.py
+     14  D:\cityestate\src\scheduler\jobs.py
+     14  D:\cityestate\src\skills\image_analysis.py
+     12  D:\cityestate\src\skills\checklist_builder.py
+     12  D:\cityestate\src\skills\document_processing.py
+     12  D:\cityestate\src\skills\kanban_board.py
+     11  D:\cityestate\src\skills\google_maps.py
+
+
+======================================================================
+  SCAN COMPLETE
+======================================================================

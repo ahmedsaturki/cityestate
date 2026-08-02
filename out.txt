@@ -1,0 +1,10 @@
+test_empty_vault_returns_no_session: PASS
+test_save_load_round_trip: PASS
+test_list_profiles: PASS
+test_session_status_summary: PASS
+test_invalid_profile_rejected: PASS
+test_unsupported_platform_rejected: PASS
+test_delete_session: PASS
+test_encryption_at_rest: PASS
+
+All SessionVault tests PASSED.

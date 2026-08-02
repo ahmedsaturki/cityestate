@@ -1,0 +1,13 @@
+2026/07/29-03:00:20.618 78fc Reusing MANIFEST D:\cityestate\whatsapp_session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/29-03:00:20.619 78fc Recovering log #340
+2026/07/29-03:00:20.637 78fc Reusing old log D:\cityestate\whatsapp_session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000340.log 
+2026/07/29-03:00:32.964 5220 Level-0 table #348: started
+2026/07/29-03:00:32.986 5220 Level-0 table #348: 1120271 bytes OK
+2026/07/29-03:00:32.988 5220 Delete type=0 #340
+2026/07/29-03:00:32.993 5220 Compacting 1@1 + 4@2 files
+2026/07/29-03:00:33.060 5220 Generated table #349@1: 68121 keys, 2233034 bytes
+2026/07/29-03:00:33.113 5220 Generated table #350@1: 46664 keys, 2208062 bytes
+2026/07/29-03:00:33.156 5220 Generated table #351@1: 17793 keys, 2178046 bytes
+2026/07/29-03:00:33.196 5220 Generated table #352@1: 26358 keys, 1932296 bytes
+2026/07/29-03:00:33.196 5220 Compacted 1@1 + 4@2 files => 8551438 bytes
+2026/07/29-03:00:33.197 5220 compacted to: files[ 0 0 4 0 0 0 0 ]

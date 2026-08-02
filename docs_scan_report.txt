@@ -1,0 +1,1359 @@
+CityEstate Documentation Scan Report
+============================================================
+
+docs/ directory: EXISTS BUT IS EMPTY
+
+Scanned 102 Python files
+
+src\ai_crew\agents.py:38 -- Function 'create_lead_qualifier' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:71 -- Function 'create_sales_rep' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:105 -- Function 'create_copywriter' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:141 -- Function 'create_powerful_agent' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:186 -- Function 'create_data_collector' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:216 -- Function 'create_data_enricher' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:246 -- Function 'create_lead_analyst' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:277 -- Function 'create_property_expert' has return type annotation but no return documentation in docstring
+src\ai_crew\agents.py:308 -- Function 'create_market_researcher' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:61 -- Missing docstring for __init__ in class 'CityEstateCrew'
+src\ai_crew\crew.py:61 -- Missing docstring for function '__init__'
+src\ai_crew\crew.py:69 -- Function 'qualify_leads' missing param docs: posts
+src\ai_crew\crew.py:112 -- Function 'generate_whatsapp_reply' missing param docs: message, sender_name, properties
+src\ai_crew\crew.py:159 -- Function 'generate_content' missing param docs: property_data, channel
+src\ai_crew\crew.py:198 -- Function '_fallback_qualify' missing param docs: posts
+src\ai_crew\crew.py:198 -- Function '_fallback_qualify' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:205 -- Function '_fallback_reply' missing param docs: message, sender_name
+src\ai_crew\crew.py:205 -- Function '_fallback_reply' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:213 -- Function '_fallback_content' missing param docs: prop, channel
+src\ai_crew\crew.py:213 -- Function '_fallback_content' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:224 -- Function '_parse_json_result' missing param docs: result
+src\ai_crew\crew.py:224 -- Function '_parse_json_result' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:242 -- Function '_parse_content_result' missing param docs: result
+src\ai_crew\crew.py:242 -- Function '_parse_content_result' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:274 -- Function 'ask_assistant' missing param docs: question
+src\ai_crew\crew.py:313 -- Function 'process_data_pipeline' missing param docs: source, raw_data, skip_matching
+src\ai_crew\crew.py:419 -- Function 'research_market' missing param docs: area
+src\ai_crew\crew.py:446 -- Function '_fallback_pipeline' missing param docs: source, raw_data
+src\ai_crew\crew.py:446 -- Function '_fallback_pipeline' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:461 -- Function '_fallback_market_research' missing param docs: area
+src\ai_crew\crew.py:461 -- Function '_fallback_market_research' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:478 -- Function 'generate_personalized_message' missing param docs: buyer_data
+src\ai_crew\crew.py:535 -- Function 'generate_bulk_messages' missing param docs: buyers
+src\ai_crew\crew.py:550 -- Function '_fallback_personalized' missing param docs: buyer
+src\ai_crew\crew.py:550 -- Function '_fallback_personalized' has return type annotation but no return documentation in docstring
+src\ai_crew\crew.py:231 -- Complex conditional without inline comment
+src\ai_crew\crew.py:236 -- Complex conditional without inline comment
+src\ai_crew\crew.py:262 -- Complex expression without inline comment
+src\ai_crew\crew.py:264 -- Complex expression without inline comment
+src\ai_crew\crew.py:266 -- Complex expression without inline comment
+src\ai_crew\llm_config.py:22 -- Function '_check_ollama_available' has return type annotation but no return documentation in docstring
+src\ai_crew\llm_config.py:42 -- Function 'get_llm' missing param docs: model, temperature
+src\ai_crew\llm_config.py:133 -- Function 'is_llm_available' has return type annotation but no return documentation in docstring
+src\ai_crew\llm_config.py:142 -- Function 'get_llm_provider' has return type annotation but no return documentation in docstring
+src\ai_crew\outreach_agents.py:20 -- Function 'create_buyer_researcher' has return type annotation but no return documentation in docstring
+src\ai_crew\outreach_agents.py:53 -- Function 'create_personalized_writer' has return type annotation but no return documentation in docstring
+src\ai_crew\outreach_agents.py:90 -- Function 'create_message_reviewer' has return type annotation but no return documentation in docstring
+src\ai_crew\outreach_tasks.py:16 -- Function 'create_buyer_research_task' missing param docs: agent, buyer_data
+src\ai_crew\outreach_tasks.py:69 -- Function 'create_personalized_writing_task' missing param docs: agent, buyer_data, research_context
+src\ai_crew\outreach_tasks.py:122 -- Function 'create_message_review_task' missing param docs: agent, writing_context
+src\ai_crew\tasks.py:21 -- Function 'create_lead_qualification_task' missing param docs: posts_text
+src\ai_crew\tasks.py:61 -- Function 'create_whatsapp_reply_task' missing param docs: message, sender_name, available_properties
+src\ai_crew\tasks.py:99 -- Function 'create_content_generation_task' missing param docs: property_data, channel
+src\ai_crew\tasks.py:165 -- Function 'create_data_collection_task' missing param docs: source, raw_data
+src\ai_crew\tasks.py:209 -- Function 'create_data_enrichment_task' missing param docs: property_data
+src\ai_crew\tasks.py:254 -- Function 'create_lead_analysis_task' missing param docs: lead_data
+src\ai_crew\tasks.py:296 -- Function 'create_property_matching_task' missing param docs: client_data
+src\ai_crew\tasks.py:339 -- Function 'create_market_research_task' missing param docs: area
+src\ai_crew\tasks.py:130 -- Complex expression without inline comment
+src\ai_crew\tools.py:41 -- Missing docstring for class 'DatabaseQueryInput'
+src\ai_crew\tools.py:45 -- Missing docstring for class 'WhatsAppSendInput'
+src\ai_crew\tools.py:50 -- Missing docstring for class 'WebSearchInput'
+src\ai_crew\tools.py:55 -- Missing docstring for class 'PropertySearchInput'
+src\ai_crew\tools.py:76 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:133 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:193 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:215 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:228 -- Missing docstring for class 'ContentSaveInput'
+src\ai_crew\tools.py:243 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:316 -- Missing docstring for class 'DataExtractionInput'
+src\ai_crew\tools.py:336 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:361 -- Missing docstring for class 'WebCrawlerInput'
+src\ai_crew\tools.py:379 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:400 -- Missing docstring for class 'DataEnrichmentInput'
+src\ai_crew\tools.py:416 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:431 -- Missing docstring for class 'WhatsAppCheckInput'
+src\ai_crew\tools.py:447 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:466 -- Missing docstring for class 'DataQualityInput'
+src\ai_crew\tools.py:483 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:501 -- Missing docstring for class 'PhoneValidatorInput'
+src\ai_crew\tools.py:520 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:541 -- Missing docstring for class 'MarketResearchInput'
+src\ai_crew\tools.py:558 -- Missing docstring for function '_run'
+src\ai_crew\tools.py:89 -- Complex expression without inline comment
+src\ai_crew\tools.py:94 -- Complex expression without inline comment
+src\ai_crew\tools.py:96 -- Complex expression without inline comment
+src\ai_crew\tools.py:99 -- Complex expression without inline comment
+src\ai_crew\tools.py:104 -- Complex expression without inline comment
+src\api\auth.py:69 -- Function 'create_jwt_token' missing param docs: user_id, username, role
+src\api\auth.py:69 -- Function 'create_jwt_token' has return type annotation but no return documentation in docstring
+src\api\auth.py:82 -- Function 'decode_jwt_token' missing param docs: token
+src\api\auth.py:82 -- Function 'decode_jwt_token' has return type annotation but no return documentation in docstring
+src\api\auth.py:103 -- Function 'get_current_user' missing param docs: credentials
+src\api\auth.py:103 -- Function 'get_current_user' has return type annotation but no return documentation in docstring
+src\api\auth.py:119 -- Function 'authenticate_user' missing param docs: db_session, username, password
+src\api\auth.py:119 -- Function 'authenticate_user' has return type annotation but no return documentation in docstring
+src\api\auth.py:134 -- Function 'create_user' missing param docs: db_session, username, password, full_name, role
+src\api\auth.py:134 -- Function 'create_user' has return type annotation but no return documentation in docstring
+src\api\auth.py:157 -- Function '_generate_strong_password' missing param docs: length
+src\api\auth.py:157 -- Function '_generate_strong_password' has return type annotation but no return documentation in docstring
+src\api\auth.py:174 -- Function 'ensure_default_admin' missing param docs: db_session
+src\api\bridge_handler.py:177 -- Function 'parse_intent' missing param docs: message, phone
+src\api\bridge_handler.py:300 -- Function 'score_lead' missing param docs: intent, message, phone
+src\api\bridge_handler.py:417 -- Function 'match_properties' missing param docs: intent, all_properties
+src\api\bridge_handler.py:469 -- Function 'calculate_match_score' missing param docs: intent, prop
+src\api\bridge_handler.py:469 -- Function 'calculate_match_score' has return type annotation but no return documentation in docstring
+src\api\bridge_handler.py:499 -- Function 'find_matching_properties' missing param docs: intent, db_session
+src\api\bridge_handler.py:499 -- Function 'find_matching_properties' has return type annotation but no return documentation in docstring
+src\api\bridge_handler.py:556 -- Function 'generate_response' missing param docs: message, sender_name, intent, lead_score, matched_properties, db_session
+src\api\bridge_handler.py:622 -- Function 'process_incoming_message' missing param docs: profile_id, chat_id, sender_name, message_text, platform, db_session
+src\api\bridge_handler.py:285 -- Complex conditional without inline comment
+src\api\bridge_handler.py:486 -- Complex conditional without inline comment
+src\api\bridge_handler.py:369 -- Complex expression without inline comment
+src\api\bridge_handler.py:449 -- Complex conditional without inline comment
+src\api\bridge_handler.py:488 -- Complex conditional without inline comment
+src\api\bridge_handler.py:533 -- Complex expression without inline comment
+src\api\deps.py:64 -- Function 'require_auth' missing param docs: user
+src\api\deps.py:64 -- Function 'require_auth' has return type annotation but no return documentation in docstring
+src\api\deps.py:69 -- Function 'require_admin' missing param docs: user
+src\api\deps.py:69 -- Function 'require_admin' has return type annotation but no return documentation in docstring
+src\api\deps.py:80 -- Function 'get_db_status' has return type annotation but no return documentation in docstring
+src\api\main.py:63 -- Function 'lifespan' missing param docs: app
+src\api\main.py:160 -- Missing docstring for class 'RequestLoggingMiddleware'
+src\api\main.py:161 -- Missing docstring for function 'dispatch'
+src\api\models.py:16 -- Missing docstring for class 'LoginRequest'
+src\api\models.py:21 -- Missing docstring for class 'TokenResponse'
+src\api\models.py:27 -- Missing docstring for class 'UserCreate'
+src\api\models.py:34 -- Missing docstring for class 'UserResponse'
+src\api\models.py:46 -- Missing docstring for class 'LeadCreate'
+src\api\models.py:60 -- Missing docstring for class 'LeadUpdate'
+src\api\models.py:74 -- Missing docstring for class 'LeadResponse'
+src\api\models.py:96 -- Missing docstring for class 'PropertyCreate'
+src\api\models.py:124 -- Missing docstring for class 'PropertyUpdate'
+src\api\models.py:149 -- Missing docstring for class 'PropertyResponse'
+src\api\models.py:183 -- Missing docstring for class 'ClientRequestCreate'
+src\api\models.py:199 -- Missing docstring for class 'ClientRequestUpdate'
+src\api\models.py:206 -- Missing docstring for class 'ClientRequestResponse'
+src\api\models.py:234 -- Missing docstring for class 'AutomationRequest'
+src\api\models.py:241 -- Missing docstring for class 'AutomationResponse'
+src\api\models.py:251 -- Missing docstring for class 'DashboardStats'
+src\api\models.py:267 -- Missing docstring for class 'MatchResult'
+src\api\models.py:277 -- Missing docstring for class 'MatchResponse'
+src\api\routes\__init__.py:19 -- Complex data literal without inline comment
+src\api\routes\auth.py:35 -- Function '_check_rate_limit' missing param docs: ip
+src\api\routes\auth.py:53 -- Function 'login' missing param docs: request, req, db
+src\api\routes\auth.py:83 -- Function 'register' missing param docs: request, user, db
+src\api\routes\auth.py:96 -- Function 'get_me' missing param docs: user, db
+src\api\routes\auth.py:106 -- Function 'list_users' missing param docs: user, db
+src\api\routes\auth.py:126 -- Function 'extension_token' missing param docs: request, req, db
+src\api\routes\auth.py:113 -- Complex expression without inline comment
+src\api\routes\automation.py:20 -- Function 'run_campaign_task' missing param docs: action, platform, dry_run
+src\api\routes\automation.py:67 -- Function 'run_automation' missing param docs: request, background_tasks, user
+src\api\routes\automation.py:104 -- Function 'trigger_scrape' missing param docs: background_tasks, platform, user
+src\api\routes\automation.py:120 -- Function 'trigger_send' missing param docs: background_tasks, platform, user
+src\api\routes\automation.py:136 -- Function 'trigger_enrich' missing param docs: background_tasks, user
+src\api\routes\automation.py:151 -- Function 'get_automation_status' missing param docs: user
+src\api\routes\content.py:23 -- Missing docstring for class 'ContentRequest'
+src\api\routes\content.py:28 -- Missing docstring for class 'ContentResponse'
+src\api\routes\content.py:38 -- Function 'generate_content' missing param docs: req, user
+src\api\routes\content.py:83 -- Function 'preview_content' missing param docs: property_id, channel, user
+src\api\routes\dashboard.py:22 -- Function 'get_dashboard_stats' missing param docs: user, db
+src\api\routes\dashboard.py:91 -- Function 'get_chart_data' missing param docs: user, db
+src\api\routes\dashboard.py:129 -- Complex expression without inline comment
+src\api\routes\dashboard.py:85 -- Complex expression without inline comment
+src\api\routes\dashboard.py:86 -- Complex expression without inline comment
+src\api\routes\data.py:23 -- Missing docstring for class 'ExtractRequest'
+src\api\routes\data.py:31 -- Missing docstring for class 'QualityRequest'
+src\api\routes\data.py:36 -- Missing docstring for class 'WhatsAppCheckRequest'
+src\api\routes\data.py:44 -- Function 'extract_data' missing param docs: req, user
+src\api\routes\data.py:73 -- Function 'score_quality' missing param docs: req, user
+src\api\routes\data.py:93 -- Function 'market_research' missing param docs: user
+src\api\routes\data.py:120 -- Function 'check_whatsapp' missing param docs: req, user
+src\api\routes\leads.py:20 -- Function 'list_leads' missing param docs: lead_type, status_filter, area, limit, offset, user, db
+src\api\routes\leads.py:44 -- Function 'get_lead_stats' missing param docs: user, db
+src\api\routes\leads.py:70 -- Function 'get_lead' missing param docs: lead_id, user, db
+src\api\routes\leads.py:83 -- Function 'create_lead' missing param docs: request, user, db
+src\api\routes\leads.py:116 -- Function 'update_lead' missing param docs: lead_id, request, user, db
+src\api\routes\leads.py:137 -- Function 'delete_lead' missing param docs: lead_id, user, db
+src\api\routes\leads.py:40 -- Complex expression without inline comment
+src\api\routes\properties.py:20 -- Function 'list_properties' missing param docs: property_type, status_filter, area, min_price, max_price, bedrooms, limit, offset, user, db
+src\api\routes\properties.py:53 -- Function 'get_property_stats' missing param docs: user, db
+src\api\routes\properties.py:92 -- Function 'get_property' missing param docs: property_id, user, db
+src\api\routes\properties.py:105 -- Function 'create_property' missing param docs: request, user, db
+src\api\routes\properties.py:145 -- Function 'update_property' missing param docs: property_id, request, user, db
+src\api\routes\properties.py:166 -- Function 'delete_property' missing param docs: property_id, user, db
+src\api\routes\properties.py:49 -- Complex expression without inline comment
+src\api\routes\requests.py:27 -- Function 'list_requests' missing param docs: status_filter, area, priority, limit, offset, user, db
+src\api\routes\requests.py:51 -- Function 'get_request_stats' missing param docs: user, db
+src\api\routes\requests.py:77 -- Function 'get_request' missing param docs: request_id, user, db
+src\api\routes\requests.py:90 -- Function 'create_request' missing param docs: request, user, db
+src\api\routes\requests.py:119 -- Function 'update_request' missing param docs: request_id, request, user, db
+src\api\routes\requests.py:140 -- Function 'delete_request' missing param docs: request_id, user, db
+src\api\routes\requests.py:155 -- Function 'match_request' missing param docs: request_id, user, db
+src\api\routes\requests.py:47 -- Complex expression without inline comment
+src\api\routes\scheduler.py:22 -- Function 'set_scheduler' missing param docs: scheduler
+src\api\routes\scheduler.py:28 -- Missing docstring for function '_get_scheduler'
+src\api\routes\scheduler.py:38 -- Function 'scheduler_status' missing param docs: user, sched
+src\api\routes\scheduler.py:50 -- Function 'scheduler_pause' missing param docs: user, sched
+src\api\routes\scheduler.py:63 -- Function 'scheduler_resume' missing param docs: user, sched
+src\api\routes\scheduler.py:76 -- Function 'run_job_now' missing param docs: job_id, user, sched
+src\api\routes\skills.py:26 -- Missing docstring for class 'TaskCreate'
+src\api\routes\skills.py:36 -- Missing docstring for class 'GoalCreate'
+src\api\routes\skills.py:44 -- Missing docstring for class 'NoteCreate'
+src\api\routes\skills.py:51 -- Missing docstring for class 'BrainstormRequest'
+src\api\routes\skills.py:55 -- Missing docstring for class 'QuickIdea'
+src\api\routes\skills.py:59 -- Missing docstring for class 'KanbanBoardCreate'
+src\api\routes\skills.py:64 -- Missing docstring for class 'KanbanCardCreate'
+src\api\routes\skills.py:71 -- Missing docstring for class 'CardMove'
+src\api\routes\skills.py:79 -- Function 'list_tasks' missing param docs: user
+src\api\routes\skills.py:92 -- Function 'create_task' missing param docs: task, user
+src\api\routes\skills.py:111 -- Function 'update_task_status' missing param docs: task_id, data, user
+src\api\routes\skills.py:124 -- Function 'delete_task' missing param docs: task_id, user
+src\api\routes\skills.py:140 -- Function 'list_goals' missing param docs: user
+src\api\routes\skills.py:153 -- Function 'create_goal' missing param docs: goal, user
+src\api\routes\skills.py:172 -- Function 'update_goal_progress' missing param docs: goal_id, data, user
+src\api\routes\skills.py:188 -- Function 'list_kanban_boards' missing param docs: user
+src\api\routes\skills.py:201 -- Function 'create_kanban_board' missing param docs: board, user
+src\api\routes\skills.py:214 -- Function 'get_kanban_board' missing param docs: board_name, user
+src\api\routes\skills.py:231 -- Function 'add_kanban_card' missing param docs: board_name, card, user
+src\api\routes\skills.py:250 -- Function 'move_kanban_card' missing param docs: board_name, card_id, move, user
+src\api\routes\skills.py:266 -- Function 'list_notes' missing param docs: user
+src\api\routes\skills.py:279 -- Function 'create_note' missing param docs: note, user
+src\api\routes\skills.py:297 -- Function 'delete_note' missing param docs: note_id, user
+src\api\routes\skills.py:310 -- Function 'brainstorm_ideas' missing param docs: req, user
+src\api\routes\skills.py:323 -- Function 'list_quick_notes' missing param docs: user
+src\api\routes\skills.py:335 -- Function 'create_quick_note' missing param docs: data, user
+src\api\routes\skills.py:351 -- Function 'get_time_summary' missing param docs: project, user
+src\api\routes\skills.py:364 -- Function 'start_timer' missing param docs: data, user
+src\api\routes\skills.py:380 -- Function 'stop_timer' missing param docs: user
+src\api\routes\skills.py:396 -- Function 'compare_properties' missing param docs: data, user
+src\api\routes\skills.py:409 -- Function 'analyze_investment' missing param docs: data, user
+src\api\routes\skills.py:425 -- Function 'list_checklists' missing param docs: user
+src\api\routes\skills.py:437 -- Function 'create_checklist' missing param docs: data, user
+src\api\routes\skills.py:453 -- Function 'toggle_checklist_item' missing param docs: checklist_id, data, user
+src\api\routes\skills.py:466 -- Function 'add_checklist_item' missing param docs: checklist_id, data, user
+src\api\routes\skills.py:482 -- Function 'score_lead' missing param docs: data, user
+src\api\routes\skills.py:495 -- Function 'match_lead' missing param docs: data, user
+src\api\routes\skills.py:510 -- Function 'batch_score_leads' missing param docs: data, user
+src\api\routes\skills.py:524 -- Function 'scoring_dashboard' missing param docs: user
+src\api\routes\webhooks.py:63 -- Missing docstring for class 'WebhookResponse'
+src\api\routes\webhooks.py:109 -- Function '_normalize_fields' missing param docs: data
+src\api\routes\webhooks.py:109 -- Function '_normalize_fields' has return type annotation but no return documentation in docstring
+src\api\routes\webhooks.py:133 -- Function '_verify_webhook_signature' missing param docs: request, raw_body
+src\api\routes\webhooks.py:133 -- Function '_verify_webhook_signature' has return type annotation but no return documentation in docstring
+src\api\routes\webhooks.py:179 -- Function 'receive_form_submission' missing param docs: request, db
+src\api\routes\webhooks.py:287 -- Function '_enqueue_matching' missing param docs: request_id
+src\api\routes\webhooks.py:287 -- Function '_enqueue_matching' has return type annotation but no return documentation in docstring
+src\api\routes\webhooks.py:333 -- Function '_run_inline_match' missing param docs: db, request_obj
+src\api\routes\webhooks.py:333 -- Function '_run_inline_match' has return type annotation but no return documentation in docstring
+src\api\routes\webhooks.py:365 -- Function '_run_inline_match' missing param docs: db, request_obj
+src\api\routes\webhooks.py:378 -- Function 'webhook_info' missing param docs: user
+src\api\routes\webhooks.py:427 -- Missing docstring for class 'WhatsAppWebSendRequest'
+src\api\routes\webhooks.py:433 -- Function 'start_whatsapp_web' missing param docs: headless, user
+src\api\routes\webhooks.py:451 -- Function 'stop_whatsapp_web' missing param docs: user
+src\api\routes\webhooks.py:462 -- Function 'whatsapp_web_status' missing param docs: user
+src\api\routes\webhooks.py:478 -- Function 'send_whatsapp_web_message' missing param docs: req, user
+src\api\routes\webhooks.py:494 -- Function 'get_whatsapp_web_unread' missing param docs: user
+src\api\routes\webhooks.py:507 -- Function 'get_whatsapp_web_chats' missing param docs: limit, user
+src\api\routes\webhooks.py:523 -- Function 'search_whatsapp_web_contact' missing param docs: query, user
+src\api\routes\webhooks.py:539 -- Function 'take_whatsapp_web_screenshot' missing param docs: filename, user
+src\api\routes\webhooks.py:352 -- Complex conditional without inline comment
+src\api\routes\webhooks.py:249 -- Complex conditional without inline comment
+src\api\routes\webhooks.py:249 -- Complex expression without inline comment
+src\api\routes\websocket.py:30 -- Function '_verify_ws_token' missing param docs: token
+src\api\routes\websocket.py:47 -- Function '_handle_bridge_message' missing param docs: data, profile_id
+src\api\routes\websocket.py:87 -- Function '_handle_whatsapp_message' missing param docs: data, profile_id
+src\api\routes\websocket.py:87 -- Function '_handle_whatsapp_message' has return type annotation but no return documentation in docstring
+src\api\routes\websocket.py:159 -- Function '_handle_facebook_post' missing param docs: data, profile_id
+src\api\routes\websocket.py:159 -- Function '_handle_facebook_post' has return type annotation but no return documentation in docstring
+src\api\routes\websocket.py:230 -- Function 'bridge_websocket' missing param docs: websocket, token, profile_id
+src\api\routes\websocket.py:315 -- Function 'bridge_messages' missing param docs: limit
+src\api\websocket_manager.py:50 -- Missing docstring for __init__ in class 'WebSocketManager'
+src\api\websocket_manager.py:50 -- Missing docstring for function '__init__'
+src\api\websocket_manager.py:59 -- Function 'connect' missing param docs: websocket, profile_id, user_agent
+src\api\websocket_manager.py:94 -- Function 'disconnect' missing param docs: profile_id
+src\api\websocket_manager.py:105 -- Function 'is_connected' missing param docs: profile_id
+src\api\websocket_manager.py:105 -- Function 'is_connected' has return type annotation but no return documentation in docstring
+src\api\websocket_manager.py:127 -- Function 'send_to_profile' missing param docs: profile_id, message
+src\api\websocket_manager.py:152 -- Function 'broadcast' missing param docs: message
+src\api\websocket_manager.py:174 -- Function '_queue_message' missing param docs: profile_id, message
+src\api\websocket_manager.py:215 -- Function 'update_heartbeat' missing param docs: profile_id
+src\api\websocket_manager.py:111 -- Complex expression without inline comment
+src\api\websocket_manager.py:225 -- Complex expression without inline comment
+src\api\websocket_manager.py:226 -- Complex expression without inline comment
+src\automation\__init__.py:1 -- Missing module docstring
+src\automation\browser_manager.py:16 -- Missing docstring for __init__ in class 'BrowserManager'
+src\automation\browser_manager.py:16 -- Missing docstring for function '__init__'
+src\automation\browser_manager.py:43 -- Function 'navigate' missing param docs: url
+src\automation\browser_manager.py:43 -- Function 'navigate' has return type annotation but no return documentation in docstring
+src\automation\browser_manager.py:52 -- Function 'screenshot' missing param docs: filename
+src\automation\browser_manager.py:52 -- Function 'screenshot' has return type annotation but no return documentation in docstring
+src\automation\browser_manager.py:61 -- Function 'click' missing param docs: selector
+src\automation\browser_manager.py:61 -- Function 'click' has return type annotation but no return documentation in docstring
+src\automation\browser_manager.py:70 -- Function 'type_text' missing param docs: selector, text
+src\automation\browser_manager.py:70 -- Function 'type_text' has return type annotation but no return documentation in docstring
+src\automation\browser_manager.py:79 -- Function 'extract_text' missing param docs: selector
+src\automation\browser_manager.py:79 -- Function 'extract_text' has return type annotation but no return documentation in docstring
+src\automation\browser_manager.py:87 -- Function 'wait_for' missing param docs: selector, timeout
+src\automation\browser_manager.py:87 -- Function 'wait_for' has return type annotation but no return documentation in docstring
+src\automation\browser_manager.py:118 -- Missing docstring for function '__aenter__'
+src\automation\browser_manager.py:121 -- Missing docstring for function '__aexit__'
+src\automation\experts\__init__.py:20 -- Complex data literal without inline comment
+src\automation\experts\classifier.py:117 -- Missing docstring for __init__ in class 'LeadClassifierExpert'
+src\automation\experts\classifier.py:117 -- Missing docstring for function '__init__'
+src\automation\experts\classifier.py:120 -- Function 'classify' missing param docs: lead
+src\automation\experts\classifier.py:203 -- Function 'classify_batch' missing param docs: leads
+src\automation\experts\classifier.py:216 -- Function 'get_confidence_distribution' missing param docs: results
+src\automation\experts\classifier.py:216 -- Function 'get_confidence_distribution' has return type annotation but no return documentation in docstring
+src\automation\experts\classifier.py:224 -- Function 'get_type_distribution' missing param docs: results
+src\automation\experts\classifier.py:224 -- Function 'get_type_distribution' has return type annotation but no return documentation in docstring
+src\automation\experts\phone.py:62 -- Missing docstring for __init__ in class 'PhoneValidatorExpert'
+src\automation\experts\phone.py:62 -- Missing docstring for function '__init__'
+src\automation\experts\phone.py:65 -- Function 'normalize' missing param docs: phone
+src\automation\experts\phone.py:113 -- Function 'validate' missing param docs: phone
+src\automation\experts\phone.py:189 -- Function 'validate_batch' missing param docs: phones
+src\automation\experts\phone.py:197 -- Function 'deduplicate' missing param docs: phones
+src\automation\experts\phone.py:214 -- Function 'format_for_display' missing param docs: phone
+src\automation\experts\phone.py:227 -- Function 'format_for_whatsapp' missing param docs: phone
+src\automation\experts\phone.py:240 -- Function 'get_stats' missing param docs: phones
+src\automation\experts\phone.py:240 -- Function 'get_stats' has return type annotation but no return documentation in docstring
+src\automation\experts\phone.py:195 -- Complex expression without inline comment
+src\automation\experts\phone.py:208 -- Complex conditional without inline comment
+src\automation\experts\phone.py:250 -- Complex expression without inline comment
+src\automation\experts\phone.py:246 -- Complex expression without inline comment
+src\automation\experts\phone.py:247 -- Complex expression without inline comment
+src\automation\experts\phone.py:248 -- Complex expression without inline comment
+src\automation\experts\phone.py:249 -- Complex expression without inline comment
+src\automation\experts\phone.py:251 -- Complex expression without inline comment
+src\automation\experts\phone.py:254 -- Complex expression without inline comment
+src\automation\experts\whatsapp.py:40 -- Complex data literal without inline comment
+src\automation\experts\whatsapp.py:77 -- Missing docstring for __init__ in class 'WhatsAppExpert'
+src\automation\experts\whatsapp.py:77 -- Missing docstring for function '__init__'
+src\automation\experts\whatsapp.py:107 -- Missing docstring for function 'is_connected'
+src\automation\experts\whatsapp.py:114 -- Function 'connect' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:141 -- Function 'disconnect' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:180 -- Function '_get_next_template' missing param docs: segment
+src\automation\experts\whatsapp.py:180 -- Function '_get_next_template' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:187 -- Function 'send_whatsapp_message' missing param docs: to, message, lead
+src\automation\experts\whatsapp.py:256 -- Function '_format_message' missing param docs: lead, template
+src\automation\experts\whatsapp.py:256 -- Function '_format_message' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:277 -- Function 'get_chats' missing param docs: limit
+src\automation\experts\whatsapp.py:277 -- Function 'get_chats' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:281 -- Function 'get_unread_messages' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:285 -- Function 'search_contact' missing param docs: query
+src\automation\experts\whatsapp.py:285 -- Function 'search_contact' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:293 -- Function 'init_session' missing param docs: timeout
+src\automation\experts\whatsapp.py:328 -- Function 'get_audit_log' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:332 -- Function 'get_stats' has return type annotation but no return documentation in docstring
+src\automation\experts\whatsapp.py:335 -- Complex expression without inline comment
+src\automation\experts\whatsapp.py:338 -- Complex expression without inline comment
+src\automation\experts\whatsapp.py:343 -- Complex expression without inline comment
+src\automation\experts\writer.py:90 -- Missing docstring for __init__ in class 'MessageWriterExpert'
+src\automation\experts\writer.py:90 -- Missing docstring for function '__init__'
+src\automation\experts\writer.py:105 -- Function '_extract_lead_info' missing param docs: lead
+src\automation\experts\writer.py:105 -- Function '_extract_lead_info' has return type annotation but no return documentation in docstring
+src\automation\experts\writer.py:144 -- Function '_generate_with_llm' missing param docs: lead_info, channel, lang
+src\automation\experts\writer.py:144 -- Function '_generate_with_llm' has return type annotation but no return documentation in docstring
+src\automation\experts\writer.py:237 -- Function '_validate_message' missing param docs: message
+src\automation\experts\writer.py:237 -- Function '_validate_message' has return type annotation but no return documentation in docstring
+src\automation\experts\writer.py:257 -- Function '_generate_template' missing param docs: lead_info, channel, lang
+src\automation\experts\writer.py:257 -- Function '_generate_template' has return type annotation but no return documentation in docstring
+src\automation\experts\writer.py:337 -- Function 'generate' missing param docs: lead, channel, lang
+src\automation\experts\writer.py:359 -- Function 'generate_variants' missing param docs: lead, channel, lang, count
+src\automation\experts\writer.py:372 -- Function 'get_stats' has return type annotation but no return documentation in docstring
+src\automation\experts\writer.py:112 -- Complex conditional without inline comment
+src\automation\human_simulator.py:15 -- Missing docstring for __init__ in class 'HumanSimulator'
+src\automation\human_simulator.py:15 -- Missing docstring for function '__init__'
+src\automation\human_simulator.py:21 -- Function 'human_type' missing param docs: page, selector, text
+src\automation\human_simulator.py:29 -- Function 'human_click' missing param docs: page, selector
+src\automation\human_simulator.py:41 -- Function 'human_scroll' missing param docs: page, direction, amount
+src\automation\human_simulator.py:52 -- Function 'random_mouse_movement' missing param docs: page
+src\automation\human_simulator.py:62 -- Function 'simulate_reading' missing param docs: page, duration
+src\automation\human_simulator.py:68 -- Function 'human_form_fill' missing param docs: page, fields
+src\automation\human_simulator.py:74 -- Function 'random_delay' missing param docs: min_sec, max_sec
+src\automation\selectors.py:236 -- Missing docstring for __init__ in class 'SelectorRegistry'
+src\automation\selectors.py:236 -- Missing docstring for function '__init__'
+src\automation\selectors.py:243 -- Function 'get' missing param docs: platform, selector_name
+src\automation\selectors.py:243 -- Function 'get' has return type annotation but no return documentation in docstring
+src\automation\selectors.py:248 -- Function 'get_all_selectors' missing param docs: platform, selector_name
+src\automation\selectors.py:248 -- Function 'get_all_selectors' has return type annotation but no return documentation in docstring
+src\automation\selectors.py:255 -- Function 'record_success' missing param docs: platform, selector_name, selector
+src\automation\selectors.py:263 -- Function 'record_failure' missing param docs: platform, selector_name, selector
+src\automation\selectors.py:275 -- Function '_update_stats' missing param docs: platform, selector_name, selector, success
+src\automation\selectors.py:286 -- Function 'get_health_report' has return type annotation but no return documentation in docstring
+src\automation\selectors.py:298 -- Function 'find_best_selector' missing param docs: platform, selector_name
+src\automation\selectors.py:298 -- Function 'find_best_selector' has return type annotation but no return documentation in docstring
+src\automation\selectors.py:316 -- Function 'get_selector' missing param docs: platform, name
+src\automation\selectors.py:316 -- Function 'get_selector' has return type annotation but no return documentation in docstring
+src\automation\selectors.py:321 -- Function 'get_all_selectors' missing param docs: platform, name
+src\automation\selectors.py:321 -- Function 'get_all_selectors' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:44 -- __init__ param 'page' not documented in class 'SmartWait' docstring
+src\automation\smart_wait.py:44 -- __init__ param 'default_timeout' not documented in class 'SmartWait' docstring
+src\automation\smart_wait.py:44 -- Function '__init__' missing param docs: page, default_timeout
+src\automation\smart_wait.py:44 -- Function '__init__' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:56 -- Function '_log_state' missing param docs: operation, result, details
+src\automation\smart_wait.py:56 -- Function '_log_state' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:72 -- Function 'wait_for_login' missing param docs: platform, timeout
+src\automation\smart_wait.py:179 -- Function 'wait_for_element_visible' missing param docs: selector, timeout, description
+src\automation\smart_wait.py:228 -- Function 'wait_for_element_hidden' missing param docs: selector, timeout, description
+src\automation\smart_wait.py:228 -- Function 'wait_for_element_hidden' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:273 -- Function 'wait_for_text_present' missing param docs: text, timeout, description
+src\automation\smart_wait.py:273 -- Function 'wait_for_text_present' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:309 -- Function 'wait_for_send_success' missing param docs: phone, timeout
+src\automation\smart_wait.py:309 -- Function 'wait_for_send_success' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:377 -- Function 'wait_for_group_loaded' missing param docs: timeout
+src\automation\smart_wait.py:377 -- Function 'wait_for_group_loaded' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:414 -- Function 'wait_for_chat_open' missing param docs: phone, timeout
+src\automation\smart_wait.py:414 -- Function 'wait_for_chat_open' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:454 -- Function 'retry_with_backoff' missing param docs: func, max_retries, base_delay, max_delay, description
+src\automation\smart_wait.py:511 -- Function 'scroll_and_load' missing param docs: scroll_count, scroll_delay
+src\automation\smart_wait.py:544 -- Function 'get_state_history' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:548 -- Function 'clear_state_history' has return type annotation but no return documentation in docstring
+src\automation\smart_wait.py:159 -- Complex conditional without inline comment
+src\automation\smart_wait.py:434 -- Complex conditional without inline comment
+src\automation\whatsapp_automation.py:16 -- Missing docstring for __init__ in class 'WhatsAppAutomation'
+src\automation\whatsapp_automation.py:16 -- Missing docstring for function '__init__'
+src\automation\whatsapp_automation.py:35 -- Function 'wait_for_login' missing param docs: timeout
+src\automation\whatsapp_automation.py:43 -- Function 'send_message' missing param docs: phone, message
+src\automation\whatsapp_automation.py:43 -- Function 'send_message' has return type annotation but no return documentation in docstring
+src\automation\whatsapp_automation.py:56 -- Function 'send_property_message' missing param docs: phone, property_data
+src\automation\whatsapp_automation.py:56 -- Function 'send_property_message' has return type annotation but no return documentation in docstring
+src\automation\whatsapp_automation.py:67 -- Function 'send_bulk_messages' missing param docs: contacts, message_template
+src\automation\whatsapp_automation.py:67 -- Function 'send_bulk_messages' has return type annotation but no return documentation in docstring
+src\automation\whatsapp_automation.py:79 -- Function 'get_contacts' has return type annotation but no return documentation in docstring
+src\backup\encrypted_backup.py:48 -- Missing docstring for function '_utc_now_compact'
+src\backup\encrypted_backup.py:52 -- Function '_fernet_from_vault_key' has return type annotation but no return documentation in docstring
+src\backup\encrypted_backup.py:61 -- Missing docstring for function '_hash_file'
+src\backup\encrypted_backup.py:69 -- Function 'create_backup' missing param docs: project_root, backup_dir, db_path, vault_dir, retain_count
+src\backup\encrypted_backup.py:174 -- Function '_cleanup_old' missing param docs: backup_dir, retain, trash_dir
+src\backup\encrypted_backup.py:174 -- Function '_cleanup_old' has return type annotation but no return documentation in docstring
+src\backup\encrypted_backup.py:202 -- Function '_purge_trash' missing param docs: trash_dir, max_age_hours
+src\backup\encrypted_backup.py:202 -- Function '_purge_trash' has return type annotation but no return documentation in docstring
+src\backup\encrypted_backup.py:223 -- Function 'restore_backup' missing param docs: artifact, dest_dir
+src\backup\encrypted_backup.py:260 -- Function 'main' has return type annotation but no return documentation in docstring
+src\backup\encrypted_backup.py:186 -- Complex expression without inline comment
+src\config\loader.py:74 -- Function 'create_llm' missing param docs: config
+src\config\loader.py:96 -- Function 'load_agents_config' has return type annotation but no return documentation in docstring
+src\config\loader.py:105 -- Function 'load_tasks_config' has return type annotation but no return documentation in docstring
+src\dashboard\app.py:61 -- Function 'api_get' missing param docs: endpoint, params
+src\dashboard\app.py:61 -- Function 'api_get' has return type annotation but no return documentation in docstring
+src\dashboard\app.py:89 -- Function 'api_get_root' missing param docs: endpoint, params
+src\dashboard\app.py:89 -- Function 'api_get_root' has return type annotation but no return documentation in docstring
+src\dashboard\app.py:113 -- Function 'api_post' missing param docs: endpoint, data
+src\dashboard\app.py:113 -- Function 'api_post' has return type annotation but no return documentation in docstring
+src\dashboard\app.py:1642 -- Missing docstring for function 'main'
+src\dashboard\app.py:1077 -- Complex expression without inline comment
+src\dashboard\app.py:597 -- Complex conditional without inline comment
+src\dashboard\app.py:855 -- Complex conditional without inline comment
+src\dashboard\app.py:1613 -- Complex conditional without inline comment
+src\dashboard\app.py:940 -- Complex expression without inline comment
+src\dashboard\app.py:1165 -- Complex expression without inline comment
+src\dashboard\app.py:1135 -- Complex expression without inline comment
+src\data\__init__.py:14 -- Complex data literal without inline comment
+src\data\crawler.py:56 -- Missing docstring for __init__ in class 'WebCrawler'
+src\data\crawler.py:56 -- Missing docstring for function '__init__'
+src\data\crawler.py:66 -- Function 'crawl_source' missing param docs: source, max_pages
+src\data\crawler.py:117 -- Function 'crawl_all_sources' missing param docs: max_pages_per_source
+src\data\crawler.py:117 -- Function 'crawl_all_sources' has return type annotation but no return documentation in docstring
+src\data\crawler.py:129 -- Function 'crawl_url' missing param docs: url
+src\data\crawler.py:164 -- Function '_fetch_page' missing param docs: url
+src\data\crawler.py:192 -- Function '_fetch_via_jina' missing param docs: url, api_key
+src\data\crawler.py:192 -- Function '_fetch_via_jina' has return type annotation but no return documentation in docstring
+src\data\crawler.py:210 -- Function '_fetch_via_http' missing param docs: url
+src\data\crawler.py:210 -- Function '_fetch_via_http' has return type annotation but no return documentation in docstring
+src\data\crawler.py:223 -- Function '_parse_listings' missing param docs: html, source, url
+src\data\crawler.py:223 -- Function '_parse_listings' has return type annotation but no return documentation in docstring
+src\data\crawler.py:277 -- Function '_guess_property_type' missing param docs: text
+src\data\crawler.py:277 -- Function '_guess_property_type' has return type annotation but no return documentation in docstring
+src\data\crawler.py:292 -- Function '_guess_area' missing param docs: text
+src\data\crawler.py:292 -- Function '_guess_area' has return type annotation but no return documentation in docstring
+src\data\crawler.py:306 -- Function '_rate_limit' missing param docs: domain
+src\data\crawler.py:280 -- Complex expression without inline comment
+src\data\crawler.py:282 -- Complex expression without inline comment
+src\data\crawler.py:284 -- Complex expression without inline comment
+src\data\crawler.py:286 -- Complex expression without inline comment
+src\data\crawler.py:288 -- Complex expression without inline comment
+src\data\enricher.py:104 -- Missing docstring for __init__ in class 'DataEnricher'
+src\data\enricher.py:104 -- Missing docstring for function '__init__'
+src\data\enricher.py:110 -- Function 'enrich' missing param docs: property_data
+src\data\enricher.py:162 -- Function 'enrich_batch' missing param docs: properties
+src\data\enricher.py:162 -- Function 'enrich_batch' has return type annotation but no return documentation in docstring
+src\data\enricher.py:169 -- Function '_calculate_price_per_sqm' missing param docs: data
+src\data\enricher.py:169 -- Function '_calculate_price_per_sqm' has return type annotation but no return documentation in docstring
+src\data\enricher.py:177 -- Function '_get_area_info' missing param docs: area
+src\data\enricher.py:177 -- Function '_get_area_info' has return type annotation but no return documentation in docstring
+src\data\enricher.py:183 -- Function '_get_developer_info' missing param docs: developer
+src\data\enricher.py:183 -- Function '_get_developer_info' has return type annotation but no return documentation in docstring
+src\data\enricher.py:190 -- Function '_compare_to_market' missing param docs: data
+src\data\enricher.py:190 -- Function '_compare_to_market' has return type annotation but no return documentation in docstring
+src\data\enricher.py:224 -- Function '_assess_contact_quality' missing param docs: data
+src\data\enricher.py:224 -- Function '_assess_contact_quality' has return type annotation but no return documentation in docstring
+src\data\enricher.py:251 -- Function '_calculate_completeness' missing param docs: data
+src\data\enricher.py:251 -- Function '_calculate_completeness' has return type annotation but no return documentation in docstring
+src\data\enricher.py:267 -- Function '_is_premium' missing param docs: data
+src\data\enricher.py:267 -- Function '_is_premium' has return type annotation but no return documentation in docstring
+src\data\enricher.py:173 -- Complex conditional without inline comment
+src\data\enricher.py:179 -- Complex conditional without inline comment
+src\data\enricher.py:204 -- Complex conditional without inline comment
+src\data\enricher.py:164 -- Complex expression without inline comment
+src\data\enricher.py:173 -- Complex expression without inline comment
+src\data\enricher.py:186 -- Complex conditional without inline comment
+src\data\extractor.py:44 -- Missing docstring for __init__ in class 'DataExtractor'
+src\data\extractor.py:44 -- Missing docstring for function '__init__'
+src\data\extractor.py:50 -- Function 'extract_from_whatsapp' missing param docs: message, sender
+src\data\extractor.py:96 -- Function 'extract_from_facebook' missing param docs: post_text, author, post_url
+src\data\extractor.py:137 -- Function 'extract_from_webpage' missing param docs: html, url
+src\data\extractor.py:176 -- Function 'extract_from_json' missing param docs: data
+src\data\extractor.py:176 -- Function 'extract_from_json' has return type annotation but no return documentation in docstring
+src\data\extractor.py:193 -- Function 'extract_from_csv_row' missing param docs: row
+src\data\extractor.py:193 -- Function 'extract_from_csv_row' has return type annotation but no return documentation in docstring
+src\data\extractor.py:200 -- Function '_extract_phone' missing param docs: text
+src\data\extractor.py:200 -- Function '_extract_phone' has return type annotation but no return documentation in docstring
+src\data\extractor.py:211 -- Function '_extract_property_type' missing param docs: text
+src\data\extractor.py:211 -- Function '_extract_property_type' has return type annotation but no return documentation in docstring
+src\data\extractor.py:229 -- Function '_extract_area' missing param docs: text
+src\data\extractor.py:229 -- Function '_extract_area' has return type annotation but no return documentation in docstring
+src\data\extractor.py:251 -- Function '_extract_budget' missing param docs: text
+src\data\extractor.py:251 -- Function '_extract_budget' has return type annotation but no return documentation in docstring
+src\data\extractor.py:268 -- Function '_extract_bedrooms' missing param docs: text
+src\data\extractor.py:268 -- Function '_extract_bedrooms' has return type annotation but no return documentation in docstring
+src\data\extractor.py:284 -- Function '_detect_intent' missing param docs: text
+src\data\extractor.py:284 -- Function '_detect_intent' has return type annotation but no return documentation in docstring
+src\data\quality.py:34 -- Complex data literal without inline comment
+src\data\quality.py:42 -- Complex data literal without inline comment
+src\data\quality.py:62 -- Missing docstring for __init__ in class 'DataQualityScorer'
+src\data\quality.py:62 -- Missing docstring for function '__init__'
+src\data\quality.py:68 -- Function 'score_property' missing param docs: property_data
+src\data\quality.py:150 -- Function 'score_lead' missing param docs: lead_data
+src\data\quality.py:202 -- Function 'score_batch' missing param docs: items, item_type
+src\data\quality.py:240 -- Function 'find_duplicates' missing param docs: items, key_fields
+src\data\quality.py:272 -- Function '_score_completeness' missing param docs: data, required, optional
+src\data\quality.py:272 -- Function '_score_completeness' has return type annotation but no return documentation in docstring
+src\data\quality.py:289 -- Function '_score_freshness' missing param docs: data
+src\data\quality.py:289 -- Function '_score_freshness' has return type annotation but no return documentation in docstring
+src\data\quality.py:318 -- Function '_score_property_consistency' missing param docs: data
+src\data\quality.py:318 -- Function '_score_property_consistency' has return type annotation but no return documentation in docstring
+src\data\quality.py:354 -- Function '_score_property_format' missing param docs: data
+src\data\quality.py:354 -- Function '_score_property_format' has return type annotation but no return documentation in docstring
+src\data\quality.py:375 -- Function '_score_phone_quality' missing param docs: phone
+src\data\quality.py:375 -- Function '_score_phone_quality' has return type annotation but no return documentation in docstring
+src\data\quality.py:391 -- Function '_score_intent_clarity' missing param docs: data
+src\data\quality.py:391 -- Function '_score_intent_clarity' has return type annotation but no return documentation in docstring
+src\data\quality.py:406 -- Function '_assign_tier' missing param docs: score
+src\data\quality.py:406 -- Function '_assign_tier' has return type annotation but no return documentation in docstring
+src\data\quality.py:326 -- Complex conditional without inline comment
+src\data\quality.py:348 -- Complex conditional without inline comment
+src\data\quality.py:326 -- Complex expression without inline comment
+src\data\quality.py:338 -- Complex conditional without inline comment
+src\data\quality.py:348 -- Complex expression without inline comment
+src\data\quality.py:341 -- Complex conditional without inline comment
+src\data\whatsapp_check.py:46 -- Missing docstring for __init__ in class 'WhatsAppChecker'
+src\data\whatsapp_check.py:46 -- Missing docstring for function '__init__'
+src\data\whatsapp_check.py:53 -- Function 'normalize_phone' missing param docs: phone
+src\data\whatsapp_check.py:94 -- Function 'check_whatsapp' missing param docs: phone
+src\data\whatsapp_check.py:139 -- Function 'check_batch' missing param docs: phones
+src\data\whatsapp_check.py:158 -- Function 'qualify_lead' missing param docs: phone, name, property_type, budget
+src\data\whatsapp_check.py:224 -- Function 'is_egyptian_number' missing param docs: phone
+src\data\whatsapp_check.py:224 -- Function 'is_egyptian_number' has return type annotation but no return documentation in docstring
+src\data\whatsapp_check.py:229 -- Function 'extract_phones_from_text' missing param docs: text
+src\data\whatsapp_check.py:229 -- Function 'extract_phones_from_text' has return type annotation but no return documentation in docstring
+src\data\whatsapp_check.py:242 -- Complex conditional without inline comment
+src\database\ingester.py:93 -- Function 'to_dict' has return type annotation but no return documentation in docstring
+src\database\ingester.py:119 -- Function 'setup_logger' missing param docs: name
+src\database\ingester.py:119 -- Function 'setup_logger' has return type annotation but no return documentation in docstring
+src\database\ingester.py:154 -- Function 'normalize_phone' missing param docs: raw
+src\database\ingester.py:186 -- Function 'normalize_email' missing param docs: raw
+src\database\ingester.py:200 -- Function 'sanitize_text' missing param docs: raw, max_length
+src\database\ingester.py:200 -- Function 'sanitize_text' has return type annotation but no return documentation in docstring
+src\database\ingester.py:229 -- __init__ param 'database_url' not documented in class 'CSVIngester' docstring
+src\database\ingester.py:229 -- __init__ param 'output_dir' not documented in class 'CSVIngester' docstring
+src\database\ingester.py:229 -- __init__ param 'dry_run' not documented in class 'CSVIngester' docstring
+src\database\ingester.py:229 -- Function '__init__' missing param docs: database_url, output_dir, dry_run
+src\database\ingester.py:281 -- Function 'discover_csv_files' has return type annotation but no return documentation in docstring
+src\database\ingester.py:290 -- Function 'load_csv' missing param docs: filepath
+src\database\ingester.py:290 -- Function 'load_csv' has return type annotation but no return documentation in docstring
+src\database\ingester.py:323 -- Function 'validate_row' missing param docs: row
+src\database\ingester.py:398 -- Function 'deduplicate' missing param docs: df, session
+src\database\ingester.py:398 -- Function 'deduplicate' has return type annotation but no return documentation in docstring
+src\database\ingester.py:460 -- Function 'insert_leads' missing param docs: df, source_file
+src\database\ingester.py:613 -- Function 'get_leads_by_type' missing param docs: lead_type, limit
+src\database\ingester.py:613 -- Function 'get_leads_by_type' has return type annotation but no return documentation in docstring
+src\database\ingester.py:628 -- Function 'get_new_leads' missing param docs: limit
+src\database\ingester.py:628 -- Function 'get_new_leads' has return type annotation but no return documentation in docstring
+src\database\ingester.py:643 -- Function 'update_lead_status' missing param docs: lead_id, status
+src\database\ingester.py:643 -- Function 'update_lead_status' has return type annotation but no return documentation in docstring
+src\database\ingester.py:662 -- Function 'get_stats' has return type annotation but no return documentation in docstring
+src\database\ingester.py:173 -- Complex conditional without inline comment
+src\database\ingester.py:175 -- Complex conditional without inline comment
+src\database\ingester.py:445 -- Complex expression without inline comment
+src\database\ingester.py:624 -- Complex expression without inline comment
+src\database\ingester.py:639 -- Complex expression without inline comment
+src\database\models.py:45 -- Missing docstring for function 'to_dict'
+src\database\models.py:126 -- Missing docstring for function 'to_dict'
+src\database\models.py:218 -- Missing docstring for function 'to_dict'
+src\database\models.py:290 -- Missing docstring for function 'to_dict'
+src\database\models.py:314 -- Function 'get_engine' missing param docs: database_url
+src\database\models.py:320 -- Function 'get_session' missing param docs: engine
+src\database\models.py:320 -- Function 'get_session' has return type annotation but no return documentation in docstring
+src\database\models.py:326 -- Function 'init_database' missing param docs: database_url
+src\error_handling.py:61 -- Missing docstring for __init__ in class 'AppError'
+src\error_handling.py:61 -- Missing docstring for function '__init__'
+src\error_handling.py:74 -- Function 'to_dict' has return type annotation but no return documentation in docstring
+src\error_handling.py:89 -- Function 'error_response' missing param docs: code, message, details, status_code
+src\error_handling.py:89 -- Function 'error_response' has return type annotation but no return documentation in docstring
+src\error_handling.py:109 -- Function 'retry' missing param docs: max_retries, delay, backoff_factor, exceptions
+src\error_handling.py:154 -- Function 'async_retry' missing param docs: max_retries, delay, backoff_factor, exceptions
+src\error_handling.py:208 -- Missing docstring for __init__ in class 'CircuitBreaker'
+src\error_handling.py:208 -- Missing docstring for function '__init__'
+src\error_handling.py:226 -- Function 'state' has return type annotation but no return documentation in docstring
+src\error_handling.py:262 -- Function 'can_execute' has return type annotation but no return documentation in docstring
+src\error_handling.py:272 -- Function 'execute' missing param docs: func, *args, **kwargs
+src\error_handling.py:293 -- Function 'get_status' has return type annotation but no return documentation in docstring
+src\error_handling.py:316 -- Function 'setup_error_handlers' missing param docs: app
+src\logging_config.py:21 -- Missing docstring for function 'format'
+src\logging_config.py:53 -- Missing docstring for function 'format'
+src\logging_config.py:65 -- Function 'setup_logging' missing param docs: log_dir, log_level, enable_json, enable_file_rotation, max_bytes, backup_count
+src\logging_config.py:146 -- Missing docstring for __init__ in class 'MetricsCollector'
+src\logging_config.py:146 -- Missing docstring for function '__init__'
+src\logging_config.py:151 -- Function 'increment' missing param docs: name, value
+src\logging_config.py:155 -- Function 'record_timer' missing param docs: name, duration_ms
+src\logging_config.py:164 -- Function 'get_counter' missing param docs: name
+src\logging_config.py:164 -- Function 'get_counter' has return type annotation but no return documentation in docstring
+src\logging_config.py:168 -- Function 'get_timer_stats' missing param docs: name
+src\logging_config.py:168 -- Function 'get_timer_stats' has return type annotation but no return documentation in docstring
+src\logging_config.py:188 -- Function 'get_all_metrics' has return type annotation but no return documentation in docstring
+src\logging_config.py:192 -- Complex expression without inline comment
+src\matching\engine.py:86 -- Function 'normalize_area' missing param docs: area
+src\matching\engine.py:86 -- Function 'normalize_area' has return type annotation but no return documentation in docstring
+src\matching\engine.py:111 -- Function 'score' missing param docs: request, property
+src\matching\engine.py:111 -- Function 'score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:144 -- Function '_area_score' missing param docs: req, prop
+src\matching\engine.py:144 -- Function '_area_score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:161 -- Function '_price_score' missing param docs: req, prop
+src\matching\engine.py:161 -- Function '_price_score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:189 -- Function '_type_score' missing param docs: req, prop
+src\matching\engine.py:189 -- Function '_type_score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:201 -- Function '_bedroom_score' missing param docs: req, prop
+src\matching\engine.py:201 -- Function '_bedroom_score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:216 -- Function '_area_sqm_score' missing param docs: req, prop
+src\matching\engine.py:216 -- Function '_area_sqm_score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:242 -- Function '_payment_score' missing param docs: req, prop
+src\matching\engine.py:242 -- Function '_payment_score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:256 -- Function '_amenities_score' missing param docs: req, prop
+src\matching\engine.py:256 -- Function '_amenities_score' has return type annotation but no return documentation in docstring
+src\matching\engine.py:280 -- Missing docstring for __init__ in class 'MatchMakingEngine'
+src\matching\engine.py:280 -- Missing docstring for function '__init__'
+src\matching\engine.py:284 -- Function 'match_request' missing param docs: request_id
+src\matching\engine.py:364 -- Function 'match_all_pending' has return type annotation but no return documentation in docstring
+src\matching\engine.py:383 -- Function 'find_properties_for_client' missing param docs: client_name
+src\matching\engine.py:383 -- Function 'find_properties_for_client' has return type annotation but no return documentation in docstring
+src\matching\engine.py:413 -- Function 'get_match_statistics' has return type annotation but no return documentation in docstring
+src\matching\engine.py:155 -- Complex conditional without inline comment
+src\matching\engine.py:170 -- Complex conditional without inline comment
+src\matching\engine.py:227 -- Complex conditional without inline comment
+src\matching\engine.py:268 -- Complex conditional without inline comment
+src\matching\engine.py:375 -- Complex expression without inline comment
+src\matching\notifier.py:26 -- Missing docstring for __init__ in class 'MatchNotifier'
+src\matching\notifier.py:26 -- Missing docstring for function '__init__'
+src\matching\notifier.py:29 -- Function 'notify_whatsapp' missing param docs: request, property, score, live
+src\matching\notifier.py:29 -- Function 'notify_whatsapp' has return type annotation but no return documentation in docstring
+src\matching\notifier.py:98 -- Function '_send_live' missing param docs: phone, message
+src\matching\notifier.py:98 -- Function '_send_live' has return type annotation but no return documentation in docstring
+src\matching\notifier.py:118 -- Function '_build_message' missing param docs: request, property, score
+src\matching\notifier.py:118 -- Function '_build_message' has return type annotation but no return documentation in docstring
+src\matching\notifier.py:147 -- Function 'notify_pending_matches' missing param docs: live
+src\matching\notifier.py:147 -- Function 'notify_pending_matches' has return type annotation but no return documentation in docstring
+src\mcp\whatsapp_web_server.py:17 -- Missing docstring for __init__ in class 'WhatsAppWebMCPServer'
+src\mcp\whatsapp_web_server.py:17 -- Missing docstring for function '__init__'
+src\mcp\whatsapp_web_server.py:174 -- Function 'handle_tool_call' missing param docs: tool_name, arguments
+src\mcp\whatsapp_web_server.py:174 -- Function 'handle_tool_call' has return type annotation but no return documentation in docstring
+src\mcp\whatsapp_web_server.py:275 -- Function 'handle_resource_read' missing param docs: uri
+src\mcp\whatsapp_web_server.py:275 -- Function 'handle_resource_read' has return type annotation but no return documentation in docstring
+src\mcp\whatsapp_web_server.py:301 -- Function 'get_tools_schema' has return type annotation but no return documentation in docstring
+src\mcp\whatsapp_web_server.py:312 -- Function 'get_resources_schema' has return type annotation but no return documentation in docstring
+src\mcp\whatsapp_web_server.py:321 -- Function 'get_mcp_server' has return type annotation but no return documentation in docstring
+src\mcp\whatsapp_web_server.py:303 -- Complex expression without inline comment
+src\outreach\__init__.py:14 -- Complex data literal without inline comment
+src\outreach\campaign_log.py:42 -- __init__ param 'output_dir' not documented in class 'CampaignLog' docstring
+src\outreach\campaign_log.py:42 -- Function '__init__' missing param docs: output_dir
+src\outreach\campaign_log.py:42 -- Function '__init__' has return type annotation but no return documentation in docstring
+src\outreach\campaign_log.py:53 -- Function '_ensure_header' has return type annotation but no return documentation in docstring
+src\outreach\campaign_log.py:61 -- Function 'log' missing param docs: lead_id, lead_type, segment, channel, subject, body, status, message_source
+src\outreach\campaign_log.py:61 -- Function 'log' has return type annotation but no return documentation in docstring
+src\outreach\campaign_log.py:149 -- Function 'get_records' missing param docs: lead_id, segment, channel, limit
+src\outreach\campaign_log.py:55 -- Complex conditional without inline comment
+src\outreach\campaign_log.py:176 -- Complex conditional without inline comment
+src\outreach\campaign_log.py:178 -- Complex conditional without inline comment
+src\outreach\campaign_log.py:180 -- Complex conditional without inline comment
+src\outreach\content_generator.py:24 -- Missing docstring for __init__ in class 'ContentGenerator'
+src\outreach\content_generator.py:24 -- Missing docstring for function '__init__'
+src\outreach\content_generator.py:39 -- Function 'generate' missing param docs: property_data, channel
+src\outreach\content_generator.py:61 -- Function '_llm_generate' missing param docs: prop, channel, llm
+src\outreach\content_generator.py:61 -- Function '_llm_generate' has return type annotation but no return documentation in docstring
+src\outreach\content_generator.py:144 -- Function '_extract_section' missing param docs: text, markers
+src\outreach\content_generator.py:144 -- Function '_extract_section' has return type annotation but no return documentation in docstring
+src\outreach\content_generator.py:161 -- Function '_template_generate' missing param docs: prop, channel
+src\outreach\content_generator.py:161 -- Function '_template_generate' has return type annotation but no return documentation in docstring
+src\outreach\content_generator.py:180 -- Function '_build_context' missing param docs: p
+src\outreach\content_generator.py:180 -- Function '_build_context' has return type annotation but no return documentation in docstring
+src\outreach\content_generator.py:246 -- Missing docstring for function '_gen_facebook'
+src\outreach\content_generator.py:260 -- Missing docstring for function '_gen_instagram'
+src\outreach\content_generator.py:272 -- Missing docstring for function '_gen_whatsapp'
+src\outreach\content_generator.py:214 -- Complex expression without inline comment
+src\outreach\content_generator.py:106 -- Complex expression without inline comment
+src\outreach\dispatcher.py:38 -- __init__ param 'output_dir' not documented in class 'Dispatcher' docstring
+src\outreach\dispatcher.py:38 -- __init__ param 'dry_run' not documented in class 'Dispatcher' docstring
+src\outreach\dispatcher.py:38 -- __init__ param 'live_mode' not documented in class 'Dispatcher' docstring
+src\outreach\dispatcher.py:38 -- __init__ param 'whatsapp_expert' not documented in class 'Dispatcher' docstring
+src\outreach\dispatcher.py:38 -- __init__ param 'whatsapp_circuit_breaker' not documented in class 'Dispatcher' docstring
+src\outreach\dispatcher.py:38 -- Function '__init__' missing param docs: output_dir, dry_run, live_mode, whatsapp_expert, whatsapp_circuit_breaker
+src\outreach\dispatcher.py:38 -- Function '__init__' has return type annotation but no return documentation in docstring
+src\outreach\dispatcher.py:64 -- Function '_truncate' missing param docs: text, max_length
+src\outreach\dispatcher.py:64 -- Function '_truncate' has return type annotation but no return documentation in docstring
+src\outreach\dispatcher.py:70 -- Function '_format_email' missing param docs: subject, body
+src\outreach\dispatcher.py:70 -- Function '_format_email' has return type annotation but no return documentation in docstring
+src\outreach\dispatcher.py:78 -- Function '_format_sms' missing param docs: subject, body
+src\outreach\dispatcher.py:78 -- Function '_format_sms' has return type annotation but no return documentation in docstring
+src\outreach\dispatcher.py:86 -- Function '_format_whatsapp' missing param docs: subject, body
+src\outreach\dispatcher.py:86 -- Function '_format_whatsapp' has return type annotation but no return documentation in docstring
+src\outreach\dispatcher.py:94 -- Function '_format_for_channel' missing param docs: channel, subject, body
+src\outreach\dispatcher.py:94 -- Function '_format_for_channel' has return type annotation but no return documentation in docstring
+src\outreach\dispatcher.py:104 -- Function 'dispatch' missing param docs: lead_id, lead_type, segment, channel, subject, body, message_source, phone
+src\outreach\dispatcher.py:220 -- Function 'dispatch_all_channels' missing param docs: lead_id, lead_type, segment, messages, message_source
+src\outreach\dispatcher.py:255 -- Function 'stats' has return type annotation but no return documentation in docstring
+src\outreach\dispatcher.py:144 -- Complex conditional without inline comment
+src\outreach\dispatcher.py:144 -- Complex expression without inline comment
+src\outreach\engine.py:44 -- Missing docstring for __init__ in class 'OutreachEngine'
+src\outreach\engine.py:44 -- Missing docstring for function '__init__'
+src\outreach\engine.py:70 -- Function '_load_leads' has return type annotation but no return documentation in docstring
+src\outreach\engine.py:93 -- Function '_select_segment' missing param docs: lead
+src\outreach\engine.py:93 -- Function '_select_segment' has return type annotation but no return documentation in docstring
+src\outreach\engine.py:98 -- Function '_generate_messages' missing param docs: lead, segment
+src\outreach\engine.py:131 -- Function 'run' missing param docs: channels, limit
+src\outreach\engine.py:183 -- Function '_build_summary' missing param docs: leads_processed, segments_used
+src\outreach\engine.py:183 -- Function '_build_summary' has return type annotation but no return documentation in docstring
+src\outreach\engine.py:196 -- Function 'preview' missing param docs: lead_index, channel
+src\outreach\engine.py:226 -- Function 'stats' has return type annotation but no return documentation in docstring
+src\outreach\engine.py:85 -- Complex expression without inline comment
+src\outreach\intent_parser.py:37 -- Missing docstring for function 'to_dict'
+src\outreach\intent_parser.py:50 -- Missing docstring for function 'has_property_intent'
+src\outreach\intent_parser.py:63 -- Missing docstring for __init__ in class 'IntentParser'
+src\outreach\intent_parser.py:63 -- Missing docstring for function '__init__'
+src\outreach\intent_parser.py:78 -- Function 'parse' missing param docs: message
+src\outreach\intent_parser.py:78 -- Function 'parse' has return type annotation but no return documentation in docstring
+src\outreach\intent_parser.py:95 -- Function '_llm_parse' missing param docs: message, llm
+src\outreach\intent_parser.py:95 -- Function '_llm_parse' has return type annotation but no return documentation in docstring
+src\outreach\intent_parser.py:150 -- Function '_rule_parse' missing param docs: message
+src\outreach\intent_parser.py:150 -- Function '_rule_parse' has return type annotation but no return documentation in docstring
+src\outreach\intent_parser.py:165 -- Function '_normalize' missing param docs: text
+src\outreach\intent_parser.py:165 -- Function '_normalize' has return type annotation but no return documentation in docstring
+src\outreach\intent_parser.py:174 -- Function '_detect_intent' missing param docs: text
+src\outreach\intent_parser.py:174 -- Function '_detect_intent' has return type annotation but no return documentation in docstring
+src\outreach\intent_parser.py:189 -- Missing docstring for function '_extract_property_type'
+src\outreach\intent_parser.py:202 -- Missing docstring for function '_extract_area'
+src\outreach\intent_parser.py:218 -- Missing docstring for function '_extract_budget'
+src\outreach\intent_parser.py:252 -- Missing docstring for function '_extract_bedrooms'
+src\outreach\intent_parser.py:256 -- Missing docstring for function '_extract_keywords'
+src\outreach\intent_parser.py:264 -- Missing docstring for function '_calc_confidence'
+src\outreach\intent_parser.py:132 -- Complex conditional without inline comment
+src\outreach\intent_parser.py:262 -- Complex expression without inline comment
+src\outreach\intent_parser.py:52 -- Complex expression without inline comment
+src\outreach\llm_generator.py:72 -- __init__ param 'api_key' not documented in class 'LLMGenerator' docstring
+src\outreach\llm_generator.py:72 -- __init__ param 'model' not documented in class 'LLMGenerator' docstring
+src\outreach\llm_generator.py:72 -- __init__ param 'temperature' not documented in class 'LLMGenerator' docstring
+src\outreach\llm_generator.py:72 -- __init__ param 'timeout' not documented in class 'LLMGenerator' docstring
+src\outreach\llm_generator.py:72 -- Function '__init__' missing param docs: api_key, model, temperature, timeout
+src\outreach\llm_generator.py:72 -- Function '__init__' has return type annotation but no return documentation in docstring
+src\outreach\llm_generator.py:101 -- Function '_build_prompt' missing param docs: lead, channel, segment
+src\outreach\llm_generator.py:101 -- Function '_build_prompt' has return type annotation but no return documentation in docstring
+src\outreach\llm_generator.py:135 -- Function '_parse_response' missing param docs: content
+src\outreach\llm_generator.py:135 -- Function '_parse_response' has return type annotation but no return documentation in docstring
+src\outreach\llm_generator.py:176 -- Function 'generate' missing param docs: lead, channel, segment
+src\outreach\llm_generator.py:262 -- Function 'stats' has return type annotation but no return documentation in docstring
+src\outreach\llm_generator.py:143 -- Complex conditional without inline comment
+src\outreach\llm_generator.py:153 -- Complex conditional without inline comment
+src\outreach\llm_generator.py:163 -- Complex conditional without inline comment
+src\outreach\llm_generator.py:237 -- Complex conditional without inline comment
+src\outreach\llm_generator.py:239 -- Complex conditional without inline comment
+src\outreach\rate_limiter.py:25 -- Missing docstring for __init__ in class 'TokenBucket'
+src\outreach\rate_limiter.py:25 -- Missing docstring for function '__init__'
+src\outreach\rate_limiter.py:37 -- Function '_refill' has return type annotation but no return documentation in docstring
+src\outreach\rate_limiter.py:44 -- Function 'acquire' missing param docs: timeout
+src\outreach\rate_limiter.py:83 -- Function 'available_tokens' has return type annotation but no return documentation in docstring
+src\outreach\rate_limiter.py:89 -- Function 'reset' has return type annotation but no return documentation in docstring
+src\outreach\rate_limiter.py:62 -- Complex conditional without inline comment
+src\outreach\social_radar.py:45 -- Function 'is_seller_post' missing param docs: text
+src\outreach\social_radar.py:45 -- Function 'is_seller_post' has return type annotation but no return documentation in docstring
+src\outreach\social_radar.py:54 -- Function 'normalize_phone' missing param docs: text
+src\outreach\social_radar.py:54 -- Function 'normalize_phone' has return type annotation but no return documentation in docstring
+src\outreach\social_radar.py:92 -- Missing docstring for __init__ in class 'SocialRadar'
+src\outreach\social_radar.py:92 -- Missing docstring for function '__init__'
+src\outreach\social_radar.py:103 -- Function 'scan_posts' missing param docs: posts, db_session
+src\outreach\social_radar.py:214 -- Function 'get_stats' has return type annotation but no return documentation in docstring
+src\outreach\social_radar.py:122 -- Complex conditional without inline comment
+src\outreach\templates.py:304 -- Function 'detect_segment' missing param docs: lead_type
+src\outreach\templates.py:304 -- Function 'detect_segment' has return type annotation but no return documentation in docstring
+src\outreach\templates.py:317 -- Function 'get_template' missing param docs: segment, channel
+src\outreach\templates.py:341 -- Function 'inject_variables' missing param docs: template, lead
+src\outreach\templates.py:341 -- Function 'inject_variables' has return type annotation but no return documentation in docstring
+src\outreach\templates.py:372 -- Function 'render_message' missing param docs: segment, channel, lead
+src\scheduler\engine.py:33 -- Function '_env_int' missing param docs: key
+src\scheduler\engine.py:33 -- Function '_env_int' has return type annotation but no return documentation in docstring
+src\scheduler\engine.py:47 -- Missing docstring for __init__ in class 'SchedulerEngine'
+src\scheduler\engine.py:47 -- Missing docstring for function '__init__'
+src\scheduler\engine.py:80 -- Function 'shutdown' missing param docs: wait
+src\scheduler\engine.py:151 -- Function '_on_job_event' missing param docs: event
+src\scheduler\engine.py:188 -- Function 'run_job_now' missing param docs: job_id
+src\scheduler\engine.py:188 -- Function 'run_job_now' has return type annotation but no return documentation in docstring
+src\scheduler\jobs.py:28 -- Function '_timed' missing param docs: label
+src\scheduler\jobs.py:43 -- Function '_run_cli' missing param docs: command, label
+src\scheduler\jobs.py:43 -- Function '_run_cli' has return type annotation but no return documentation in docstring
+src\scheduler\jobs.py:59 -- Function '_run_in_process_via_subprocess' missing param docs: command, label
+src\scheduler\jobs.py:59 -- Function '_run_in_process_via_subprocess' has return type annotation but no return documentation in docstring
+src\scheduler\jobs.py:92 -- Function '_run_in_process' missing param docs: fn_name, label
+src\scheduler\jobs.py:92 -- Function '_run_in_process' has return type annotation but no return documentation in docstring
+src\scheduler\jobs.py:164 -- Function 'run_matching_for_request' missing param docs: request_id
+src\scheduler\jobs.py:194 -- Complex conditional without inline comment
+src\services\mcp_service.py:22 -- Missing docstring for __init__ in class 'MCPService'
+src\services\mcp_service.py:22 -- Missing docstring for function '__init__'
+src\services\mcp_service.py:40 -- Function 'send_whatsapp' missing param docs: phone, message, dry_run
+src\services\mcp_service.py:65 -- Function 'send_whatsapp_batch' missing param docs: recipients, dry_run
+src\services\mcp_service.py:87 -- Function 'scrape_facebook_groups' missing param docs: groups, max_groups
+src\services\mcp_service.py:87 -- Function 'scrape_facebook_groups' has return type annotation but no return documentation in docstring
+src\services\mcp_service.py:94 -- Function 'get_facebook_leads' missing param docs: limit
+src\services\mcp_service.py:94 -- Function 'get_facebook_leads' has return type annotation but no return documentation in docstring
+src\services\mcp_service.py:102 -- Function 'web_search' missing param docs: query, max_results
+src\services\mcp_service.py:131 -- Function 'search_and_notify' missing param docs: query, phone, dry_run
+src\services\mcp_service.py:168 -- Function 'get_mcp_service' missing param docs: headless
+src\services\mcp_service.py:168 -- Function 'get_mcp_service' has return type annotation but no return documentation in docstring
+src\services\mcp_service.py:117 -- Complex expression without inline comment
+src\services\whatsapp_web.py:92 -- Missing docstring for __init__ in class 'WhatsAppWeb'
+src\services\whatsapp_web.py:92 -- Missing docstring for function '__init__'
+src\services\whatsapp_web.py:101 -- Function 'start' missing param docs: headless
+src\services\whatsapp_web.py:101 -- Function 'start' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:143 -- Function '_check_auth' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:161 -- Function 'check_and_update_auth' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:169 -- Function '_wait_for_authentication' missing param docs: timeout
+src\services\whatsapp_web.py:169 -- Function '_wait_for_authentication' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:213 -- Function 'send_message' missing param docs: phone, message
+src\services\whatsapp_web.py:213 -- Function 'send_message' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:307 -- Function '_click_chat_from_list' missing param docs: phone
+src\services\whatsapp_web.py:307 -- Function '_click_chat_from_list' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:331 -- Function '_click_chat_from_search' missing param docs: phone
+src\services\whatsapp_web.py:331 -- Function '_click_chat_from_search' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:394 -- Function 'send_image' missing param docs: phone, image_path, caption
+src\services\whatsapp_web.py:394 -- Function 'send_image' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:478 -- Function 'get_unread_messages' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:546 -- Function 'get_chat_list' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:627 -- Function 'search_contact' missing param docs: query
+src\services\whatsapp_web.py:627 -- Function 'search_contact' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:678 -- Function 'send_typing_indicator' missing param docs: phone
+src\services\whatsapp_web.py:678 -- Function 'send_typing_indicator' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:723 -- Function 'take_screenshot' missing param docs: filename
+src\services\whatsapp_web.py:723 -- Function 'take_screenshot' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:757 -- Function 'is_online' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:778 -- Function 'get_whatsapp_web' has return type annotation but no return documentation in docstring
+src\services\whatsapp_web.py:321 -- Complex conditional without inline comment
+src\services\whatsapp_web.py:608 -- Complex conditional without inline comment
+src\services\whatsapp_web.py:591 -- Complex conditional without inline comment
+src\session_vault\__init__.py:12 -- Complex data literal without inline comment
+src\session_vault\browser_profile.py:33 -- Missing docstring for __init__ in class 'BrowserProfile'
+src\session_vault\browser_profile.py:33 -- Missing docstring for function '__init__'
+src\session_vault\browser_profile.py:39 -- Function 'create_profile' missing param docs: name, platform
+src\session_vault\browser_profile.py:64 -- Function 'get_profile' missing param docs: name, platform
+src\session_vault\browser_profile.py:64 -- Function 'get_profile' has return type annotation but no return documentation in docstring
+src\session_vault\browser_profile.py:71 -- Function 'update_meta' missing param docs: name, platform, updates
+src\session_vault\browser_profile.py:71 -- Function 'update_meta' has return type annotation but no return documentation in docstring
+src\session_vault\browser_profile.py:81 -- Function 'get_launch_args' missing param docs: platform, profile
+src\session_vault\browser_profile.py:81 -- Function 'get_launch_args' has return type annotation but no return documentation in docstring
+src\session_vault\browser_profile.py:92 -- Function 'list_profiles' has return type annotation but no return documentation in docstring
+src\session_vault\browser_profile.py:110 -- Function 'delete_profile' missing param docs: name, platform
+src\session_vault\browser_profile.py:110 -- Function 'delete_profile' has return type annotation but no return documentation in docstring
+src\session_vault\cookie_manager.py:18 -- Missing docstring for __init__ in class 'CookieManager'
+src\session_vault\cookie_manager.py:18 -- Missing docstring for function '__init__'
+src\session_vault\cookie_manager.py:24 -- Function 'save_cookies' missing param docs: platform, profile, cookies
+src\session_vault\cookie_manager.py:24 -- Function 'save_cookies' has return type annotation but no return documentation in docstring
+src\session_vault\cookie_manager.py:45 -- Function 'load_cookies' missing param docs: platform, profile
+src\session_vault\cookie_manager.py:56 -- Function 'has_cookies' missing param docs: platform, profile
+src\session_vault\cookie_manager.py:56 -- Function 'has_cookies' has return type annotation but no return documentation in docstring
+src\session_vault\cookie_manager.py:60 -- Function 'clear_cookies' missing param docs: platform, profile
+src\session_vault\cookie_manager.py:60 -- Function 'clear_cookies' has return type annotation but no return documentation in docstring
+src\session_vault\cookie_manager.py:66 -- Function 'get_all_profiles' has return type annotation but no return documentation in docstring
+src\session_vault\cookie_manager.py:76 -- Function 'get_cookie_stats' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:51 -- Missing docstring for __init__ in class 'EncryptionManager'
+src\session_vault\encryption.py:51 -- Missing docstring for function '__init__'
+src\session_vault\encryption.py:73 -- Function '_derive_fernet_key' missing param docs: master_key, salt
+src\session_vault\encryption.py:73 -- Function '_derive_fernet_key' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:98 -- Function 'encrypt' missing param docs: data
+src\session_vault\encryption.py:98 -- Function 'encrypt' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:106 -- Function 'decrypt' missing param docs: token
+src\session_vault\encryption.py:106 -- Function 'decrypt' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:114 -- Function 'hash_password' missing param docs: password
+src\session_vault\encryption.py:114 -- Function 'hash_password' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:132 -- Function 'verify_password' missing param docs: password, hashed
+src\session_vault\encryption.py:132 -- Function 'verify_password' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:154 -- Function 'save_encrypted_file' missing param docs: path, data
+src\session_vault\encryption.py:154 -- Function 'save_encrypted_file' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:160 -- Function 'load_encrypted_file' missing param docs: path
+src\session_vault\encryption.py:160 -- Function 'load_encrypted_file' has return type annotation but no return documentation in docstring
+src\session_vault\encryption.py:123 -- Complex conditional without inline comment
+src\session_vault\vault.py:44 -- Missing docstring for __init__ in class 'SessionVault'
+src\session_vault\vault.py:44 -- Missing docstring for function '__init__'
+src\session_vault\vault.py:54 -- Missing docstring for function 'enc'
+src\session_vault\vault.py:62 -- Missing docstring for function '_session_path'
+src\session_vault\vault.py:70 -- Missing docstring for function '_empty_session'
+src\session_vault\vault.py:82 -- Missing docstring for function '_read'
+src\session_vault\vault.py:110 -- Function 'get_whatsapp_session' missing param docs: profile
+src\session_vault\vault.py:120 -- Function 'get_facebook_session' missing param docs: profile
+src\session_vault\vault.py:130 -- Function 'get_session_status' missing param docs: platform
+src\session_vault\vault.py:172 -- Function 'save_session' missing param docs: platform, profile, data
+src\session_vault\vault.py:172 -- Function 'save_session' has return type annotation but no return documentation in docstring
+src\session_vault\vault.py:195 -- Missing docstring for function 'delete_session'
+src\session_vault\vault.py:203 -- Missing docstring for function 'list_profiles'
+src\session_vault\vault.py:163 -- Complex expression without inline comment
+src\session_vault\vault.py:209 -- Complex expression without inline comment
+src\session_vault\vault.py:65 -- Complex expression without inline comment
+src\skills\__init__.py:27 -- Complex data literal without inline comment
+src\skills\checklist_builder.py:19 -- Complex data literal without inline comment
+src\skills\checklist_builder.py:90 -- Missing docstring for __init__ in class 'ChecklistSkill'
+src\skills\checklist_builder.py:90 -- Missing docstring for function '__init__'
+src\skills\checklist_builder.py:93 -- Missing docstring for function '_load_checklists'
+src\skills\checklist_builder.py:101 -- Missing docstring for function '_save_checklists'
+src\skills\checklist_builder.py:105 -- Function 'create_checklist' missing param docs: name, items, category
+src\skills\checklist_builder.py:105 -- Function 'create_checklist' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:124 -- Function 'create_from_template' missing param docs: template_name, custom_items
+src\skills\checklist_builder.py:124 -- Function 'create_from_template' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:136 -- Function 'get_checklist' missing param docs: checklist_id
+src\skills\checklist_builder.py:136 -- Function 'get_checklist' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:143 -- Function 'toggle_item' missing param docs: checklist_id, item_index
+src\skills\checklist_builder.py:143 -- Function 'toggle_item' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:169 -- Function 'add_item' missing param docs: checklist_id, text
+src\skills\checklist_builder.py:169 -- Function 'add_item' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:180 -- Function 'remove_item' missing param docs: checklist_id, item_index
+src\skills\checklist_builder.py:180 -- Function 'remove_item' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:192 -- Function 'list_checklists' missing param docs: category
+src\skills\checklist_builder.py:192 -- Function 'list_checklists' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:208 -- Function 'get_templates' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:217 -- Function 'delete_checklist' missing param docs: checklist_id
+src\skills\checklist_builder.py:217 -- Function 'delete_checklist' has return type annotation but no return documentation in docstring
+src\skills\checklist_builder.py:112 -- Complex expression without inline comment
+src\skills\checklist_builder.py:147 -- Complex conditional without inline comment
+src\skills\checklist_builder.py:184 -- Complex conditional without inline comment
+src\skills\checklist_builder.py:196 -- Complex expression without inline comment
+src\skills\checklist_builder.py:211 -- Complex expression without inline comment
+src\skills\checklist_builder.py:244 -- Complex expression without inline comment
+src\skills\checklist_builder.py:199 -- Complex expression without inline comment
+src\skills\checklist_builder.py:158 -- Complex expression without inline comment
+src\skills\computer_use.py:21 -- Missing docstring for __init__ in class 'ComputerUseSkill'
+src\skills\computer_use.py:21 -- Missing docstring for function '__init__'
+src\skills\computer_use.py:25 -- Function 'take_screenshot' missing param docs: save_path
+src\skills\computer_use.py:25 -- Function 'take_screenshot' has return type annotation but no return documentation in docstring
+src\skills\computer_use.py:49 -- Function 'take_browser_screenshot' missing param docs: url, save_path
+src\skills\computer_use.py:49 -- Function 'take_browser_screenshot' has return type annotation but no return documentation in docstring
+src\skills\computer_use.py:76 -- Function 'click_element' missing param docs: selector, page_url
+src\skills\computer_use.py:76 -- Function 'click_element' has return type annotation but no return documentation in docstring
+src\skills\computer_use.py:95 -- Function 'type_text' missing param docs: selector, text, page_url
+src\skills\computer_use.py:95 -- Function 'type_text' has return type annotation but no return documentation in docstring
+src\skills\computer_use.py:113 -- Function 'scroll_page' missing param docs: direction, amount
+src\skills\computer_use.py:113 -- Function 'scroll_page' has return type annotation but no return documentation in docstring
+src\skills\computer_use.py:132 -- Function 'extract_page_content' missing param docs: url
+src\skills\computer_use.py:132 -- Function 'extract_page_content' has return type annotation but no return documentation in docstring
+src\skills\decision_matrix.py:18 -- Function 'compare_properties' missing param docs: properties, criteria
+src\skills\decision_matrix.py:18 -- Function 'compare_properties' has return type annotation but no return documentation in docstring
+src\skills\decision_matrix.py:69 -- Function 'analyze_investment' missing param docs: property_data
+src\skills\decision_matrix.py:69 -- Function 'analyze_investment' has return type annotation but no return documentation in docstring
+src\skills\decision_matrix.py:125 -- Function 'score_vendor' missing param docs: vendor_data
+src\skills\decision_matrix.py:125 -- Function 'score_vendor' has return type annotation but no return documentation in docstring
+src\skills\decision_matrix.py:146 -- Function 'pros_cons_analysis' missing param docs: options
+src\skills\decision_matrix.py:146 -- Function 'pros_cons_analysis' has return type annotation but no return documentation in docstring
+src\skills\decision_matrix.py:169 -- Missing docstring for function '_score_to_grade'
+src\skills\decision_matrix.py:178 -- Missing docstring for function '_investment_verdict'
+src\skills\decision_matrix.py:35 -- Complex expression without inline comment
+src\skills\decision_matrix.py:135 -- Complex expression without inline comment
+src\skills\decision_matrix.py:142 -- Complex expression without inline comment
+src\skills\document_processing.py:19 -- Function 'extract_text' missing param docs: file_path
+src\skills\document_processing.py:19 -- Function 'extract_text' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:36 -- Function '_extract_pdf' missing param docs: file_path
+src\skills\document_processing.py:36 -- Function '_extract_pdf' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:72 -- Function '_extract_docx' missing param docs: file_path
+src\skills\document_processing.py:72 -- Function '_extract_docx' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:106 -- Function '_extract_txt' missing param docs: file_path
+src\skills\document_processing.py:106 -- Function '_extract_txt' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:122 -- Function 'analyze_contract' missing param docs: file_path
+src\skills\document_processing.py:122 -- Function 'analyze_contract' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:150 -- Function 'extract_property_details' missing param docs: file_path
+src\skills\document_processing.py:150 -- Function 'extract_property_details' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:175 -- Function 'batch_extract' missing param docs: file_paths
+src\skills\document_processing.py:175 -- Function 'batch_extract' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:183 -- Function '_extract_pattern' missing param docs: text, pattern
+src\skills\document_processing.py:183 -- Function '_extract_pattern' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:189 -- Function '_extract_number' missing param docs: text, pattern
+src\skills\document_processing.py:189 -- Function '_extract_number' has return type annotation but no return documentation in docstring
+src\skills\document_processing.py:65 -- Complex expression without inline comment
+src\skills\document_processing.py:88 -- Complex expression without inline comment
+src\skills\document_processing.py:99 -- Complex expression without inline comment
+src\skills\email_skill.py:25 -- Missing docstring for __init__ in class 'EmailSkill'
+src\skills\email_skill.py:25 -- Missing docstring for function '__init__'
+src\skills\email_skill.py:29 -- Function 'send_email' missing param docs: to, subject, body, from_name, attachments, is_html
+src\skills\email_skill.py:29 -- Function 'send_email' has return type annotation but no return documentation in docstring
+src\skills\email_skill.py:88 -- Function 'send_bulk' missing param docs: recipients, subject, body, from_name
+src\skills\email_skill.py:88 -- Function 'send_bulk' has return type annotation but no return documentation in docstring
+src\skills\email_skill.py:112 -- Function 'draft_property_inquiry' missing param docs: property_info
+src\skills\email_skill.py:112 -- Function 'draft_property_inquiry' has return type annotation but no return documentation in docstring
+src\skills\email_skill.py:139 -- Function 'draft_price_negotiation' missing param docs: property_info, offer_price
+src\skills\email_skill.py:139 -- Function 'draft_price_negotiation' has return type annotation but no return documentation in docstring
+src\skills\email_skill.py:166 -- Function 'parse_email' missing param docs: raw_email
+src\skills\email_skill.py:166 -- Function 'parse_email' has return type annotation but no return documentation in docstring
+src\skills\email_skill.py:101 -- Complex expression without inline comment
+src\skills\email_skill.py:102 -- Complex expression without inline comment
+src\skills\goal_tracker.py:21 -- Missing docstring for __init__ in class 'GoalTrackerSkill'
+src\skills\goal_tracker.py:21 -- Missing docstring for function '__init__'
+src\skills\goal_tracker.py:24 -- Missing docstring for function '_load_goals'
+src\skills\goal_tracker.py:32 -- Missing docstring for function '_save_goals'
+src\skills\goal_tracker.py:36 -- Function 'create_goal' missing param docs: title, description, category, target_value, unit, deadline, parent_id
+src\skills\goal_tracker.py:36 -- Function 'create_goal' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:78 -- Function 'update_goal' missing param docs: goal_id, **kwargs
+src\skills\goal_tracker.py:78 -- Function 'update_goal' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:94 -- Function 'add_milestone' missing param docs: goal_id, title, target_date
+src\skills\goal_tracker.py:94 -- Function 'add_milestone' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:110 -- Function 'complete_milestone' missing param docs: goal_id, milestone_id
+src\skills\goal_tracker.py:110 -- Function 'complete_milestone' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:123 -- Function 'add_key_result' missing param docs: goal_id, title, target_value, unit
+src\skills\goal_tracker.py:123 -- Function 'add_key_result' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:139 -- Function 'update_key_result' missing param docs: goal_id, kr_id, current_value
+src\skills\goal_tracker.py:139 -- Function 'update_key_result' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:152 -- Function 'record_progress' missing param docs: goal_id, value, note
+src\skills\goal_tracker.py:152 -- Function 'record_progress' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:169 -- Function 'get_goal' missing param docs: goal_id
+src\skills\goal_tracker.py:169 -- Function 'get_goal' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:176 -- Function 'list_goals' missing param docs: status, category
+src\skills\goal_tracker.py:176 -- Function 'list_goals' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:197 -- Function 'get_dashboard' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:216 -- Function '_calc_progress' missing param docs: goal
+src\skills\goal_tracker.py:216 -- Function '_calc_progress' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:225 -- Function '_get_at_risk_goals' missing param docs: goals
+src\skills\goal_tracker.py:225 -- Function '_get_at_risk_goals' has return type annotation but no return documentation in docstring
+src\skills\goal_tracker.py:218 -- Complex conditional without inline comment
+src\skills\goal_tracker.py:200 -- Complex expression without inline comment
+src\skills\goal_tracker.py:201 -- Complex expression without inline comment
+src\skills\goal_tracker.py:180 -- Complex expression without inline comment
+src\skills\goal_tracker.py:182 -- Complex expression without inline comment
+src\skills\goal_tracker.py:234 -- Complex conditional without inline comment
+src\skills\goal_tracker.py:276 -- Complex expression without inline comment
+src\skills\goal_tracker.py:83 -- Complex conditional without inline comment
+src\skills\goal_tracker.py:221 -- Complex expression without inline comment
+src\skills\goal_tracker.py:191 -- Complex expression without inline comment
+src\skills\goal_tracker.py:192 -- Complex expression without inline comment
+src\skills\goal_tracker.py:193 -- Complex expression without inline comment
+src\skills\goal_tracker.py:205 -- Complex expression without inline comment
+src\skills\google_maps.py:19 -- Missing docstring for __init__ in class 'GoogleMapsSkill'
+src\skills\google_maps.py:19 -- Missing docstring for function '__init__'
+src\skills\google_maps.py:25 -- Function 'geocode' missing param docs: address
+src\skills\google_maps.py:25 -- Function 'geocode' has return type annotation but no return documentation in docstring
+src\skills\google_maps.py:56 -- Function 'reverse_geocode' missing param docs: lat, lon
+src\skills\google_maps.py:56 -- Function 'reverse_geocode' has return type annotation but no return documentation in docstring
+src\skills\google_maps.py:84 -- Function 'nearby_search' missing param docs: lat, lon, query, radius_meters
+src\skills\google_maps.py:84 -- Function 'nearby_search' has return type annotation but no return documentation in docstring
+src\skills\google_maps.py:152 -- Function 'analyze_property_location' missing param docs: lat, lon
+src\skills\google_maps.py:152 -- Function 'analyze_property_location' has return type annotation but no return documentation in docstring
+src\skills\google_maps.py:181 -- Function 'calculate_distance' missing param docs: origin, destination
+src\skills\google_maps.py:181 -- Function 'calculate_distance' has return type annotation but no return documentation in docstring
+src\skills\google_maps.py:206 -- Function '_haversine' missing param docs: lat1, lon1, lat2, lon2
+src\skills\google_maps.py:206 -- Function '_haversine' has return type annotation but no return documentation in docstring
+src\skills\google_maps.py:216 -- Function '_calculate_location_score' missing param docs: analyses
+src\skills\google_maps.py:216 -- Function '_calculate_location_score' has return type annotation but no return documentation in docstring
+src\skills\google_maps.py:187 -- Complex conditional without inline comment
+src\skills\google_search.py:19 -- Missing docstring for __init__ in class 'GoogleSearchSkill'
+src\skills\google_search.py:19 -- Missing docstring for function '__init__'
+src\skills\google_search.py:26 -- Function 'search' missing param docs: query, engine, max_results, location, language
+src\skills\google_search.py:26 -- Function 'search' has return type annotation but no return documentation in docstring
+src\skills\google_search.py:38 -- Function 'search_real_estate' missing param docs: query, area, max_results
+src\skills\google_search.py:38 -- Function 'search_real_estate' has return type annotation but no return documentation in docstring
+src\skills\google_search.py:50 -- Function 'search_news' missing param docs: query, max_results
+src\skills\google_search.py:50 -- Function 'search_news' has return type annotation but no return documentation in docstring
+src\skills\google_search.py:55 -- Function '_search_duckduckgo' missing param docs: query, max_results, location, language
+src\skills\google_search.py:55 -- Function '_search_duckduckgo' has return type annotation but no return documentation in docstring
+src\skills\google_search.py:82 -- Function '_search_google_scrape' missing param docs: query, max_results, location, language
+src\skills\google_search.py:82 -- Function '_search_google_scrape' has return type annotation but no return documentation in docstring
+src\skills\google_search.py:124 -- Function '_search_bing' missing param docs: query, max_results, location, language
+src\skills\google_search.py:124 -- Function '_search_bing' has return type annotation but no return documentation in docstring
+src\skills\google_search.py:67 -- Complex expression without inline comment
+src\skills\image_analysis.py:19 -- Function 'analyze_property_image' missing param docs: image_path
+src\skills\image_analysis.py:19 -- Function 'analyze_property_image' has return type annotation but no return documentation in docstring
+src\skills\image_analysis.py:61 -- Function 'batch_analyze_images' missing param docs: image_paths
+src\skills\image_analysis.py:61 -- Function 'batch_analyze_images' has return type annotation but no return documentation in docstring
+src\skills\image_analysis.py:82 -- Function 'enhance_image' missing param docs: image_path, output_path
+src\skills\image_analysis.py:82 -- Function 'enhance_image' has return type annotation but no return documentation in docstring
+src\skills\image_analysis.py:117 -- Function 'detect_room_type' missing param docs: image_path
+src\skills\image_analysis.py:117 -- Function 'detect_room_type' has return type annotation but no return documentation in docstring
+src\skills\image_analysis.py:156 -- Function 'create_thumbnail' missing param docs: image_path, output_path, size
+src\skills\image_analysis.py:156 -- Function 'create_thumbnail' has return type annotation but no return documentation in docstring
+src\skills\image_analysis.py:180 -- Function 'extract_image_metadata' missing param docs: image_path
+src\skills\image_analysis.py:180 -- Function 'extract_image_metadata' has return type annotation but no return documentation in docstring
+src\skills\image_analysis.py:206 -- Function '_get_dominant_color' missing param docs: img
+src\skills\image_analysis.py:206 -- Function '_get_dominant_color' has return type annotation but no return documentation in docstring
+src\skills\image_analysis.py:68 -- Complex expression without inline comment
+src\skills\image_analysis.py:136 -- Complex conditional without inline comment
+src\skills\image_analysis.py:139 -- Complex conditional without inline comment
+src\skills\image_analysis.py:78 -- Complex expression without inline comment
+src\skills\image_analysis.py:142 -- Complex conditional without inline comment
+src\skills\image_analysis.py:76 -- Complex expression without inline comment
+src\skills\kanban_board.py:21 -- Missing docstring for __init__ in class 'KanbanSkill'
+src\skills\kanban_board.py:21 -- Missing docstring for function '__init__'
+src\skills\kanban_board.py:24 -- Missing docstring for function '_load_boards'
+src\skills\kanban_board.py:32 -- Missing docstring for function '_save_boards'
+src\skills\kanban_board.py:36 -- Function 'create_board' missing param docs: board_name, columns
+src\skills\kanban_board.py:36 -- Function 'create_board' has return type annotation but no return documentation in docstring
+src\skills\kanban_board.py:51 -- Function 'add_card' missing param docs: board_name, column, title, description, assignee, priority
+src\skills\kanban_board.py:51 -- Function 'add_card' has return type annotation but no return documentation in docstring
+src\skills\kanban_board.py:76 -- Function 'move_card' missing param docs: board_name, card_id, from_column, to_column
+src\skills\kanban_board.py:76 -- Function 'move_card' has return type annotation but no return documentation in docstring
+src\skills\kanban_board.py:99 -- Function 'get_board' missing param docs: board_name
+src\skills\kanban_board.py:99 -- Function 'get_board' has return type annotation but no return documentation in docstring
+src\skills\kanban_board.py:114 -- Function 'list_boards' has return type annotation but no return documentation in docstring
+src\skills\kanban_board.py:122 -- Function 'add_label' missing param docs: board_name, card_id, label
+src\skills\kanban_board.py:122 -- Function 'add_label' has return type annotation but no return documentation in docstring
+src\skills\kanban_board.py:136 -- Function 'get_card' missing param docs: board_name, card_id
+src\skills\kanban_board.py:136 -- Function 'get_card' has return type annotation but no return documentation in docstring
+src\skills\kanban_board.py:82 -- Complex conditional without inline comment
+src\skills\kanban_board.py:43 -- Complex expression without inline comment
+src\skills\kanban_board.py:112 -- Complex expression without inline comment
+src\skills\kanban_board.py:118 -- Complex expression without inline comment
+src\skills\kanban_board.py:164 -- Complex expression without inline comment
+src\skills\kanban_board.py:61 -- Complex expression without inline comment
+src\skills\lead_scoring.py:22 -- Missing docstring for __init__ in class 'LeadScoringSkill'
+src\skills\lead_scoring.py:22 -- Missing docstring for function '__init__'
+src\skills\lead_scoring.py:67 -- Function 'score_lead' missing param docs: lead_data
+src\skills\lead_scoring.py:164 -- Function 'match_lead_to_properties' missing param docs: lead_data, properties
+src\skills\lead_scoring.py:185 -- Function '_calculate_match_score' missing param docs: lead, prop
+src\skills\lead_scoring.py:185 -- Function '_calculate_match_score' has return type annotation but no return documentation in docstring
+src\skills\lead_scoring.py:239 -- Function '_get_match_reasons' missing param docs: lead, prop
+src\skills\lead_scoring.py:239 -- Function '_get_match_reasons' has return type annotation but no return documentation in docstring
+src\skills\lead_scoring.py:263 -- Function 'score_leads_batch' missing param docs: leads
+src\skills\lead_scoring.py:263 -- Function 'score_leads_batch' has return type annotation but no return documentation in docstring
+src\skills\lead_scoring.py:275 -- Function 'get_scoring_dashboard' has return type annotation but no return documentation in docstring
+src\skills\lead_scoring.py:304 -- Missing docstring for class 'LeadScoreInput'
+src\skills\lead_scoring.py:317 -- Missing docstring for function '_run'
+src\skills\lead_scoring.py:328 -- Missing docstring for class 'LeadMatchInput'
+src\skills\lead_scoring.py:342 -- Missing docstring for function '_run'
+src\skills\lead_scoring.py:354 -- Missing docstring for class 'LeadBatchScoreInput'
+src\skills\lead_scoring.py:367 -- Missing docstring for function '_run'
+src\skills\lead_scoring.py:386 -- Missing docstring for function '_run'
+src\skills\lead_scoring.py:245 -- Complex conditional without inline comment
+src\skills\lead_scoring.py:250 -- Complex conditional without inline comment
+src\skills\lead_scoring.py:255 -- Complex conditional without inline comment
+src\skills\lead_scoring.py:204 -- Complex conditional without inline comment
+src\skills\lead_scoring.py:245 -- Complex expression without inline comment
+src\skills\lead_scoring.py:250 -- Complex expression without inline comment
+src\skills\lead_scoring.py:255 -- Complex expression without inline comment
+src\skills\lead_scoring.py:100 -- Complex expression without inline comment
+src\skills\lead_scoring.py:228 -- Complex conditional without inline comment
+src\skills\lead_scoring.py:283 -- Complex expression without inline comment
+src\skills\lead_scoring.py:284 -- Complex expression without inline comment
+src\skills\lead_scoring.py:285 -- Complex expression without inline comment
+src\skills\lead_scoring.py:112 -- Complex expression without inline comment
+src\skills\lead_scoring.py:230 -- Complex conditional without inline comment
+src\skills\lead_scoring.py:249 -- Complex expression without inline comment
+src\skills\lead_scoring.py:206 -- Complex expression without inline comment
+src\skills\lead_scoring.py:292 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:21 -- Missing docstring for __init__ in class 'NotesSkill'
+src\skills\notes_brainstorming.py:21 -- Missing docstring for function '__init__'
+src\skills\notes_brainstorming.py:24 -- Missing docstring for function '_load_notes'
+src\skills\notes_brainstorming.py:32 -- Missing docstring for function '_save_notes'
+src\skills\notes_brainstorming.py:36 -- Function 'create_note' missing param docs: title, content, category, tags
+src\skills\notes_brainstorming.py:36 -- Function 'create_note' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:52 -- Function 'update_note' missing param docs: note_id, content
+src\skills\notes_brainstorming.py:52 -- Function 'update_note' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:62 -- Function 'search_notes' missing param docs: query
+src\skills\notes_brainstorming.py:62 -- Function 'search_notes' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:71 -- Function 'list_notes' missing param docs: category, tag
+src\skills\notes_brainstorming.py:71 -- Function 'list_notes' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:83 -- Function 'pin_note' missing param docs: note_id
+src\skills\notes_brainstorming.py:83 -- Function 'pin_note' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:92 -- Function 'delete_note' missing param docs: note_id
+src\skills\notes_brainstorming.py:92 -- Function 'delete_note' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:101 -- Function 'list_quick_notes' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:107 -- Function 'quick_idea' missing param docs: idea
+src\skills\notes_brainstorming.py:107 -- Function 'quick_idea' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:111 -- Function 'brainstorm' missing param docs: topic, ideas
+src\skills\notes_brainstorming.py:111 -- Function 'brainstorm' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:151 -- Function 'add_idea' missing param docs: topic, idea
+src\skills\notes_brainstorming.py:151 -- Function 'add_idea' has return type annotation but no return documentation in docstring
+src\skills\notes_brainstorming.py:65 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:103 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:75 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:77 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:67 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:128 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:174 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:202 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:130 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:132 -- Complex expression without inline comment
+src\skills\notes_brainstorming.py:134 -- Complex expression without inline comment
+src\skills\report_generator.py:20 -- Function 'generate_property_report' missing param docs: property_data
+src\skills\report_generator.py:20 -- Function 'generate_property_report' has return type annotation but no return documentation in docstring
+src\skills\report_generator.py:56 -- Function 'generate_market_report' missing param docs: market_data
+src\skills\report_generator.py:56 -- Function 'generate_market_report' has return type annotation but no return documentation in docstring
+src\skills\report_generator.py:88 -- Function 'generate_client_report' missing param docs: client_data
+src\skills\report_generator.py:88 -- Function 'generate_client_report' has return type annotation but no return documentation in docstring
+src\skills\report_generator.py:118 -- Function 'generate_performance_report' missing param docs: performance_data
+src\skills\report_generator.py:118 -- Function 'generate_performance_report' has return type annotation but no return documentation in docstring
+src\skills\report_generator.py:148 -- Function 'save_report' missing param docs: content, filename, report_type
+src\skills\report_generator.py:148 -- Function 'save_report' has return type annotation but no return documentation in docstring
+src\skills\report_generator.py:156 -- Missing docstring for function '_list_to_markdown'
+src\skills\report_generator.py:161 -- Missing docstring for function '_dict_to_markdown'
+src\skills\report_generator.py:159 -- Complex expression without inline comment
+src\skills\report_generator.py:164 -- Complex expression without inline comment
+src\skills\task_manager.py:20 -- Missing docstring for class 'Priority'
+src\skills\task_manager.py:27 -- Missing docstring for class 'TaskStatus'
+src\skills\task_manager.py:38 -- Missing docstring for __init__ in class 'TaskManagerSkill'
+src\skills\task_manager.py:38 -- Missing docstring for function '__init__'
+src\skills\task_manager.py:41 -- Function '_load_tasks' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:55 -- Function 'create_task' missing param docs: title, description, priority, category, deadline, assignee, parent_id
+src\skills\task_manager.py:55 -- Function 'create_task' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:98 -- Function 'update_task' missing param docs: task_id, **kwargs
+src\skills\task_manager.py:98 -- Function 'update_task' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:114 -- Function 'get_task' missing param docs: task_id
+src\skills\task_manager.py:114 -- Function 'get_task' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:121 -- Function 'delete_task' missing param docs: task_id
+src\skills\task_manager.py:121 -- Function 'delete_task' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:130 -- Function 'list_tasks' missing param docs: status, priority, category, assignee
+src\skills\task_manager.py:130 -- Function 'list_tasks' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:159 -- Function 'get_overdue_tasks' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:165 -- Function 'get_upcoming_tasks' missing param docs: days
+src\skills\task_manager.py:165 -- Function 'get_upcoming_tasks' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:175 -- Function 'get_progress_report' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:194 -- Function 'add_tag' missing param docs: task_id, tag
+src\skills\task_manager.py:194 -- Function 'add_tag' has return type annotation but no return documentation in docstring
+src\skills\task_manager.py:204 -- Missing docstring for function '_count_by_status'
+src\skills\task_manager.py:211 -- Missing docstring for function '_count_by_priority'
+src\skills\task_manager.py:218 -- Missing docstring for function '_count_by_category'
+src\skills\task_manager.py:162 -- Complex expression without inline comment
+src\skills\task_manager.py:169 -- Complex expression without inline comment
+src\skills\task_manager.py:140 -- Complex expression without inline comment
+src\skills\task_manager.py:142 -- Complex expression without inline comment
+src\skills\task_manager.py:144 -- Complex expression without inline comment
+src\skills\task_manager.py:146 -- Complex expression without inline comment
+src\skills\task_manager.py:181 -- Complex expression without inline comment
+src\skills\task_manager.py:182 -- Complex expression without inline comment
+src\skills\task_manager.py:183 -- Complex expression without inline comment
+src\skills\task_manager.py:262 -- Complex expression without inline comment
+src\skills\task_manager.py:103 -- Complex conditional without inline comment
+src\skills\task_manager.py:162 -- Complex expression without inline comment
+src\skills\task_manager.py:171 -- Complex expression without inline comment
+src\skills\time_tracker.py:22 -- Missing docstring for __init__ in class 'TimeTrackerSkill'
+src\skills\time_tracker.py:22 -- Missing docstring for function '__init__'
+src\skills\time_tracker.py:26 -- Missing docstring for function '_load_entries'
+src\skills\time_tracker.py:34 -- Missing docstring for function '_save_entries'
+src\skills\time_tracker.py:38 -- Function 'start_timer' missing param docs: task, project, tags
+src\skills\time_tracker.py:38 -- Function 'start_timer' has return type annotation but no return documentation in docstring
+src\skills\time_tracker.py:53 -- Function 'stop_timer' missing param docs: notes
+src\skills\time_tracker.py:53 -- Function 'stop_timer' has return type annotation but no return documentation in docstring
+src\skills\time_tracker.py:75 -- Function 'log_time' missing param docs: task, minutes, project, date, notes
+src\skills\time_tracker.py:75 -- Function 'log_time' has return type annotation but no return documentation in docstring
+src\skills\time_tracker.py:92 -- Function 'get_active_timer' has return type annotation but no return documentation in docstring
+src\skills\time_tracker.py:106 -- Function 'get_summary' missing param docs: days, project
+src\skills\time_tracker.py:106 -- Function 'get_summary' has return type annotation but no return documentation in docstring
+src\skills\time_tracker.py:137 -- Function 'get_daily_report' missing param docs: date
+src\skills\time_tracker.py:137 -- Function 'get_daily_report' has return type annotation but no return documentation in docstring
+src\skills\time_tracker.py:152 -- Function 'delete_entry' missing param docs: entry_id
+src\skills\time_tracker.py:152 -- Function 'delete_entry' has return type annotation but no return documentation in docstring
+src\skills\time_tracker.py:161 -- Missing docstring for function '_format_duration'
+src\skills\time_tracker.py:109 -- Complex expression without inline comment
+src\skills\time_tracker.py:140 -- Complex expression without inline comment
+src\skills\time_tracker.py:112 -- Complex expression without inline comment
+src\skills\time_tracker.py:114 -- Complex expression without inline comment
+src\skills\time_tracker.py:132 -- Complex expression without inline comment
+src\skills\time_tracker.py:133 -- Complex expression without inline comment
+src\skills\time_tracker.py:142 -- Complex expression without inline comment
+src\skills\translator.py:18 -- Function 'translate' missing param docs: text, source_lang, target_lang
+src\skills\translator.py:18 -- Function 'translate' has return type annotation but no return documentation in docstring
+src\skills\translator.py:49 -- Function 'translate_batch' missing param docs: texts, target_lang
+src\skills\translator.py:49 -- Function 'translate_batch' has return type annotation but no return documentation in docstring
+src\skills\translator.py:64 -- Function 'detect_language' missing param docs: text
+src\skills\translator.py:64 -- Function 'detect_language' has return type annotation but no return documentation in docstring
+src\skills\translator.py:97 -- Function 'localize_property' missing param docs: property_data, target_lang
+src\skills\translator.py:97 -- Function 'localize_property' has return type annotation but no return documentation in docstring
+src\skills\translator.py:122 -- Function 'translate_whatsapp_message' missing param docs: message, target_lang
+src\skills\translator.py:122 -- Function 'translate_whatsapp_message' has return type annotation but no return documentation in docstring
+src\skills\translator.py:135 -- Function 'get_common_phrases' missing param docs: lang
+src\skills\translator.py:135 -- Function 'get_common_phrases' has return type annotation but no return documentation in docstring
+src\skills\translator.py:56 -- Complex expression without inline comment
+src\skills\translator.py:103 -- Complex conditional without inline comment
+src\skills\translator.py:36 -- Complex expression without inline comment
+src\skills\voice_speech.py:20 -- Function 'text_to_speech' missing param docs: text, output_path
+src\skills\voice_speech.py:20 -- Function 'text_to_speech' has return type annotation but no return documentation in docstring
+src\skills\voice_speech.py:51 -- Function '_tts_pyttsx3' missing param docs: text, output_path
+src\skills\voice_speech.py:51 -- Function '_tts_pyttsx3' has return type annotation but no return documentation in docstring
+src\skills\voice_speech.py:73 -- Function 'speech_to_text' missing param docs: audio_path
+src\skills\voice_speech.py:73 -- Function 'speech_to_text' has return type annotation but no return documentation in docstring
+src\skills\voice_speech.py:103 -- Function 'generate_property_description' missing param docs: property_data
+src\skills\voice_speech.py:103 -- Function 'generate_property_description' has return type annotation but no return documentation in docstring
+src\skills\voice_speech.py:124 -- Function 'generate_viewing_script' missing param docs: property_data
+src\skills\voice_speech.py:124 -- Function 'generate_viewing_script' has return type annotation but no return documentation in docstring
+src\skills\web_scraper.py:20 -- Missing docstring for __init__ in class 'WebScraperSkill'
+src\skills\web_scraper.py:20 -- Missing docstring for function '__init__'
+src\skills\web_scraper.py:27 -- Function 'scrape_url' missing param docs: url, extract_links
+src\skills\web_scraper.py:27 -- Function 'scrape_url' has return type annotation but no return documentation in docstring
+src\skills\web_scraper.py:68 -- Function 'scrape_multiple' missing param docs: urls, max_concurrent
+src\skills\web_scraper.py:68 -- Function 'scrape_multiple' has return type annotation but no return documentation in docstring
+src\skills\web_scraper.py:85 -- Function 'extract_listing' missing param docs: url, site_type
+src\skills\web_scraper.py:85 -- Function 'extract_listing' has return type annotation but no return documentation in docstring
+src\skills\web_scraper.py:149 -- Function 'scrape_listing_site' missing param docs: site_url, max_pages
+src\skills\web_scraper.py:149 -- Function 'scrape_listing_site' has return type annotation but no return documentation in docstring
+src\skills\web_scraper.py:194 -- Function '_extract_structured_data' missing param docs: page
+src\skills\web_scraper.py:194 -- Function '_extract_structured_data' has return type annotation but no return documentation in docstring
+src\skills\web_scraper.py:213 -- Function '_extract_price' missing param docs: text
+src\skills\web_scraper.py:213 -- Function '_extract_price' has return type annotation but no return documentation in docstring
+src\skills\web_scraper.py:78 -- Complex expression without inline comment
+src\skills\web_scraper.py:80 -- Complex expression without inline comment
+src\skills\whatsapp_web_skill.py:20 -- Missing docstring for __init__ in class 'WhatsAppWebSkill'
+src\skills\whatsapp_web_skill.py:20 -- Missing docstring for function '__init__'
+src\skills\whatsapp_web_skill.py:30 -- Function 'send_message' missing param docs: phone, message
+src\skills\whatsapp_web_skill.py:30 -- Function 'send_message' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:38 -- Function 'send_image' missing param docs: phone, image_path, caption
+src\skills\whatsapp_web_skill.py:38 -- Function 'send_image' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:47 -- Function 'get_unread_messages' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:52 -- Function 'get_chats' missing param docs: limit
+src\skills\whatsapp_web_skill.py:52 -- Function 'get_chats' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:57 -- Function 'search_contact' missing param docs: query
+src\skills\whatsapp_web_skill.py:57 -- Function 'search_contact' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:62 -- Function 'start' missing param docs: headless
+src\skills\whatsapp_web_skill.py:62 -- Function 'start' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:67 -- Function 'stop' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:72 -- Function 'status' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:77 -- Function 'screenshot' missing param docs: filename
+src\skills\whatsapp_web_skill.py:77 -- Function 'screenshot' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:82 -- Function 'get_tools' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:112 -- Function '_send_message_tool' missing param docs: phone, message
+src\skills\whatsapp_web_skill.py:112 -- Function '_send_message_tool' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:117 -- Function '_get_unread_tool' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:122 -- Function '_get_chats_tool' missing param docs: limit
+src\skills\whatsapp_web_skill.py:122 -- Function '_get_chats_tool' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:127 -- Function '_search_contact_tool' missing param docs: query
+src\skills\whatsapp_web_skill.py:127 -- Function '_search_contact_tool' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:132 -- Function '_status_tool' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:139 -- Function 'send_whatsapp_message' missing param docs: phone, message
+src\skills\whatsapp_web_skill.py:139 -- Function 'send_whatsapp_message' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:146 -- Function 'get_whatsapp_unread' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:153 -- Function 'get_whatsapp_chats' missing param docs: limit
+src\skills\whatsapp_web_skill.py:153 -- Function 'get_whatsapp_chats' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:160 -- Function 'search_whatsapp_contact' missing param docs: query
+src\skills\whatsapp_web_skill.py:160 -- Function 'search_whatsapp_contact' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:167 -- Function 'get_whatsapp_status' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:174 -- Function 'start_whatsapp_web' missing param docs: headless
+src\skills\whatsapp_web_skill.py:174 -- Function 'start_whatsapp_web' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:181 -- Function 'stop_whatsapp_web' has return type annotation but no return documentation in docstring
+src\skills\whatsapp_web_skill.py:188 -- Function 'take_whatsapp_screenshot' missing param docs: filename
+src\skills\whatsapp_web_skill.py:188 -- Function 'take_whatsapp_screenshot' has return type annotation but no return documentation in docstring
+
+Total issues: 1349
+Files with issues: 92

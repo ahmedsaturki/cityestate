@@ -1,0 +1,1 @@
+"""Facebook-specific automation (stub)."""

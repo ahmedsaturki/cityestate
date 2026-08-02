@@ -1,0 +1,99 @@
+# =============================================================================
+# CityEstate Docker Ignore
+# ========================
+# Files to exclude from Docker build context
+# =============================================================================
+
+# Version control
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Documentation
+*.md
+LICENSE
+
+# Tests
+tests/
+test_*.py
+*_test.py
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Output (will be mounted as volume)
+output/
+
+# Data
+data/
+.cityestate_db/
+
+# Local environment
+.env.local
+.env.development
+.env.production
+
+# Agents & skills
+.agents/
+.claude/
+
+# Alembic
+alembic/versions/__pycache__/
+
+# Scripts
+scripts/
+
+# Logs
+*.log
+logs/
+
+# Large directories
+.backups/
+vault/
+whatsapp_session/
+.tmp/
+.github/
+alembic/

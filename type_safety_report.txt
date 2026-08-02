@@ -1,0 +1,170 @@
+======================================================================
+TYPE SAFETY AUDIT — CityEstate src/
+======================================================================
+
+1. MISSING RETURN TYPE HINTS: 209
+   D:/cityestate/src\ai_crew\crew.py:112: def generate_whatsapp_reply(
+   D:/cityestate/src\ai_crew\crew.py:159: def generate_content(
+   D:/cityestate/src\ai_crew\crew.py:313: def process_data_pipeline(
+   D:/cityestate/src\ai_crew\llm_config.py:33: def _ensure_openrouter_key():
+   D:/cityestate/src\ai_crew\llm_config.py:42: def get_llm(model: str = None, temperature: float = 0.1):
+   D:/cityestate/src\ai_crew\outreach_tasks.py:69: def create_personalized_writing_task(
+   D:/cityestate/src\ai_crew\tasks.py:61: def create_whatsapp_reply_task(
+   D:/cityestate/src\ai_crew\tools.py:133: def _run(
+   D:/cityestate/src\api\auth.py:103: def get_current_user(
+   D:/cityestate/src\api\auth.py:134: def create_user(db_session, username: str, password: str,
+   D:/cityestate/src\api\deps.py:45: def set_sqlite_pragma(dbapi_connection, connection_record):
+   D:/cityestate/src\api\deps.py:55: def get_db():
+   D:/cityestate/src\api\main.py:210: def health_check():
+   D:/cityestate/src\api\main.py:255: def get_metrics():
+   D:/cityestate/src\api\main.py:293: def monitoring_summary():
+   D:/cityestate/src\api\main.py:304: def root():
+   D:/cityestate/src\api\routes\auth.py:53: def login(request: LoginRequest, req: Request, db: Session = Depends(get_db)):
+   D:/cityestate/src\api\routes\auth.py:83: def register(request: UserCreate, user: dict = Depends(require_admin), db: Session = Depends(get_db)):
+   D:/cityestate/src\api\routes\auth.py:96: def get_me(user: dict = Depends(require_auth), db: Session = Depends(get_db)):
+   D:/cityestate/src\api\routes\auth.py:106: def list_users(
+   D:/cityestate/src\api\routes\auth.py:126: def extension_token(request: ExtensionTokenRequest, req: Request, db: Session = Depends(get_db)):
+   D:/cityestate/src\api\routes\automation.py:20: def run_campaign_task(action: str, platform: str, dry_run: bool = False):
+   D:/cityestate/src\api\routes\automation.py:67: def run_automation(
+   D:/cityestate/src\api\routes\automation.py:104: def trigger_scrape(
+   D:/cityestate/src\api\routes\automation.py:120: def trigger_send(
+   D:/cityestate/src\api\routes\automation.py:136: def trigger_enrich(
+   D:/cityestate/src\api\routes\automation.py:151: def get_automation_status(
+   D:/cityestate/src\api\routes\content.py:38: def generate_content(
+   D:/cityestate/src\api\routes\content.py:83: def preview_content(
+   D:/cityestate/src\api\routes\dashboard.py:22: def get_dashboard_stats(
+   D:/cityestate/src\api\routes\dashboard.py:91: def get_chart_data(
+   D:/cityestate/src\api\routes\data.py:44: def extract_data(req: ExtractRequest, user: dict = Depends(require_auth)):
+   D:/cityestate/src\api\routes\data.py:73: def score_quality(req: QualityRequest, user: dict = Depends(require_auth)):
+   D:/cityestate/src\api\routes\data.py:93: def market_research(user: dict = Depends(require_auth)):
+   D:/cityestate/src\api\routes\data.py:120: def check_whatsapp(req: WhatsAppCheckRequest, user: dict = Depends(require_auth)):
+   D:/cityestate/src\api\routes\leads.py:20: def list_leads(
+   D:/cityestate/src\api\routes\leads.py:44: def get_lead_stats(
+   D:/cityestate/src\api\routes\leads.py:77: def get_lead(
+   D:/cityestate/src\api\routes\leads.py:90: def create_lead(
+   D:/cityestate/src\api\routes\leads.py:123: def update_lead(
+   D:/cityestate/src\api\routes\leads.py:144: def delete_lead(
+   D:/cityestate/src\api\routes\properties.py:20: def list_properties(
+   D:/cityestate/src\api\routes\properties.py:53: def get_property_stats(
+   D:/cityestate/src\api\routes\properties.py:98: def get_property(
+   D:/cityestate/src\api\routes\properties.py:111: def create_property(
+   D:/cityestate/src\api\routes\properties.py:151: def update_property(
+   D:/cityestate/src\api\routes\properties.py:172: def delete_property(
+   D:/cityestate/src\api\routes\requests.py:27: def list_requests(
+   D:/cityestate/src\api\routes\requests.py:51: def get_request_stats(
+   D:/cityestate/src\api\routes\requests.py:84: def get_request(
+   ... and 159 more
+
+2. USES Any TYPE: 36
+   D:/cityestate/src\api\routes\data.py:32: data: dict[str, Any]
+   D:/cityestate/src\api\routes\webhooks.py:58: extra_fields: Optional[dict[str, Any]] = Field(default_factory=dict, alias="extra_fields")
+   D:/cityestate/src\api\routes\webhooks.py:413: "Any system that sends JSON POST",
+   D:/cityestate/src\automation\smart_wait.py:44: def __init__(self, page: Any, default_timeout: int = 30000) -> None:
+   D:/cityestate/src\automation\smart_wait.py:461: ) -> tuple[bool, Any]:
+   D:/cityestate/src\mcp\whatsapp_web_server.py:174: async def handle_tool_call(self, tool_name: str, arguments: Dict[str, Any]) -> Dict[str, Any]:
+   D:/cityestate/src\mcp\whatsapp_web_server.py:275: async def handle_resource_read(self, uri: str) -> Dict[str, Any]:
+   D:/cityestate/src\mcp\whatsapp_web_server.py:301: def get_tools_schema(self) -> List[Dict[str, Any]]:
+   D:/cityestate/src\mcp\whatsapp_web_server.py:312: def get_resources_schema(self) -> List[Dict[str, Any]]:
+   D:/cityestate/src\outreach\templates.py:341: def inject_variables(template: dict[str, str] | str, lead: dict[str, Any]) -> dict[str, str]:
+   D:/cityestate/src\outreach\templates.py:372: def render_message(segment: str, channel: str, lead: dict[str, Any]) -> dict[str, str]:
+   D:/cityestate/src\services\whatsapp_web.py:478: async def get_unread_messages(self) -> List[Dict[str, Any]]:
+   D:/cityestate/src\services\whatsapp_web.py:546: async def get_chat_list(self) -> List[Dict[str, Any]]:
+   D:/cityestate/src\services\whatsapp_web.py:627: async def search_contact(self, query: str) -> List[Dict[str, Any]]:
+   D:/cityestate/src\session_vault\browser_profile.py:92: def list_profiles(self) -> list[dict[str, Any]]:
+   D:/cityestate/src\session_vault\cookie_manager.py:76: def get_cookie_stats(self) -> dict[str, Any]:
+   D:/cityestate/src\session_vault\encryption.py:98: def encrypt(self, data: Any) -> str:
+   D:/cityestate/src\session_vault\encryption.py:106: def decrypt(self, token: str) -> Any:
+   D:/cityestate/src\session_vault\encryption.py:154: def save_encrypted_file(self, path: Path, data: Any) -> None:
+   D:/cityestate/src\session_vault\encryption.py:160: def load_encrypted_file(self, path: Path) -> Any:
+   D:/cityestate/src\session_vault\vault.py:70: def _empty_session(platform: str, profile: str) -> dict[str, Any]:
+   D:/cityestate/src\session_vault\vault.py:82: def _read(self, platform: str, profile: str) -> dict[str, Any] | None:
+   D:/cityestate/src\session_vault\vault.py:110: def get_whatsapp_session(self, profile: str = "default") -> dict[str, Any]:
+   D:/cityestate/src\session_vault\vault.py:120: def get_facebook_session(self, profile: str = "default") -> dict[str, Any]:
+   D:/cityestate/src\session_vault\vault.py:130: def get_session_status(self, platform: str = "") -> dict[str, Any]:
+   D:/cityestate/src\session_vault\vault.py:176: data: dict[str, Any],
+   D:/cityestate/src\skills\whatsapp_web_skill.py:30: async def send_message(self, phone: str, message: str) -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:38: async def send_image(self, phone: str, image_path: str, caption: str = "") -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:47: async def get_unread_messages(self) -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:52: async def get_chats(self, limit: int = 20) -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:57: async def search_contact(self, query: str) -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:62: async def start(self, headless: bool = False) -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:67: async def stop(self) -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:72: async def status(self) -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:77: async def screenshot(self, filename: str = "whatsapp_screenshot.png") -> Dict[str, Any]:
+   D:/cityestate/src\skills\whatsapp_web_skill.py:82: def get_tools(self) -> List[Dict[str, Any]]:
+
+3. Optional WITHOUT DEFAULT in Pydantic models: 144
+   D:/cityestate/src\api\models.py:30: full_name: Optional[str] = None
+   D:/cityestate/src\api\models.py:37: full_name: Optional[str]
+   D:/cityestate/src\api\models.py:40: created_at: Optional[str]
+   D:/cityestate/src\api\models.py:51: budget: Optional[str] = None
+   D:/cityestate/src\api\models.py:52: area: Optional[str] = None
+   D:/cityestate/src\api\models.py:53: interest: Optional[str] = None
+   D:/cityestate/src\api\models.py:55: phone: Optional[str] = None
+   D:/cityestate/src\api\models.py:56: email: Optional[str] = None
+   D:/cityestate/src\api\models.py:57: tags: Optional[str] = None
+   D:/cityestate/src\api\models.py:61: title: Optional[str]
+   D:/cityestate/src\api\models.py:62: lead_type: Optional[str]
+   D:/cityestate/src\api\models.py:63: budget: Optional[str]
+   D:/cityestate/src\api\models.py:64: area: Optional[str]
+   D:/cityestate/src\api\models.py:65: interest: Optional[str]
+   D:/cityestate/src\api\models.py:66: urgency: Optional[str]
+   D:/cityestate/src\api\models.py:67: phone: Optional[str]
+   D:/cityestate/src\api\models.py:68: email: Optional[str]
+   D:/cityestate/src\api\models.py:69: status: Optional[str]
+   D:/cityestate/src\api\models.py:70: score: Optional[float]
+   D:/cityestate/src\api\models.py:71: tags: Optional[str]
+   ... and 124 more
+
+4. PYDANTIC FIELDS WITHOUT VALIDATION: 9
+   D:/cityestate/src\api\routes\webhooks.py:45: name: Optional[str] = Field(None, alias="name")
+   D:/cityestate/src\api\routes\webhooks.py:46: phone: Optional[str] = Field(None, alias="phone")
+   D:/cityestate/src\api\routes\webhooks.py:47: email: Optional[str] = Field(None, alias="email")
+   D:/cityestate/src\api\routes\webhooks.py:48: message: Optional[str] = Field(None, alias="message")
+   D:/cityestate/src\api\routes\webhooks.py:51: area: Optional[str] = Field(None, alias="area")
+   D:/cityestate/src\api\routes\webhooks.py:52: min_budget: Optional[float] = Field(None, alias="min_budget")
+   D:/cityestate/src\api\routes\webhooks.py:53: max_budget: Optional[float] = Field(None, alias="max_budget")
+   D:/cityestate/src\api\routes\webhooks.py:54: bedrooms: Optional[int] = Field(None, alias="bedrooms")
+   D:/cityestate/src\api\routes\webhooks.py:55: property_type: Optional[str] = Field(None, alias="property_type")
+
+5. UNTYPED FUNCTION PARAMETERS: 5
+   D:/cityestate/src\api\deps.py:45: func=set_sqlite_pragma param='dbapi_connection' : def set_sqlite_pragma(dbapi_connection, connection_record):
+   D:/cityestate/src\error_handling.py:125: func=wrapper param='*args' : def wrapper(*args, **kwargs):
+   D:/cityestate/src\error_handling.py:272: func=execute param='*args' : def execute(self, func: Callable, *args, **kwargs):
+   D:/cityestate/src\error_handling.py:316: func=setup_error_handlers param='app' : def setup_error_handlers(app):
+   D:/cityestate/src\scheduler\engine.py:151: func=_on_job_event param='event' : def _on_job_event(self, event):
+
+6. UNTYPED DICT RETURNS (no return type annotation): 312
+   D:/cityestate/src\ai_crew\crew.py:172: return {}
+   D:/cityestate/src\ai_crew\crew.py:457: return {"extraction": extracted, "enrichment": None, "analysis": None, "matching": None, "errors": ["llm_unavailable"]}
+   D:/cityestate/src\ai_crew\crew.py:459: return {"extraction": None, "enrichment": None, "analysis": None, "matching": None, "errors": [str(e)]}
+   D:/cityestate/src\ai_crew\crew.py:473: return {"market_report": {"error": str(e)}}
+   D:/cityestate/src\api\bridge_handler.py:308: return {"score": 0, "tier": "rejected", "quality": "rejected", "reasons": ["ميزانية منخفضة جداً"]}
+   D:/cityestate/src\api\bridge_handler.py:340: return {"score": 0, "tier": "rejected", "quality": "rejected", "reasons": ["ميزانية منخفضة جداً"]}
+   D:/cityestate/src\api\bridge_handler.py:404: return {
+   D:/cityestate/src\api\bridge_handler.py:693: return {
+   D:/cityestate/src\api\deps.py:87: return {"status": "healthy", "url": DATABASE_URL.split("@")[-1] if "@" in DATABASE_URL else "local"}
+   D:/cityestate/src\api\deps.py:91: return {"status": "error", "error": str(e)}
+   D:/cityestate/src\api\main.py:282: return {
+   D:/cityestate/src\api\main.py:295: return {
+   D:/cityestate/src\api\main.py:306: return {
+   D:/cityestate/src\api\routes\auth.py:184: return {
+   D:/cityestate/src\api\routes\automation.py:54: return {
+   D:/cityestate/src\api\routes\automation.py:61: return {"status": "timeout", "error": "Task timed out after 10 minutes"}
+   D:/cityestate/src\api\routes\automation.py:63: return {"status": "error", "error": str(e)}
+   D:/cityestate/src\api\routes\automation.py:116: return {"status": "started", "action": "scrape", "platform": platform}
+   D:/cityestate/src\api\routes\automation.py:132: return {"status": "started", "action": "send", "platform": platform}
+   D:/cityestate/src\api\routes\automation.py:147: return {"status": "started", "action": "enrich"}
+   D:/cityestate/src\api\routes\automation.py:168: return {
+   D:/cityestate/src\api\routes\dashboard.py:131: return {
+   D:/cityestate/src\api\routes\data.py:66: return {"status": "ok", "source": req.source, "data": result, "stats": extractor.stats}
+   D:/cityestate/src\api\routes\data.py:86: return {"status": "ok", "data_type": req.data_type, "result": result}
+   D:/cityestate/src\api\routes\data.py:113: return {"status": "ok", "data": research}
+   D:/cityestate/src\api\routes\data.py:127: return {"status": "ok", "phone": req.phone, "result": result}
+   D:/cityestate/src\api\routes\leads.py:69: return {
+   D:/cityestate/src\api\routes\leads.py:155: return {"status": "deleted", "id": lead_id}
+   D:/cityestate/src\api\routes\properties.py:85: return {
+   D:/cityestate/src\api\routes\properties.py:183: return {"status": "deleted", "id": property_id}
+   ... and 282 more
+
+7. UNSAFE CASTS: 0

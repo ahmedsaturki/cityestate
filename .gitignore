@@ -1,0 +1,49 @@
+# --- Environment & Secrets ---
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# --- Logs ---
+logs/
+*.log
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Generated ---
+final_report.md
+report_*.md
+
+# --- Output (CRM data, databases, leads, campaign logs) ---
+output/*.db
+output/*.csv
+output/*.log
+output/campaign_logs/
+output/scraper_logs/
+output/pilot_logs/
+
+# --- Backups ---
+backups/
+
+# --- Encrypted vault data ---
+vault/
+
+# --- Misc ---
+*.tmp
+*.bak
+*.backup
+.env.pre_restore_*
+cmd cli*.txt

@@ -1,0 +1,280 @@
+/* CityEstate Bridge — Popup Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  direction: rtl;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Status Card */
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #16213e;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #666;
+  flex-shrink: 0;
+}
+
+.status-indicator.connected {
+  background: #25D366;
+  box-shadow: 0 0 8px #25D366;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.connecting {
+  background: #FFC107;
+  animation: pulse 1s infinite;
+}
+
+.status-indicator.disconnected {
+  background: #F44336;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.status-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status-detail {
+  font-size: 11px;
+  color: #888;
+}
+
+/* Info Card */
+.info-card {
+  background: #16213e;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  font-size: 12px;
+  color: #888;
+}
+
+.info-value {
+  font-size: 12px;
+  color: #ccc;
+  font-family: monospace;
+  direction: ltr;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stat-card {
+  background: #16213e;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #25D366;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #888;
+}
+
+/* Lead Card */
+.lead-card {
+  background: linear-gradient(135deg, #1e3a5f, #16213e);
+  border: 1px solid #25D366;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.lead-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.lead-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FF6B6B;
+  direction: rtl;
+}
+
+.lead-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: #25D366;
+}
+
+.lead-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.lead-area {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Actions */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: #25D366;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #20BD5A;
+}
+
+.btn-secondary {
+  background: #333;
+  color: #ccc;
+}
+
+.btn-secondary:hover {
+  background: #444;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 11px;
+  background: #16213e;
+  color: #888;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-small:hover {
+  background: #1e3a5f;
+}
+
+/* Auto-auth Card */
+.auto-auth-card {
+  background: #16213e;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.auto-auth-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.auto-auth-label {
+  font-size: 12px;
+  color: #888;
+}
+
+.auto-auth-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: #25D366;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  padding-top: 8px;
+  border-top: 1px solid #222;
+}

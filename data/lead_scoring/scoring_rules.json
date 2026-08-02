@@ -1,0 +1,26 @@
+{
+  "budget_weight": 0.25,
+  "location_weight": 0.2,
+  "urgency_weight": 0.2,
+  "engagement_weight": 0.15,
+  "recency_weight": 0.1,
+  "source_weight": 0.1,
+  "source_scores": {
+    "referral": 90,
+    "website": 70,
+    "facebook": 60,
+    "whatsapp": 80,
+    "phone_call": 85,
+    "walk_in": 95,
+    "webhook": 50,
+    "unknown": 30
+  },
+  "urgency_signals": [
+    "immediate",
+    "asap",
+    "urgently",
+    "في أسرع وقت",
+    "عاجل",
+    "محتاج دلوقتي"
+  ]
+}
