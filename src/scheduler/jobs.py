@@ -70,6 +70,7 @@ def _run_in_process_via_subprocess(command: str, label: str) -> dict:
                 text=True,
                 timeout=300,
                 env={**os.environ, "PYTHONIOENCODING": "utf-8"},
+                check=False,
             )
             if result.returncode == 0:
                 logger.info("[%s] Completed successfully", label)

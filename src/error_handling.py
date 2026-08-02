@@ -226,10 +226,9 @@ class CircuitBreaker:
     @property
     def state(self) -> CircuitState:
         """Get current state, checking for auto-recovery."""
-        if self._state == CircuitState.OPEN:
-            if time.time() - self._last_failure_time >= self.recovery_timeout:
-                self._state = CircuitState.HALF_OPEN
-                self._half_open_calls = 0
+        if self._state == CircuitState.OPEN and time.time() - self._last_failure_time >= self.recovery_timeout:
+            self._state = CircuitState.HALF_OPEN
+            self._half_open_calls = 0
         return self._state
 
     def record_success(self) -> None:

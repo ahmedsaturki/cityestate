@@ -49,6 +49,7 @@ def run_campaign_task(action: str, platform: str, dry_run: bool = False) -> dict
                 stderr=subprocess.STDOUT,
                 timeout=600,
                 cwd=project_root,
+                check=False,
             )
 
         return {

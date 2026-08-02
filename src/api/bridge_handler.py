@@ -445,9 +445,8 @@ def match_properties(intent: dict, all_properties: list) -> list:
                 continue
 
         # Bedrooms match
-        if intent.get("bedrooms") is not None and prop.get("bedrooms") is not None:
-            if abs(intent["bedrooms"] - prop["bedrooms"]) > 1:
-                continue
+        if intent.get("bedrooms") is not None and prop.get("bedrooms") is not None and abs(intent["bedrooms"] - prop["bedrooms"]) > 1:
+            continue
 
         # Calculate match score
         score = calculate_match_score(intent, prop)

@@ -46,7 +46,7 @@ def _sanitize_text(value: str | None, *, max_length: int) -> str | None:
     if value is None:
         return None
     if not isinstance(value, str):
-        raise ValueError("expected string")
+        raise TypeError("expected string")
     cleaned = _NULL_BYTE_RE.sub("", value)
     cleaned = _HTML_COMMENT_RE.sub("", cleaned)
     cleaned = _DANGEROUS_TAG_RE.sub("", cleaned)
@@ -65,7 +65,7 @@ def _validate_url(value: str | None) -> str | None:
     if value is None:
         return None
     if not isinstance(value, str):
-        raise ValueError("expected string")
+        raise TypeError("expected string")
     candidate = _NULL_BYTE_RE.sub("", value).strip()
     if not candidate:
         raise ValueError("URL cannot be empty")
