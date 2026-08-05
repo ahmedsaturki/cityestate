@@ -27,7 +27,7 @@ class TestMessageDispatcher:
         mock_request.id = 1
         mock_request.client_name = "Test Client"
         mock_request.area = "New Cairo"
-        mock_request.budget_min = "500000"
+        mock_request.min_budget = "500000"
 
         result = dispatcher.send_match_notification(mock_request)
 
@@ -96,7 +96,7 @@ class TestMessageDispatcher:
         mock_request = MagicMock()
         mock_request.client_name = "Ahmed"
         mock_request.area = "New Cairo"
-        mock_request.budget_min = "500000"
+        mock_request.min_budget = "500000"
 
         message = dispatcher._build_match_message(mock_request)
 
