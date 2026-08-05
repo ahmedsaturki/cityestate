@@ -248,8 +248,13 @@ class RequestSizeLimitMiddleware(BaseHTTPMiddleware):
 # ---------------------------------------------------------------------------
 # Rate Limiting Middleware
 # ---------------------------------------------------------------------------
+_rate_limit_counter: int = 0  # counts requests for periodic cleanup
+
+
 class RateLimitMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
+        global _rate_limit_counter
+
         # Skip rate limiting for auth and health endpoints
         if request.url.path in (
             f"/api/{API_VERSION}/auth/token",
@@ -259,7 +264,7 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
             "/docs",
             "/openapi.json",
             "/redoc",
-        ) or request.url.path.startswith("/api/extension-token"):
+        ) or request.url.path.startswith(f"/api/{API_VERSION}/auth/extension-token"):
             return await call_next(request)
 
         client_ip = request.client.host if request.client else "unknown"
@@ -267,7 +272,15 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         now = time.time()
         window_start = now - 60  # 60-second window
 
-        # Clean old entries
+        # Periodic global cleanup: every 1000 requests, purge all expired keys
+        _rate_limit_counter += 1
+        if _rate_limit_counter % 1000 == 0:
+            expired = [k for k, v in _rate_limit_store.items()
+                       if not v or v[-1] < window_start]
+            for k in expired:
+                del _rate_limit_store[k]
+
+        # Clean old entries for this key
         if key in _rate_limit_store:
             _rate_limit_store[key] = [t for t in _rate_limit_store[key] if t > window_start]
         else:
@@ -290,6 +303,7 @@ app.add_middleware(RequestSizeLimitMiddleware)
 app.add_middleware(RateLimitMiddleware)
 
 app.add_middleware(RequestLoggingMiddleware)
+app.add_middleware(SecurityHeadersMiddleware)
 
 # ---------------------------------------------------------------------------
 # Register Routes — versioned prefix only (/api/v1/)

@@ -97,7 +97,7 @@ class WhatsAppExpert:
         self._circuit_breaker = circuit_breakers["whatsapp"]
 
         # Compose the underlying WhatsAppWeb service
-        self._web = WhatsAppWeb(db_path=db_path, output_dir=output_dir, headless=headless)
+        self._web = WhatsAppWeb(headless=headless)
 
         self._is_connected = False
 

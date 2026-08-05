@@ -52,10 +52,17 @@ class MCPService:
             return {"status": "dry_run", "phone": phone}
 
         try:
+            import asyncio
             expert = self._get_whatsapp()
-            # WhatsAppExpert.send_message is sync, wraps asyncio internally
-            result = expert.send_message(phone, message)
-            return result
+            # send_whatsapp_message is async; run it in the event loop
+            loop = asyncio.new_event_loop()
+            try:
+                result = loop.run_until_complete(
+                    expert.send_whatsapp_message(to=phone, message=message)
+                )
+                return {"status": "sent" if result else "failed", "phone": phone}
+            finally:
+                loop.close()
         except Exception as e:
             logger.error("WhatsApp send failed to %s: %s", phone, e)
             return {"status": "error", "phone": phone, "error": str(e)}

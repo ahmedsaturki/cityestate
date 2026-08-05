@@ -1,46 +1,50 @@
 # CityEstate — Python Dependencies
 # =================================
 # Core
-fastapi==0.115.0
-uvicorn[standard]==0.30.0
-pydantic==2.9.0
-python-dotenv==1.0.1
-python-multipart==0.0.9
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.9.0
+python-dotenv>=1.0.1
+python-multipart>=0.0.9
 
 # Database
-sqlalchemy==2.0.35
-aiosqlite==0.20.0
+sqlalchemy>=2.0.35
+aiosqlite>=0.20.0
+alembic>=1.13.0
 
 # Auth
-pyjwt==2.9.0
-passlib[bcrypt]==1.7.4
-bcrypt==4.2.0
+pyjwt>=2.9.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.2.0
 
 # HTTP
-httpx==0.27.0
-requests==2.32.3
+httpx>=0.27.0
+requests>=2.32.3
 
 # AI/LLM
-crewai==0.100.1
-langchain-openai==0.2.0
-langchain-community==0.3.0
+crewai>=0.100.1
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+
+# Web Search (used by skills/google_search and mcp_service)
+duckduckgo_search>=5.0.0
 
 # Dashboard
-streamlit==1.39.0
+streamlit>=1.39.0
 
 # Scheduling
-apscheduler==3.10.4
+apscheduler>=3.10.4
 
 # Encryption
 cryptography>=43.0.1
 
 # Testing
-pytest==9.1.1
-pytest-asyncio==1.4.0
+pytest>=9.1.1
+pytest-asyncio>=1.4.0
 
 # Utilities
-jinja2==3.1.4
-aiofiles==24.1.0
+jinja2>=3.1.4
+aiofiles>=24.1.0
 
 # Browser Automation
-playwright==1.49.1
+playwright>=1.49.1

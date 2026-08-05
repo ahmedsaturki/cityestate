@@ -5,7 +5,10 @@ WhatsApp Web automation.
 """
 
 import asyncio
+import logging
 import random
+
+logger = logging.getLogger("cityestate.automation.whatsapp")
 
 
 class WhatsAppAutomation:
