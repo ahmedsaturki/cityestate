@@ -35,6 +35,12 @@ class _AutoLifespanTestClient(_OriginalTestClient):
             self._lifespan_active = False
         super().close()
 
+    def __del__(self):
+        # Ensure the lifespan is shut down when the client is garbage-collected.
+        # Without this, SchedulerEngine threads and DB connections leak across
+        # test modules.
+        self.close()
+
 
 # Replace FastAPI's TestClient globally so all test modules use our version.
 import fastapi.testclient
@@ -66,13 +72,13 @@ warnings.filterwarnings("ignore", message=".*pytest.mark.asyncio.*")
 def _clear_rate_limiter():
     """Reset the in-memory login rate limiter before the test suite runs.
 
-    The rate limiter in ``src.api.auth._login_attempts`` persists across
-    test modules within the same process.  Intentionally-failed logins
-    (``test_login_invalid``) in one module can lock out subsequent modules.
-    Clearing the dict at session start prevents false 429s.
+    The rate limiter in ``src.api.routes.auth._login_attempts`` persists
+    across test modules within the same process.  Intentionally-failed
+    logins (``test_login_invalid``) in one module can lock out subsequent
+    modules.  Clearing the dict at session start prevents false 429s.
     """
     try:
-        from src.api.auth import _login_attempts
+        from src.api.routes.auth import _login_attempts
         _login_attempts.clear()
     except ImportError:
         pass
