@@ -73,8 +73,11 @@ async def lifespan(app: FastAPI):
     # Import engine and session factory
     from src.api.deps import SessionLocal, engine
 
-    # Import ALL models to register them with Base.metadata
-    from src.database.ingester import Base
+    # Import ALL models to register them with Base.metadata.
+    # `ingester.Base` is the declarative base; importing `models` triggers
+    # the registration of User, Property, ClientRequest, MessageLog, etc.
+    from src.database.ingester import Base  # noqa: F811
+    import src.database.models  # registers all ORM models on Base
 
     # Step 1: Create ALL tables
     Base.metadata.create_all(engine)
