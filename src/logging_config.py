@@ -84,6 +84,16 @@ def setup_logging(
     # Clear existing handlers
     root_logger.handlers.clear()
 
+    # Force UTF-8 on the console streams. Windows terminals default to the
+    # ANSI code page (cp1252), which cannot encode Arabic / arrow glyphs and
+    # raises UnicodeEncodeError inside logging.emit() (see server_err.txt).
+    # errors="replace" guarantees a message can never crash the server.
+    for _stream in (sys.stdout, sys.stderr):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, OSError):
+            pass  # Not a text stream / not reconfigureable (e.g. some IDEs)
+
     # Console handler
     console_handler = logging.StreamHandler(sys.stdout)
     if enable_json:

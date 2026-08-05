@@ -46,7 +46,11 @@ def _sanitize_text(value: str | None, *, max_length: int) -> str | None:
     if value is None:
         return None
     if not isinstance(value, str):
-        raise TypeError("expected string")
+        # Accept numeric types (e.g. budget=2000000) and coerce to string
+        if isinstance(value, (int, float)):
+            value = str(value)
+        else:
+            raise TypeError("expected string")
     cleaned = _NULL_BYTE_RE.sub("", value)
     cleaned = _HTML_COMMENT_RE.sub("", cleaned)
     cleaned = _DANGEROUS_TAG_RE.sub("", cleaned)

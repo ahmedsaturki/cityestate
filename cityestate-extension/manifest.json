@@ -1,20 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "CityEstate Bridge",
-  "version": "1.0.0",
-  "description": "Bridge between your browser and CityEstate AI Brain — WhatsApp & Facebook automation",
+  "name": "CityEstate Control Center",
+  "version": "2.0.0",
+  "description": "بوابة شاملة للتحكم في المتصفح — استخراج، نشر، زحف، بحث، تنفيذ، وذكاء اصطناعي",
   "permissions": [
     "activeTab",
     "notifications",
     "storage",
     "scripting",
     "tabs",
-    "alarms"
+    "alarms",
+    "downloads",
+    "clipboardWrite"
   ],
   "host_permissions": [
     "https://web.whatsapp.com/*",
     "https://www.facebook.com/*",
-    "http://localhost:8000/*"
+    "https://www.instagram.com/*",
+    "https://wa.me/*",
+    "http://localhost:8000/*",
+    "http://localhost:8050/*",
+    "<all_urls>"
   ],
   "background": {
     "service_worker": "background/service-worker.js",
@@ -30,10 +36,16 @@
       "matches": ["https://www.facebook.com/*"],
       "js": ["utils/dom-observer.js", "content/facebook.js"],
       "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["utils/dom-observer.js", "content/instagram.js"],
+      "run_at": "document_idle"
     }
   ],
   "action": {
     "default_popup": "popup/popup.html",
+    "default_title": "CityEstate Control Center",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
@@ -44,5 +56,21 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "فتح لوحة تحكم CityEstate"
+    },
+    "extract-page": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "استخراج البيانات من الصفحة الحالية"
+    }
   }
 }

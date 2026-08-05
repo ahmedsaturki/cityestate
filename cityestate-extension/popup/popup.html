@@ -3,84 +3,444 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CityEstate Bridge</title>
+  <title>CityEstate Control Center</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="container">
+  <div class="app">
     <!-- Header -->
-    <div class="header">
-      <img src="../icons/icon48.png" alt="CityEstate" class="logo">
-      <h1>CityEstate Bridge</h1>
-    </div>
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🏛️</span>
+        <h1>CityEstate</h1>
+        <span class="version">v2.0</span>
+      </div>
+      <div class="status-bar">
+        <span id="connection-status" class="status disconnected">●</span>
+        <span id="status-text">غير متصل</span>
+      </div>
+    </header>
 
-    <!-- Connection Status -->
-    <div class="status-card" id="statusCard">
-      <div class="status-indicator" id="statusIndicator"></div>
-      <div class="status-text">
-        <span class="status-label" id="statusLabel">جاري الاتصال...</span>
-        <span class="status-detail" id="statusDetail">Connecting to AI Brain</span>
-      </div>
-    </div>
+    <!-- Tab Navigation -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="dashboard" title="لوحة التحكم">
+        <span class="tab-icon">📊</span>
+        <span class="tab-label">الرئيسية</span>
+      </button>
+      <button class="tab" data-tab="browse" title="تصفح واستخراج">
+        <span class="tab-icon">🔍</span>
+        <span class="tab-label">استخراج</span>
+      </button>
+      <button class="tab" data-tab="publish" title="نشر المحتوى">
+        <span class="tab-icon">📤</span>
+        <span class="tab-label">نشر</span>
+      </button>
+      <button class="tab" data-tab="crawl" title="زحف البحث">
+        <span class="tab-icon">🕷️</span>
+        <span class="tab-label">زحف</span>
+      </button>
+      <button class="tab" data-tab="leads" title="العملاء المحتملين">
+        <span class="tab-icon">👥</span>
+        <span class="tab-label">leads</span>
+      </button>
+      <button class="tab" data-tab="ai" title="الذكاء الاصطناعي">
+        <span class="tab-icon">🤖</span>
+        <span class="tab-label">AI</span>
+      </button>
+      <button class="tab" data-tab="settings" title="الإعدادات">
+        <span class="tab-icon">⚙️</span>
+        <span class="tab-label">إعدادات</span>
+      </button>
+    </nav>
 
-    <!-- Profile Info -->
-    <div class="info-card">
-      <div class="info-row">
-        <span class="info-label">المعرف:</span>
-        <span class="info-value" id="profileId">---</span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">الخادم:</span>
-        <span class="info-value" id="wsUrl">localhost:8000</span>
-      </div>
-    </div>
+    <!-- Tab Content -->
+    <main class="content">
+      <!-- Dashboard Tab -->
+      <section id="tab-dashboard" class="tab-content active">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-value" id="stat-leads">0</div>
+            <div class="stat-label">العملاء</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📤</div>
+            <div class="stat-value" id="stat-sent">0</div>
+            <div class="stat-label">مرسل</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📥</div>
+            <div class="stat-value" id="stat-received">0</div>
+            <div class="stat-label">مستلم</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-value" id="stat-scored">0</div>
+            <div class="stat-label">مقيّم</div>
+          </div>
+        </div>
 
-    <!-- Quick Stats -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-number" id="messagesSent">0</span>
-        <span class="stat-label">رسائل مرسلة</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number" id="leadsFound">0</span>
-        <span class="stat-label">عملاء مكتشفين</span>
-      </div>
-    </div>
+        <div class="quick-actions">
+          <h3>إجراءات سريعة</h3>
+          <div class="action-buttons">
+            <button id="btn-scan-page" class="action-btn primary">🔍 استخراج من الصفحة</button>
+            <button id="btn-scan-all" class="action-btn">📋 استخراج الكل</button>
+            <button id="btn-auto-reply" class="action-btn success">💬 رد تلقائي</button>
+            <button id="btn-export" class="action-btn">📊 تصدير البيانات</button>
+          </div>
+        </div>
 
-    <!-- Last Lead -->
-    <div class="lead-card" id="lastLeadCard" style="display: none;">
-      <div class="lead-header">
-        <span class="lead-badge" id="leadBadge">عميل ساخن 🔥</span>
-        <span class="lead-score" id="leadScore">0/100</span>
-      </div>
-      <div class="lead-name" id="leadName">---</div>
-      <div class="lead-area" id="leadArea">---</div>
-    </div>
+        <div class="recent-activity">
+          <h3>النشاط الأخير</h3>
+          <div id="activity-list" class="activity-list">
+            <div class="empty-state">لا يوجد نشاط بعد</div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Actions -->
-    <div class="actions">
-      <button class="btn btn-primary" id="connectBtn">اتصال</button>
-      <button class="btn btn-secondary" id="disconnectBtn">قطع الاتصال</button>
-    </div>
+      <!-- Browse/Extract Tab -->
+      <section id="tab-browse" class="tab-content">
+        <div class="section-header">
+          <h3>🔍 استخراج البيانات من أي صفحة</h3>
+        </div>
 
-    <!-- Auto-auth status -->
-    <div class="auto-auth-card" id="autoAuthCard">
-      <div class="auto-auth-row">
-        <span class="auto-auth-label">المصادقة التلقائية:</span>
-        <span class="auto-auth-status" id="autoAuthStatus">جاري التحقق...</span>
-      </div>
-      <div class="auto-auth-row">
-        <label for="extensionSecret" class="auto-auth-label">EXTENSION_SHARED_SECRET:</label>
-        <input type="password" id="extensionSecret" placeholder="paste server secret here" autocomplete="off">
-      </div>
-      <button class="btn btn-small" id="saveSecretBtn">حفظ السر</button>
-      <button class="btn btn-small" id="refreshToken">تجديد التوكن</button>
-    </div>
+        <div class="extract-options">
+          <div class="option-group">
+            <label>نوع المصدر:</label>
+            <select id="extract-source">
+              <option value="auto">تلقائي</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="facebook">Facebook</option>
+              <option value="website">موقع إلكتروني</option>
+              <option value="property-listing">إعلان عقاري</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>طريقة الاستخراج:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="extract-mode" value="page" checked> الصفحة الحالية</label>
+              <label><input type="radio" name="extract-mode" value="selection"> النص المحدد</label>
+              <label><input type="radio" name="extract-mode" value="url"> رابط مخصص</label>
+            </div>
+          </div>
+
+          <div id="url-input-group" class="option-group hidden">
+            <label>الرابط:</label>
+            <input type="url" id="custom-url" placeholder="https://example.com">
+          </div>
+        </div>
+
+        <div class="extract-actions">
+          <button id="btn-extract" class="action-btn primary large">🔍 استخراج البيانات</button>
+          <button id="btn-extract-batch" class="action-btn large">📋 استخراج متعدد</button>
+        </div>
+
+        <div id="extract-results" class="results-panel hidden">
+          <h4>نتائج الاستخراج</h4>
+          <div id="extracted-data" class="data-display"></div>
+          <div class="result-actions">
+            <button id="btn-save-extract" class="action-btn success">💾 حفظ</button>
+            <button id="btn-copy-extract" class="action-btn">📋 نسخ</button>
+            <button id="btn-ai-analyze" class="action-btn primary">🤖 تحليل AI</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publish Tab -->
+      <section id="tab-publish" class="tab-content">
+        <div class="section-header">
+          <h3>📤 نشر المحتوى</h3>
+        </div>
+
+        <div class="publish-form">
+          <div class="option-group">
+            <label>المنصة:</label>
+            <div class="platform-selector">
+              <button class="platform-btn active" data-platform="whatsapp">
+                <span class="platform-icon">💬</span> WhatsApp
+              </button>
+              <button class="platform-btn" data-platform="facebook">
+                <span class="platform-icon">📘</span> Facebook
+              </button>
+              <button class="platform-btn" data-platform="instagram">
+                <span class="platform-icon">📷</span> Instagram
+              </button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <label>نوع المحتوى:</label>
+            <select id="content-type">
+              <option value="property">إعلان عقاري</option>
+              <option value="lead-gen">توليد عملاء</option>
+              <option value="follow-up">متابعة</option>
+              <option value="custom">محتوى مخصص</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>المحتوى:</label>
+            <textarea id="publish-content" rows="6" placeholder="اكتب المحتوى هنا أو دع AI يكتبه لك..."></textarea>
+          </div>
+
+          <div class="option-group">
+            <label>الجهاز المستهدف:</label>
+            <select id="target-device">
+              <option value="auto">تلقائي</option>
+              <option value="mobile">موبايل</option>
+              <option value="desktop">ديسكتوب</option>
+            </select>
+          </div>
+
+          <div class="publish-actions">
+            <button id="btn-generate-content" class="action-btn primary">🤖 توليد بالـ AI</button>
+            <button id="btn-publish" class="action-btn success large">📤 نشر الآن</button>
+            <button id="btn-schedule" class="action-btn">⏰ جدولة</button>
+          </div>
+        </div>
+
+        <div id="publish-history" class="history-panel">
+          <h4>سجل النشر</h4>
+          <div id="publish-log" class="log-list">
+            <div class="empty-state">لا يوجد نشر بعد</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Crawl Tab -->
+      <section id="tab-crawl" class="tab-content">
+        <div class="section-header">
+          <h3>🕷️ زحف البحث المتقدم</h3>
+        </div>
+
+        <div class="crawl-config">
+          <div class="option-group">
+            <label>البحث عن:</label>
+            <select id="crawl-target">
+              <option value="properties">عقارات</option>
+              <option value="leads">عملاء محتملين</option>
+              <option value="competitors">منافسين</option>
+              <option value="prices">أسعار</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>المنطقة:</label>
+            <input type="text" id="crawl-area" placeholder="مثال: الشيخ زايد، المعادي، التجمع الخامس">
+          </div>
+
+          <div class="option-group">
+            <label>المنصات:</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="crawl-platform" value="facebook" checked> Facebook Groups</label>
+              <label><input type="checkbox" name="crawl-platform" value="olx" checked> OLX</label>
+              <label><input type="checkbox" name="crawl-platform" value="aks" checked> Aqarmaps</label>
+              <label><input type="checkbox" name="crawl-platform" value="google"> Google</label>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <label>عدد النتائج:</label>
+            <input type="number" id="crawl-limit" value="50" min="10" max="500">
+          </div>
+
+          <div class="crawl-actions">
+            <button id="btn-start-crawl" class="action-btn primary large">🕷️ بدء الزحف</button>
+            <button id="btn-stop-crawl" class="action-btn danger" disabled>⏹️ إيقاف</button>
+          </div>
+        </div>
+
+        <div id="crawl-progress" class="progress-panel hidden">
+          <div class="progress-bar">
+            <div id="crawl-progress-bar" class="progress-fill" style="width: 0%"></div>
+          </div>
+          <div id="crawl-status" class="progress-text">جاري التحضير...</div>
+        </div>
+
+        <div id="crawl-results" class="results-panel hidden">
+          <h4>نتائج الزحف</h4>
+          <div id="crawl-data" class="data-display"></div>
+          <div class="result-actions">
+            <button id="btn-save-crawl" class="action-btn success">💾 حفظ الكل</button>
+            <button id="btn-ai-score" class="action-btn primary">🤖 تقييم بالـ AI</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leads Tab -->
+      <section id="tab-leads" class="tab-content">
+        <div class="section-header">
+          <h3>👥 إدارة العملاء المحتملين</h3>
+        </div>
+
+        <div class="leads-toolbar">
+          <input type="search" id="lead-search" placeholder="🔍 بحث عن عميل...">
+          <select id="lead-filter">
+            <option value="all">الكل</option>
+            <option value="hot">🔥 ساخن</option>
+            <option value="warm">🟡 دافئ</option>
+            <option value="cold">❄️ بارد</option>
+          </select>
+          <button id="btn-add-lead" class="action-btn primary">+ إضافة</button>
+        </div>
+
+        <div id="leads-list" class="leads-list">
+          <div class="empty-state">لا يوجد عملاء بعد</div>
+        </div>
+
+        <div id="lead-detail" class="lead-detail hidden">
+          <h4 id="lead-name">تفاصيل العميل</h4>
+          <div id="lead-info" class="lead-info"></div>
+          <div class="lead-actions">
+            <button id="btn-lead-whatsapp" class="action-btn success">💬 WhatsApp</button>
+            <button id="btn-lead-call" class="action-btn">📞 اتصال</button>
+            <button id="btn-lead-note" class="action-btn">📝 ملاحظة</button>
+            <button id="btn-lead-score" class="action-btn primary">🤖 تقييم AI</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Tab -->
+      <section id="tab-ai" class="tab-content">
+        <div class="section-header">
+          <h3>🤖 الذكاء الاصطناعي</h3>
+        </div>
+
+        <div class="ai-features">
+          <div class="ai-feature-card" data-feature="qualify">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-info">
+              <h4>تصنيف العملاء</h4>
+              <p>تصنيف تلقائي للعملاء حسب الاهتمام والجدية</p>
+            </div>
+            <button class="action-btn primary">تشغيل</button>
+          </div>
+
+          <div class="ai-feature-card" data-feature="content">
+            <div class="feature-icon">✍️</div>
+            <div class="feature-info">
+              <h4>توليد المحتوى</h4>
+              <p>كتابة محتوى تسويقي عقاري بالعامية المصرية</p>
+            </div>
+            <button class="action-btn primary">تشغيل</button>
+          </div>
+
+          <div class="ai-feature-card" data-feature="reply">
+            <div class="feature-icon">💬</div>
+            <div class="feature-info">
+              <h4>رد ذكي</h4>
+              <p>رد تلقائي على استفسارات العملاء</p>
+            </div>
+            <button class="action-btn primary">تشغيل</button>
+          </div>
+
+          <div class="ai-feature-card" data-feature="score">
+            <div class="feature-icon">📊</div>
+            <div class="feature-info">
+              <h4>تقييم العروض</h4>
+              <p>تقييم العقارات والأسعار تلقائياً</p>
+            </div>
+            <button class="action-btn primary">تشغيل</button>
+          </div>
+
+          <div class="ai-feature-card" data-feature="match">
+            <div class="feature-icon">🔗</div>
+            <div class="feature-info">
+              <h4>مطابقة ذكية</h4>
+              <p>مطابقة العملاء مع العقارات المناسبة</p>
+            </div>
+            <button class="action-btn primary">تشغيل</button>
+          </div>
+
+          <div class="ai-feature-card" data-feature="research">
+            <div class="feature-icon">🔬</div>
+            <div class="feature-info">
+              <h4>بحث السوق</h4>
+              <p>تحليل أسعار السوق والمنافسين</p>
+            </div>
+            <button class="action-btn primary">تشغيل</button>
+          </div>
+        </div>
+
+        <div id="ai-chat" class="ai-chat-panel">
+          <h4>محادثة AI</h4>
+          <div id="ai-messages" class="ai-messages">
+            <div class="ai-message bot">
+              <div class="message-avatar">🤖</div>
+              <div class="message-content">مرحبًا! أنا مساعد CityEstate الذكي. كيف أقدر أساعدك اليوم؟</div>
+            </div>
+          </div>
+          <div class="ai-input">
+            <input type="text" id="ai-input" placeholder="اكتب سؤالك هنا...">
+            <button id="btn-ai-send" class="action-btn primary">إرسال</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings Tab -->
+      <section id="tab-settings" class="tab-content">
+        <div class="section-header">
+          <h3>⚙️ الإعدادات</h3>
+        </div>
+
+        <div class="settings-form">
+          <div class="setting-group">
+            <label>رابط الخادم:</label>
+            <input type="url" id="server-url" value="http://localhost:8000" placeholder="http://localhost:8000">
+          </div>
+
+          <div class="setting-group">
+            <label>مفتاح API:</label>
+            <input type="password" id="api-key" placeholder="sk-...">
+          </div>
+
+          <div class="setting-group">
+            <label>طريقة العمل:</label>
+            <select id="operation-mode">
+              <option value="bridge">Bridge (متصل بالخادم)</option>
+              <option value="standalone">Standalone (محلي)</option>
+            </select>
+          </div>
+
+          <div class="setting-group">
+            <label>مستوى السرعة:</label>
+            <select id="speed-level">
+              <option value="slow">بطيء (آمن)</option>
+              <option value="normal" selected>عادي</option>
+              <option value="fast">سريع</option>
+            </select>
+          </div>
+
+          <div class="setting-group">
+            <label>
+              <input type="checkbox" id="auto-reply-enabled" checked>
+              تفعيل الرد التلقائي
+            </label>
+          </div>
+
+          <div class="setting-group">
+            <label>
+              <input type="checkbox" id="notifications-enabled" checked>
+              تفعيل الإشعارات
+            </label>
+          </div>
+
+          <div class="setting-actions">
+            <button id="btn-save-settings" class="action-btn primary large">💾 حفظ الإعدادات</button>
+            <button id="btn-reset-settings" class="action-btn danger">🔄 إعادة تعيين</button>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <div class="footer">
-      <span>CityEstate v1.0.0</span>
-    </div>
+    <footer class="footer">
+      <div class="footer-info">
+        <span>CityEstate Control Center</span>
+        <span id="footer-status">جاهز</span>
+      </div>
+    </footer>
   </div>
 
   <script src="popup.js"></script>
