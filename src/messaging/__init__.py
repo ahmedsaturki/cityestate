@@ -197,7 +197,7 @@ class MessageDispatcher:
             Formatted message string.
         """
         area = request.area or "your preferred area"
-        budget = request.budget_min or "your budget"
+        budget = request.min_budget or "your budget"
 
         message = (
             f"Hello {request.client_name},\n\n"

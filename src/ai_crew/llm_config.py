@@ -73,7 +73,7 @@ def get_llm(model: str | None = None, temperature: float = 0.1) -> Any | None:
                 openai_api_base=base_url,
                 temperature=temperature,
                 max_tokens=1024,
-                request_timeout=30,
+                request_timeout=120,
             )
             logger.info("LLM configured (OpenRouter): %s", model_id)
             return llm

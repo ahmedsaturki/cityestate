@@ -9,36 +9,40 @@ Covers:
 """
 import hashlib
 import hmac
+import json
 import os
-import sys
-import tempfile
+import pytest
 
-# Use a shared file-based sqlite so the request thread sees the same tables.
-_TEST_DB = tempfile.NamedTemporaryFile(suffix=".db", delete=False).name
-os.environ["DATABASE_URL"] = f"sqlite:///{_TEST_DB}"
-os.environ["JWT_SECRET"] = "test-jwt-secret-" + "x" * 64
-os.environ["SESSION_VAULT_KEY"] = "dGVzdC1mZXJuZXQta2V5LTQ0Ynl0ZXM="
-os.environ["ADMIN_PASSWORD"] = "TestAdmin!1AaBb"
 
-sys.path.insert(0, ".")
+# ---------------------------------------------------------------------------
+# Fixtures — do NOT touch DATABASE_URL or ADMIN_PASSWORD; the shared test
+# infrastructure in conftest.py manages those.  Only set webhook-specific
+# secrets via monkeypatch so the original values are restored after each test.
+# ---------------------------------------------------------------------------
+@pytest.fixture(autouse=True)
+def _webhook_secrets(monkeypatch):
+    """Ensure WEBHOOK_SECRET_TALLY is set for most tests."""
+    monkeypatch.setenv("WEBHOOK_SECRET_TALLY", "real-secret-32chars-padding-here")
 
-from fastapi.testclient import TestClient
 
-from src.api.main import app
-from src.database.models import Base
-from src.api.deps import engine
-
-# Initialise the schema on the already-configured engine.
-Base.metadata.create_all(engine)
+@pytest.fixture()
+def _no_webhook_secrets(monkeypatch):
+    """Remove all WEBHOOK_SECRET_* vars (for the 503 test)."""
+    for key in [k for k in list(os.environ) if k.startswith("WEBHOOK_SECRET_")]:
+        monkeypatch.delenv(key, raising=False)
 
 
 def _sign(body: bytes, secret: str) -> str:
     return hmac.new(secret.encode(), body, hashlib.sha256).hexdigest()
 
 
+# ---------------------------------------------------------------------------
+# Tests
+# ---------------------------------------------------------------------------
 def test_no_signature_returns_401():
-    os.environ.pop("WEBHOOK_SECRET_TALLY", None)
-    os.environ["WEBHOOK_SECRET_TALLY"] = "real-secret-32chars-padding-here"
+    from fastapi.testclient import TestClient
+    from src.api.main import app
+
     client = TestClient(app)
     resp = client.post(
         "/api/v1/webhooks/form",
@@ -48,7 +52,9 @@ def test_no_signature_returns_401():
 
 
 def test_wrong_signature_returns_401():
-    os.environ["WEBHOOK_SECRET_TALLY"] = "real-secret-32chars-padding-here"
+    from fastapi.testclient import TestClient
+    from src.api.main import app
+
     client = TestClient(app)
     resp = client.post(
         "/api/v1/webhooks/form",
@@ -58,25 +64,34 @@ def test_wrong_signature_returns_401():
     assert resp.status_code == 401, f"got {resp.status_code}: {resp.text}"
 
 
-def test_no_secrets_configured_returns_503():
-    for k in [k for k in os.environ if k.startswith("WEBHOOK_SECRET_")]:
-        del os.environ[k]
+def test_no_secrets_configured_returns_503(_no_webhook_secrets):
+    from fastapi.testclient import TestClient
+    from src.api.main import app
+
     client = TestClient(app)
     body = b'{"phone":"+201234567890"}'
     resp = client.post(
         "/api/v1/webhooks/form",
         content=body,
-        headers={"X-Webhook-Signature": "x", "Content-Type": "application/json"},
+        headers={
+            "X-Webhook-Signature": "x",
+            "Content-Type": "application/json",
+        },
     )
     assert resp.status_code == 503, f"got {resp.status_code}: {resp.text}"
 
 
 def test_correct_signature_returns_200():
+    from fastapi.testclient import TestClient
+    from src.api.main import app
+
     secret = "real-secret-32chars-padding-here"
-    os.environ["WEBHOOK_SECRET_TALLY"] = secret
     client = TestClient(app)
-    import json
-    body_dict = {"phone": "+201234567890", "name": "Smoke Test", "max_budget": 5000000}
+    body_dict = {
+        "phone": "+201234567890",
+        "name": "Smoke Test",
+        "max_budget": 5000000,
+    }
     body = json.dumps(body_dict).encode("utf-8")
     sig = _sign(body, secret)
     resp = client.post(
@@ -95,7 +110,11 @@ def test_correct_signature_returns_200():
     assert data["matches_found"] == 0  # queued, not run inline
 
 
+# ---------------------------------------------------------------------------
+# Legacy __main__ runner kept for standalone smoke-testing.
+# ---------------------------------------------------------------------------
 if __name__ == "__main__":
+    os.environ["WEBHOOK_SECRET_TALLY"] = "real-secret-32chars-padding-here"
     test_no_signature_returns_401()
     print("test_no_signature_returns_401: PASS")
     test_wrong_signature_returns_401()

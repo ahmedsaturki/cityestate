@@ -4,8 +4,11 @@ Browser Manager
 Centralized browser automation manager.
 """
 
+import logging
 import os
 import time
+
+logger = logging.getLogger("cityestate.automation.browser_manager")
 
 
 class BrowserManager:

@@ -226,8 +226,46 @@ class DataExtractor:
         return None
 
     def _extract_area(self, text: str) -> str | None:
-        """Extract El Sadat City area from text."""
+        """Extract area from text (El Sadat City + Greater Cairo + Alexandria)."""
         areas = {
+            # Greater Cairo — English
+            "sheikh zayed": ["sheikh zayed", "el sheikh zayed", "sheikh zayd", "الشيخ زايد", "زايد"],
+            "new cairo": ["new cairo", "cairo new", "القاهرة الجديدة", "التجمع"],
+            "6th october": ["october", "6th october", "6 october", "6 اكتوبر", "اكتوبر"],
+            "maadi": ["maadi", "المعادي", "ma'adi"],
+            "heliopolis": ["heliopolis", "مصر الجديدة", "مصر الجديده"],
+            "nasr city": ["nasr city", "مدينة نصر"],
+            "mohandessin": ["mohandessin", "mohandesin", "المهندسين"],
+            "dokki": ["dokki", "doqqi", "الدقى", "الدقى"],
+            "zamalek": ["zamalek", "الزمالك"],
+            "downtown": ["downtown", "وسط البلد", "وسط البلد"],
+            "fifth settlement": ["5th settlement", "fifth settlement", "التجمع الخامس", "التجمع 5"],
+            "tagamoa": ["tagamoa", "التجمعة", "التجمع الاول", "التجمع الأول"],
+            "new administrative capital": ["new capital", "العاصمة الإدارية", "العاصمة الادارية", "العاصمة"],
+            "el rehab": ["el rehab", "rehab", "الرحاب", "rehab city"],
+            "el shorouk": ["el shorouk", "shorouk", "الشروق", "الشروكة"],
+            "mountain view": ["mountain view", "ماونتن فيو", "mountainview"],
+            "palm hills": ["palm hills", "palm hill", "بالم هيلز", "بالم هيل"],
+            "beverly hills": ["beverly hills", "beverly", "بيفرلي هيلز"],
+            "madinaty": ["madinaty", "mdr", "مدينتي", "مدينة"],
+            "ain shams": ["ain shams", "شمس", "عين شمس"],
+            "shubra": ["shubra", "شبرا"],
+            "hadaeq el qobba": ["hadaeq el qobba", "حدائق القبة"],
+            "badr city": ["badr city", "badr", "بدر", "مدينة بدر"],
+            "obour city": ["obour", "obour city", "العبور", "مدينة العبور"],
+            "10th of ramadan": ["10th of ramadan", "10th ramadan", "العاشر من رمضان"],
+            "helwan": ["helwan", "حلوان"],
+            "ain sokhna": ["ain sokhna", "عين سخنة"],
+            "el gouna": ["el gouna", "الجونة", "gouna"],
+            "north coast": ["sahel", "north coast", "الساحل", "الساحل الشمالي"],
+            "sidi abd el rahman": ["sidi abd el rahman", "سيدي عبد الرحمن"],
+            "giza": ["giza", "جيزه", "جيزة"],
+            "faisal": ["faisal", "فيصل", "شارع فيصل"],
+            "haram": ["haram", "هرم", "شارع الهرم"],
+            # Greater Cairo — Arabic
+            "alexandria": ["alexandria", "alex", "الاسكندرية", "اسكندرية", "اسكندريه"],
+            "tanta": ["tanta", "طنطا"],
+            # El Sadat City
             "المنطقة 7 الشريط المميز": ["منطقة 7", "المنطقة 7", "شريط 7", "شريط المميز"],
             "المنطقة 9 الشريط المميز": ["منطقة 9", "المنطقة 9", "شريط 9"],
             "المنطقة 15 الشريط المميز": ["منطقة 15", "المنطقة 15", "شريط 15"],
@@ -250,11 +288,11 @@ class DataExtractor:
     def _extract_budget(self, text: str) -> float | None:
         """Extract budget amount from text."""
         patterns = [
-            (r"(\d+)\s*مليون", lambda m: int(m.group(1)) * 1_000_000),
-            (r"(\d+)\s*(الف|ألف)", lambda m: int(m.group(1)) * 1000),
+            (r"(\d+(?:\.\d+)?)\s*مليون", lambda m: float(m.group(1)) * 1_000_000),
+            (r"(\d+(?:\.\d+)?)\s*(الف|ألف)", lambda m: float(m.group(1)) * 1000),
             (r"(\d[\d,.]+)\s*(جنيه|ج\.م|EGP)", lambda m: int(m.group(1).replace(",", ""))),
-            (r"(\d+)\s*k", lambda m: int(m.group(1)) * 1000),
-            (r"(\d+)\s*M", lambda m: int(m.group(1)) * 1_000_000),
+            (r"(\d+(?:\.\d+)?)\s*k", lambda m: float(m.group(1)) * 1000),
+            (r"(\d+(?:\.\d+)?)\s*M", lambda m: float(m.group(1)) * 1_000_000),
         ]
         for pattern, extractor in patterns:
             match = re.search(pattern, text, re.IGNORECASE)
@@ -267,12 +305,12 @@ class DataExtractor:
     def _extract_bedrooms(self, text: str) -> int | None:
         """Extract bedroom count from text."""
         bedroom_keywords = {
-            0: ["استوديو", "استودييه"],
-            1: ["غرفة واحدة", "1 غرفة", "1 نوم"],
-            2: ["غرفتين", "2 غرفة", "2 نوم"],
-            3: ["تلات غرف", "3 غرفة", "3 نوم"],
-            4: ["أربع غرف", "4 غرفة", "4 نوم"],
-            5: ["خمس غرف", "5 غرفة", "5 نوم"],
+            0: ["استوديو", "استودييه", "studio"],
+            1: ["غرفة واحدة", "1 غرفة", "1 نوم", "غرفة", "bedroom", "1br", "1 bedroom"],
+            2: ["غرفتين", "2 غرفة", "2 نوم", "غرفين", "2br", "2 bedroom"],
+            3: ["تلات غرف", "3 غرفة", "3 نوم", "3 غرف", "3br", "3 bedroom"],
+            4: ["أربع غرف", "4 غرفة", "4 نوم", "4 غرف", "4br", "4 bedroom"],
+            5: ["خمس غرف", "5 غرفة", "5 نوم", "5 غرف", "5br", "5 bedroom"],
         }
         for count, keywords in bedroom_keywords.items():
             for kw in keywords:

@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dashboard",
+      "url": "http://localhost:8050"
+    },
+    {
+      "name": "api",
+      "url": "http://localhost:8000"
+    },
+    {
+      "name": "extension-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8090", "--directory", "cityestate-extension/popup"],
+      "port": 8090
+    }
+  ]
+}

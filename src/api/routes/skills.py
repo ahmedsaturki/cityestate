@@ -86,7 +86,7 @@ def list_tasks(user: dict = Depends(require_auth)):
 
 
 @router.post("/tasks")
-def create_task(task: TaskCreate, user: dict = Depends(require_auth)) -> list[dict]:
+def create_task(task: TaskCreate, user: dict = Depends(require_auth)) -> dict:
     """Create a new task."""
     try:
         from src.skills.task_manager import TaskManagerSkill
@@ -147,7 +147,7 @@ def list_goals(user: dict = Depends(require_auth)):
 
 
 @router.post("/goals")
-def create_goal(goal: GoalCreate, user: dict = Depends(require_auth)) -> list[dict]:
+def create_goal(goal: GoalCreate, user: dict = Depends(require_auth)) -> dict:
     """Create a new goal."""
     try:
         from src.skills.goal_tracker import GoalTrackerSkill
@@ -273,7 +273,7 @@ def list_notes(user: dict = Depends(require_auth)):
 
 
 @router.post("/notes")
-def create_note(note: NoteCreate, user: dict = Depends(require_auth)) -> list[dict]:
+def create_note(note: NoteCreate, user: dict = Depends(require_auth)) -> dict:
     """Create a new note."""
     try:
         from src.skills.notes_brainstorming import NotesSkill
@@ -329,7 +329,7 @@ def list_quick_notes(user: dict = Depends(require_auth)):
 
 
 @router.post("/notes/quick")
-def create_quick_note(data: QuickIdea, user: dict = Depends(require_auth)) -> list[dict]:
+def create_quick_note(data: QuickIdea, user: dict = Depends(require_auth)) -> dict:
     """Save a quick idea."""
     try:
         from src.skills.notes_brainstorming import NotesSkill

@@ -80,7 +80,7 @@ def run_notifications():
     logger.info("=== Starting Notifications Job ===")
     try:
         from src.database.models import ClientRequest, MessageLog
-        from src.messaging.dispatcher import MessageDispatcher
+        from src.messaging import MessageDispatcher
 
         db = _get_db_session()
         try:

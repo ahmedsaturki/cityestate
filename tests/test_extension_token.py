@@ -9,41 +9,34 @@ Covers:
   5. Issued token uses the dedicated `extension` role, not `admin`.
 """
 import os
-import sys
+import pytest
 from unittest.mock import MagicMock
 
-# Set required env BEFORE any src.* import, otherwise startup blocks.
-os.environ["JWT_SECRET"] = "test-jwt-secret-" + "x" * 64
-os.environ["SESSION_VAULT_KEY"] = "dGVzdC1mZXJuZXQta2V5LTQ0Ynl0ZXM="  # base64 of 32 bytes
-os.environ["ADMIN_PASSWORD"] = "TestAdmin!1AaBb"
-os.environ["DATABASE_URL"] = "sqlite:///:memory:"
 
-sys.path.insert(0, ".")
-
-from fastapi.testclient import TestClient
-
-from src.api.main import app
-
-
-class FakeUser:
-    def __init__(self):
-        self.id = 1
-        self.username = "extension"
-        self.role = "extension"
+# ---------------------------------------------------------------------------
+# Fixtures — use monkeypatch so env changes are scoped to each test.
+# ---------------------------------------------------------------------------
+@pytest.fixture(autouse=True)
+def _extension_secret(monkeypatch):
+    """Set a valid EXTENSION_SHARED_SECRET for most tests."""
+    monkeypatch.setenv(
+        "EXTENSION_SHARED_SECRET", "the-real-shared-secret-32chars-min"
+    )
 
 
-def _make_db():
-    db = MagicMock()
-    query = db.query.return_value
-    query.filter.return_value.first.return_value = None  # force provision path
-    db.add = MagicMock()
-    db.commit = MagicMock()
-    db.refresh = MagicMock(side_effect=lambda u: setattr(u, "id", 1))
-    return db
+@pytest.fixture()
+def _no_extension_secret(monkeypatch):
+    """Remove EXTENSION_SHARED_SECRET (for the 503 test)."""
+    monkeypatch.delenv("EXTENSION_SHARED_SECRET", raising=False)
 
 
+# ---------------------------------------------------------------------------
+# Tests
+# ---------------------------------------------------------------------------
 def test_wrong_secret_returns_401():
-    os.environ["EXTENSION_SHARED_SECRET"] = "the-real-shared-secret-32chars-min"
+    from fastapi.testclient import TestClient
+    from src.api.main import app
+
     client = TestClient(app)
     resp = client.post(
         "/api/v1/auth/extension-token",
@@ -54,14 +47,18 @@ def test_wrong_secret_returns_401():
 
 
 def test_missing_secret_returns_422():
-    os.environ["EXTENSION_SHARED_SECRET"] = "the-real-shared-secret-32chars-min"
+    from fastapi.testclient import TestClient
+    from src.api.main import app
+
     client = TestClient(app)
     resp = client.post("/api/v1/auth/extension-token", json={})
     assert resp.status_code == 422, f"got {resp.status_code}: {resp.text}"
 
 
-def test_unconfigured_server_returns_503(monkeypatch=None):
-    os.environ.pop("EXTENSION_SHARED_SECRET", None)
+def test_unconfigured_server_returns_503(_no_extension_secret):
+    from fastapi.testclient import TestClient
+    from src.api.main import app
+
     client = TestClient(app)
     resp = client.post(
         "/api/v1/auth/extension-token",
@@ -70,11 +67,16 @@ def test_unconfigured_server_returns_503(monkeypatch=None):
     assert resp.status_code == 503, f"got {resp.status_code}: {resp.text}"
 
 
+# ---------------------------------------------------------------------------
+# Legacy __main__ runner kept for standalone smoke-testing.
+# ---------------------------------------------------------------------------
 if __name__ == "__main__":
+    os.environ["EXTENSION_SHARED_SECRET"] = "the-real-shared-secret-32chars-min"
     test_wrong_secret_returns_401()
     print("test_wrong_secret_returns_401: PASS")
     test_missing_secret_returns_422()
     print("test_missing_secret_returns_422: PASS")
+    os.environ.pop("EXTENSION_SHARED_SECRET", None)
     test_unconfigured_server_returns_503()
     print("test_unconfigured_server_returns_503: PASS")
     print("\nAll extension-token handshake tests PASSED.")
