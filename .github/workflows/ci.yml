@@ -10,7 +10,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -23,15 +23,11 @@ jobs:
       - name: Lint with flake8
         run: flake8 src/ tests/ --max-line-length=120 --extend-ignore=E203,W503
       - name: Type check with mypy
-        run: mypy src/ --ignore-missing-imports --no-error-summary || true
+        run: mypy src/ --ignore-missing-imports --no-error-summary
 
   test:
     runs-on: ubuntu-latest
     services:
-      sqlite:
-        image: alpine:latest
-        options: >-
-          sh -c "while true; do sleep 3600; done"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -57,9 +53,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt pip-audit bandit
       - name: Audit dependencies
-        run: pip-audit -r requirements.txt || true
+        run: pip-audit -r requirements.txt
       - name: Security scan with bandit
-        run: bandit -r src/ -f json -o bandit-report.json || true
+        run: bandit -r src/ -f json -o bandit-report.json
 
   build:
     runs-on: ubuntu-latest
